@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,23 +7,40 @@ body {
   color: #333;
 }
 header {
-  background: #222;
+  background: #111;
   color: #fff;
   padding: 20px;
   text-align: center;
+}
+header .logo {
+  height: 60px;
+  margin-bottom: 10px;
 }
 main {
   padding: 20px;
 }
 h2 {
-  color: #222;
+  color: #111;
+  margin-top: 30px;
+}
+ul {
+  padding-left: 20px;
 }
 footer {
-  background: #222;
+  background: #111;
   color: #fff;
   text-align: center;
   padding: 10px;
-  position: fixed;
+  margin-top: 40px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+.gallery img {
   width: 100%;
-  bottom: 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
 }
