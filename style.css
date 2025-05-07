@@ -1,57 +1,66 @@
 
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f8f9fa;
+    background-color: #f0f0f0;
     color: #333;
     text-align: center;
 }
 header {
-    background-color: #222;
-    color: #fff;
+    background-color: #1a1a1a;
+    color: white;
     padding: 2rem 1rem;
 }
 .logo {
-    width: 100px;
-    height: 100px;
+    width: 2in;
+    height: 2in;
 }
 .tagline {
     font-size: 1.2rem;
-    font-weight: 300;
+    color: #ccc;
 }
 main {
     padding: 2rem 1rem;
-}
-.services, .gallery, .contact, .video {
-    margin-bottom: 3rem;
+    background: white;
+    max-width: 900px;
+    margin: auto;
 }
 h2 {
-    color: #444;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
 }
-ul {
-    list-style: none;
-    padding: 0;
+.testimonials blockquote {
+    font-style: italic;
+    background: #f9f9f9;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-left: 5px solid #ff9900;
+    max-width: 700px;
 }
-ul li {
-    margin: 0.5rem 0;
-}
-.gallery-row {
+.quote-form form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 1rem;
-    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
 }
-.gallery-row img {
-    width: 45%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.quote-form input, .quote-form textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.quote-form button {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
 footer {
-    background-color: #222;
-    color: #fff;
+    background: #1a1a1a;
+    color: white;
     padding: 1rem;
-    font-size: 0.9rem;
+    margin-top: 2rem;
 }

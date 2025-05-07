@@ -1,65 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solid Finish Solutions</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Solid Finish Logo" class="logo">
+        <img src="logo.png" alt="Solid Finish Logo" class="logo" />
         <h1>Solid Finish Solutions</h1>
         <p class="tagline">Professional Painting & Decorating Services in London</p>
     </header>
     <main>
         <section class="services">
             <h2>Our Services</h2>
-            <div class="service-category">
-                <h3>🎨 Painting & Decorating</h3>
-                <ul>
-                    <li>Interior & Exterior Painting</li>
-                    <li>Wallpapering and wall coverings</li>
-                    <li>Woodwork staining and varnishing</li>
-                </ul>
-            </div>
-            <div class="service-category">
-                <h3>🧱 Plastering & Skimming</h3>
-                <ul>
-                    <li>Wall and ceiling skimming</li>
-                    <li>Repairs and smoothing</li>
-                </ul>
-            </div>
-            <div class="service-category">
-                <h3>🏠 Residential & Commercial</h3>
-                <ul>
-                    <li>Property maintenance</li>
-                    <li>Tenant make-ready services</li>
-                </ul>
-            </div>
+            <ul>
+                <li>Interior & Exterior Painting</li>
+                <li>Wallpapering and wall coverings</li>
+                <li>Woodwork staining and varnishing</li>
+                <li>Plastering & Skimming</li>
+                <li>Flooring Installation & Restoration</li>
+                <li>Residential & Commercial Projects</li>
+            </ul>
         </section>
-        <section class="gallery">
-            <h2>Before & After</h2>
-            <div class="gallery-row">
-                <img src="before1.jpg" alt="Before 1">
-                <img src="after1.jpg" alt="After 1">
-            </div>
-            <div class="gallery-row">
-                <img src="before2.jpg" alt="Before 2">
-                <img src="after2.jpg" alt="After 2">
-            </div>
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <blockquote>"Tyrone and the team transformed our home — professional, clean and fast!"</blockquote>
+            <blockquote>"Reliable and high quality. We've already recommended Solid Finish to friends!"</blockquote>
         </section>
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <p>Email: info@solidfinishsolutions.co.uk</p>
-            <p>Phone: 07739960753</p>
-        </section>
-        <section class="video">
-            <h2>Project Walkthrough</h2>
-            <video width="100%" controls>
-                <source src="walkthrough.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <section class="quote-form">
+            <h2>Get a Free Quote</h2>
+            <form action="mailto:info@solidfinishsolutions.co.uk" method="POST" enctype="text/plain">
+                <input type="text" name="Name" placeholder="Your Name" required />
+                <input type="email" name="Email" placeholder="Your Email" required />
+                <input type="tel" name="Phone" placeholder="Your Phone Number" required />
+                <input type="text" name="Service" placeholder="Service Type" />
+                <textarea name="Message" placeholder="Tell us what you need..." required></textarea>
+                <button type="submit">Send Request</button>
+            </form>
         </section>
     </main>
     <footer>
