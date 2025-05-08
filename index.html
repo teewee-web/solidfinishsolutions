@@ -1,49 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solid Finish Solutions</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solid Finish Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(to bottom right, #2d2d2d, #000);
+      color: #fff;
+      padding: 30px 20px 60px;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      font-size: 40px;
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-style: italic;
+      font-size: 18px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    ul {
+      padding-left: 20px;
+      font-size: 18px;
+    }
+    .quote-form, .contact, .testimonials {
+      background: #f8f8f8;
+      border-radius: 8px;
+      padding: 30px;
+      margin-top: 30px;
+    }
+    .quote-form input, .quote-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .quote-form button {
+      background: #222;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    footer {
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Solid Finish Logo" class="logo" />
-        <h1>Solid Finish Solutions</h1>
-        <p class="tagline">Professional Painting & Decorating Services in London</p>
-    </header>
-    <main>
-        <section class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Interior & Exterior Painting</li>
-                <li>Wallpapering and wall coverings</li>
-                <li>Woodwork staining and varnishing</li>
-                <li>Plastering & Skimming</li>
-                <li>Flooring Installation & Restoration</li>
-                <li>Residential & Commercial Projects</li>
-            </ul>
-        </section>
-        <section class="testimonials">
-            <h2>What Our Clients Say</h2>
-            <blockquote>"Tyrone and the team transformed our home — professional, clean and fast!"</blockquote>
-            <blockquote>"Reliable and high quality. We've already recommended Solid Finish to friends!"</blockquote>
-        </section>
-        <section class="quote-form">
-            <h2>Get a Free Quote</h2>
-            <form action="mailto:info@solidfinishsolutions.co.uk" method="POST" enctype="text/plain">
-                <input type="text" name="Name" placeholder="Your Name" required />
-                <input type="email" name="Email" placeholder="Your Email" required />
-                <input type="tel" name="Phone" placeholder="Your Phone Number" required />
-                <input type="text" name="Service" placeholder="Service Type" />
-                <textarea name="Message" placeholder="Tell us what you need..." required></textarea>
-                <button type="submit">Send Request</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Solid Finish Solutions. All rights reserved.</p>
-    </footer>
+  <header>
+    <img src="logo.png" alt="Solid Finish Logo"/>
+    <h1>Solid Finish Solutions</h1>
+    <p>Precision, Pride, Perfection.</p>
+    <p>Professional Painting, Decorating & Property Finishing in London</p>
+  </header>
+
+  <section>
+    <img src="hero.jpg" style="width: 100%; border-radius: 8px; margin-bottom: 30px;" alt="Hero Image"/>
+
+    <h2>Our Services</h2>
+    <ul>
+      <li>Interior & Exterior Painting</li>
+      <li>Ceiling, Wall & Skirting Painting</li>
+      <li>Door, Banister, Handrail, Frame Painting</li>
+      <li>Wallpaper Removal & Application</li>
+      <li>Mould Removal & Wall Repairs</li>
+      <li>Plastering & Skimming</li>
+      <li>Furniture Assembly</li>
+      <li>Silicone Removal & Replacement</li>
+      <li>Laminate Flooring</li>
+      <li>Sanding & Preparation</li>
+    </ul>
+
+    <div class="quote-form">
+      <h3>Get a Free Quote</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="tel" placeholder="Your Phone Number" required />
+        <textarea placeholder="Project Details" rows="5"></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+    </div>
+
+    <div class="testimonials">
+      <h3>What Clients Say</h3>
+      <p><em>“Fantastic finish and real attention to detail. Highly recommend Tyrone and his team!”</em> – Lisa M, East London</p>
+      <p><em>“Clean, professional and got the job done quicker than expected.”</em> – James R, Croydon</p>
+    </div>
+
+    <img src="gallery.jpg" style="width: 100%; border-radius: 8px; margin-top: 30px;" alt="Gallery Image"/>
+
+    <div class="contact">
+      <h3>Contact</h3>
+      <p><strong>Phone:</strong> 07739 960 753</p>
+      <p><strong>Email:</strong> solidfinishsolutions@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Solid Finish Solutions. All rights reserved.
+  </footer>
 </body>
 </html>
