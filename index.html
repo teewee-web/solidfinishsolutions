@@ -14,14 +14,33 @@
 		<style>
 			.logo-container {
 				text-align: center;
-				margin-top: 1rem;
-				margin-bottom: 0;
+				margin: 1rem auto 0 auto;
 			}
 			.logo-container img {
 				max-width: 160px;
 				width: 100%;
 				height: auto;
-				display: inline-block;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@media screen and (max-width: 736px) {
+				.logo-container {
+					margin-top: 1rem;
+				}
+				.logo-container img {
+					max-width: 120px;
+				}
+			}
+			table.gallery img {
+				width: 100%;
+				max-width: 250px;
+				height: auto;
+			}
+			table.gallery {
+				width: 100%;
+				text-align: center;
+				margin: auto;
 			}
 		</style>
 	</head>
@@ -117,7 +136,90 @@
 				</div>
 			</section>
 
+			<!-- Gallery -->
+			<section id="gallery" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Gallery</h2>
+					<p>Take a look at some of our recent work across homes and businesses in London.</p>
+					<table class="gallery">
+						<tr>
+							<td><img src="images/room_update_1.jpg" alt="Project Before" /></td>
+							<td><img src="images/room_update_2.jpg" alt="Project After" /></td>
+						</tr>
+						<tr>
+							<td><img src="images/pic02.jpg" alt="Feature Wall" /></td>
+							<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" /></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+
+			<!-- Contact -->
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<p>If you’d like a quote, want to schedule a service, or have any questions — don’t hesitate to contact us. We're here to help bring your vision to life.</p>
+					<div class="split style1">
+						<section>
+							<form method="post" action="mailto:solidfinishsolutions@gmail.co.uk" autocomplete="on">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" autocomplete="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" autocomplete="email" />
+									</div>
+									<div class="field half">
+										<label for="phone">Phone</label>
+										<input type="tel" name="phone" id="phone" autocomplete="tel" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><button type="submit" class="button submit">Send Message</button></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>London, United Kingdom</span>
+									<h3>Email</h3>
+									<a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
+									<h3>Phone</h3>
+									<span>07739 960753</span>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
 		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; Solid Finish Solutions. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
