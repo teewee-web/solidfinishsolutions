@@ -12,13 +12,13 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Color scheme based on paint/decorating business logo */
+			/* Modern color scheme for painting and decorating business */
 			:root {
-				--primary-color: #1e4f78; /* Deep blue - likely brand primary */
-				--secondary-color: #c78c36; /* Warm gold - accent color */
-				--tertiary-color: #2e7cbd; /* Lighter blue - supplementary */
-				--light-color: #f2f7fc; /* Very light blue - backgrounds */
-				--dark-color: #0a2b4a; /* Very dark blue - text */
+				--primary-color: #4a6c6f; /* Muted teal - sophisticated primary */
+				--secondary-color: #d35d47; /* Terracotta - vibrant accent */
+				--tertiary-color: #8ba3a6; /* Light teal - complementary */
+				--light-color: #f5f5f0; /* Off-white - backgrounds */
+				--dark-color: #2c3e3f; /* Dark teal - text */
 			}
 			
 			/* Section background colors */
@@ -28,42 +28,47 @@
 			}
 			
 			.wrapper.style1-alt {
-				background-color: #0c3559;
-				color: rgba(255, 255, 255, 0.85);
+				background-color: #384849;
+				color: rgba(255, 255, 255, 0.9);
 			}
 			
 			.wrapper.style2 {
-				background-color: var(--primary-color);
-				color: rgba(255, 255, 255, 0.85);
+				background: linear-gradient(135deg, var(--primary-color), #384849);
+				color: rgba(255, 255, 255, 0.9);
 			}
 			
 			.wrapper.style3 {
-				background-color: var(--light-color);
+				background-color: #f0f0e8;
 				color: var(--dark-color);
 			}
 			
 			/* Sidebar styling */
 			#sidebar {
-				background-color: var(--secondary-color);
+				background: linear-gradient(180deg, var(--dark-color), #384849);
 			}
 			
 			#sidebar nav ul li a {
-				color: rgba(255, 255, 255, 0.85);
+				color: rgba(255, 255, 255, 0.8);
+				font-weight: 500;
 			}
 			
 			#sidebar nav ul li a:hover {
 				color: #ffffff;
+				text-shadow: 0 0 10px rgba(211, 93, 71, 0.5);
 			}
 			
 			/* Buttons */
 			.button {
 				background-color: var(--secondary-color);
 				color: #ffffff !important;
+				border-radius: 4px;
 				box-shadow: none;
+				transition: all 0.3s ease;
 			}
 			
 			.button:hover {
-				background-color: #d89b45;
+				background-color: #e6735f;
+				transform: translateY(-2px);
 			}
 			
 			.button.special {
@@ -76,8 +81,13 @@
 			
 			/* Icons */
 			.icon.major {
-				background-color: var(--primary-color);
+				background-color: var(--secondary-color);
 				color: #ffffff;
+				transition: transform 0.3s ease;
+			}
+			
+			.icon.major:hover {
+				transform: scale(1.05);
 			}
 			
 			/* Form elements */
@@ -86,7 +96,8 @@
 			input[type="tel"], 
 			select, 
 			textarea {
-				border-color: rgba(30, 79, 120, 0.3);
+				border-color: rgba(74, 108, 111, 0.2);
+				background-color: rgba(255, 255, 255, 0.9);
 			}
 			
 			input[type="text"]:focus, 
@@ -100,7 +111,13 @@
 			
 			/* Features sections */
 			.features section {
-				border-color: rgba(30, 79, 120, 0.15);
+				border-color: rgba(74, 108, 111, 0.15);
+				transition: all 0.3s ease;
+			}
+			
+			.features section:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 			}
 			
 			@media screen and (max-width: 768px) {
@@ -158,10 +175,41 @@
 			/* Links */
 			a {
 				color: var(--secondary-color);
+				transition: color 0.3s ease;
 			}
 			
 			a:hover {
-				color: var(--tertiary-color);
+				color: #e6735f;
+				text-decoration: none;
+			}
+			
+			/* Typography enhancements */
+			h1, h2, h3 {
+				color: var(--dark-color);
+				letter-spacing: 0.5px;
+			}
+			
+			.wrapper.style2 h1, 
+			.wrapper.style2 h2, 
+			.wrapper.style2 h3,
+			.wrapper.style1-alt h1,
+			.wrapper.style1-alt h2,
+			.wrapper.style1-alt h3 {
+				color: white;
+			}
+			
+			h2::after {
+				content: "";
+				display: block;
+				width: 50px;
+				height: 3px;
+				background-color: var(--secondary-color);
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+			
+			.wrapper.style2 h2::after {
+				background-color: rgba(255, 255, 255, 0.6);
 			}
 		</style>
 	</head>
