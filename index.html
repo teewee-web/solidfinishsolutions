@@ -19,6 +19,45 @@
 					margin: 1rem auto;
 				}
 			}
+			
+			/* Fix for text visibility */
+			p, h1, h2, h3, li, label, input, textarea, span, a {
+				color: inherit;
+				max-width: 100%;
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+			}
+			
+			/* Improve form readability */
+			form .field {
+				margin-bottom: 1.5rem;
+			}
+			
+			/* Gallery spacing */
+			table.gallery {
+				width: 100%;
+				text-align: center;
+				margin: auto;
+				border-collapse: separate;
+				border-spacing: 10px;
+			}
+			
+			table.gallery img {
+				width: 100%;
+				max-width: 250px;
+				height: auto;
+				margin-bottom: 1rem;
+			}
+			
+			/* Fix contact section spacing */
+			.contact h3 {
+				margin-top: 1.5rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.contact h3:first-child {
+				margin-top: 0;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -62,8 +101,18 @@
 							<h2>Interior & Exterior Painting</h2>
 							<p>From fresh coats to complex colour schemes, we handle homes and businesses with precision and professionalism.</p>
 							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
+								<li><a href="#two" class="button scrolly">Our Services</a></li>
 							</ul>
+						</div>
+					</div>
+				</section>
+				<!-- Added section for "Who we are" -->
+				<section>
+					<a href="#" class="image"><img src="images/pic02.jpg" alt="Professional Team" data-position="top center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Professional & Reliable</h2>
+							<p>With years of experience serving London homes and businesses, our skilled team delivers quality craftsmanship and exceptional customer service on every project.</p>
 						</div>
 					</div>
 				</section>
@@ -107,7 +156,7 @@
 						</section>
 					</div>
 					<ul class="actions">
-						<li><a href="generic.html" class="button">Learn more</a></li>
+						<li><a href="#gallery" class="button scrolly">See Our Work</a></li>
 					</ul>
 				</div>
 			</section>
@@ -117,14 +166,18 @@
 				<div class="inner">
 					<h2>Gallery</h2>
 					<p>Take a look at some of our recent work across homes and businesses in London.</p>
-					<table style="width: 100%; text-align: center;">
+					<table class="gallery">
 						<tr>
-							<td><img src="images/room_update_1.jpg" alt="Project Before" style="width: 100%; max-width: 250px; height: auto;" /></td>
-							<td><img src="images/room_update_2.jpg" alt="Project After" style="width: 100%; max-width: 250px; height: auto;" /></td>
+							<td><img src="images/room_update_1.jpg" alt="Project Before" />
+							<p>Before: Living Room Renovation</p></td>
+							<td><img src="images/room_update_2.jpg" alt="Project After" />
+							<p>After: Transformed Space</p></td>
 						</tr>
 						<tr>
-							<td><img src="images/pic02.jpg" alt="Feature Wall" style="width: 100%; max-width: 250px; height: auto;" /></td>
-							<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" style="width: 100%; max-width: 250px; height: auto;" /></td>
+							<td><img src="images/pic02.jpg" alt="Feature Wall" />
+							<p>Feature Wall Installation</p></td>
+							<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" />
+							<p>Modern Kitchen Installation</p></td>
 						</tr>
 					</table>
 				</div>
@@ -134,26 +187,26 @@
 			<section id="three" class="wrapper style1 fade-up">
 				<div class="inner">
 					<h2>Get in touch</h2>
-					<p>If you’d like a quote, want to schedule a service, or have any questions — don’t hesitate to contact us. We're here to help bring your vision to life.</p>
+					<p>If you'd like a quote, want to schedule a service, or have any questions — don't hesitate to contact us. We're here to help bring your vision to life.</p>
 					<div class="split style1">
 						<section>
-							<form method="post" action="mailto:solidfinishsolutions@gmail.co.uk" autocomplete="on">
+							<form method="post" action="mailto:solidfinishsolutions@gmail.com" autocomplete="on">
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" autocomplete="name" />
+										<input type="text" name="name" id="name" autocomplete="name" required />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" autocomplete="email" />
+										<input type="email" name="email" id="email" autocomplete="email" required />
 									</div>
-									<div class="field half">
+									<div class="field">
 										<label for="phone">Phone</label>
 										<input type="tel" name="phone" id="phone" autocomplete="tel" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="5"></textarea>
+										<textarea name="message" id="message" rows="5" required></textarea>
 									</div>
 								</div>
 								<ul class="actions">
@@ -166,8 +219,12 @@
 								<li>
 									<h3>Address</h3>
 									<span>London, United Kingdom</span>
+								</li>
+								<li>
 									<h3>Email</h3>
-									<a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
+									<a href="mailto:solidfinishsolutions@gmail.com">solidfinishsolutions@gmail.com</a>
+								</li>
+								<li>
 									<h3>Phone</h3>
 									<span>07739 960753</span>
 								</li>
