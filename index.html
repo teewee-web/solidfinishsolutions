@@ -1,181 +1,271 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solid Finish Solutions</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0b1a2d;
-      color: #ffffff;
-    }
+change the colourse of the site to match the logo, have the writing in white, add it to the whole code herechange the website colours so it matches the logo <!DOCTYPE HTML>
 
-    a, h1, h2, h3, p, li, span {
-      color: #ffffff;
-    }
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 
-    .button {
-      background-color: #d4af37;
-      color: #0b1a2d;
-      padding: 0.6em 1.2em;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 1rem;
-    }
+<html>
+	<head>
+		<title>Solid Finish Solutions</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			@media screen and (max-width: 768px) {
+				#sidebar .inner img {
+					display: block;
+					width: 140px;
+					margin: 1rem auto;
+				}
+			}
 
-    .button:hover {
-      background-color: #e6c766;
-    }
-
-    #sidebar {
-      background-color: #111d33;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    #sidebar img {
-      width: 160px;
-      margin-bottom: 1.5rem;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      margin: 1rem 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #d4af37;
-    }
-
-    .wrapper {
-      padding: 2rem 1.5rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      color: #d4af37;
-    }
-
-    ul {
-      margin-top: 1rem;
-    }
-
-    ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    .gallery {
-      width: 100%;
-      text-align: center;
-      border-collapse: separate;
-      border-spacing: 20px;
-      margin-top: 2rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
-    footer {
-      background-color: #111d33;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    footer a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-
-    @media screen and (max-width: 768px) {
-      .gallery td {
-        display: block;
-        margin-bottom: 2rem;
-      }
-
-      #sidebar img {
-        width: 120px;
-      }
-    }
-  </style>
+```
+		/* Fix for text visibility */
+		p, h1, h2, h3, li, label, input, textarea, span, a {
+			color: inherit;
+			max-width: 100%;
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+		}
+		
+		/* Improve form readability */
+		form .field {
+			margin-bottom: 1.5rem;
+		}
+		
+		/* Gallery spacing */
+		table.gallery {
+			width: 100%;
+			text-align: center;
+			margin: auto;
+			border-collapse: separate;
+			border-spacing: 10px;
+		}
+		
+		table.gallery img {
+			width: 100%;
+			max-width: 250px;
+			height: auto;
+			margin-bottom: 1rem;
+		}
+		
+		/* Fix contact section spacing */
+		.contact h3 {
+			margin-top: 1.5rem;
+			margin-bottom: 0.5rem;
+		}
+		
+		.contact h3:first-child {
+			margin-top: 0;
+		}
+	</style>
 </head>
-<body>
+<body class="is-preload">
 
-  <!-- Sidebar -->
-  <section id="sidebar">
-    <img src="images/logo_crown_color.png" alt="Solid Finish Solutions Logo" />
-    <nav>
-      <ul>
-        <li><a href="#intro">Welcome</a></li>
-        <li><a href="#services">Our Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-      </ul>
-    </nav>
-  </section>
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<img src="images/logo_crown_color.png" alt="Solid Finish Solutions Logo" style="width: 2.5in; margin-bottom: 1rem; margin-top: -1in; display: block; margin-left: auto; margin-right: auto;" />
+			<nav>
+				<ul>
+					<li><a href="#intro">Welcome</a></li>
+					<li><a href="#one">Who we are</a></li>
+					<li><a href="#two">What we do</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+					<li><a href="#three">Get in touch</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
 
-  <!-- Welcome Section -->
-  <section id="intro" class="wrapper">
-    <h1>Solid Finish Solutions</h1>
-    <p><strong>Expert Painting and Decorating</strong> is our specialty. We also offer reliable property improvement services across London — all delivered to the highest standard, on time and on budget.</p>
-    <a href="#services" class="button">Our Services</a>
-  </section>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-  <!-- Services Section -->
-  <section id="services" class="wrapper">
-    <h2>What We Do</h2>
-    <p>Our primary focus is <strong>painting and decorating</strong>, delivering flawless finishes with every brushstroke. We also offer:</p>
-    <ul>
-      <li>Wallpapering & Feature Walls</li>
-      <li>Plastering & Repairs</li>
-      <li>Plumbing & Electrics</li>
-      <li>Kitchen & Bathroom Installs</li>
-      <li>Tiling, Flooring & Carpentry</li>
-      <li>Garden Landscaping & Fencing</li>
-    </ul>
-  </section>
+		<!-- Intro -->
+		<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h1>Solid Finish Solutions</h1>
+				<p><strong>Expert Painting and Decorating</strong> is our specialty. We also offer reliable property improvement services across London — all delivered to the highest standard, on time and on budget.</p>
+				<ul class="actions">
+					<li><a href="#one" class="button scrolly">Learn more</a></li>
+				</ul>
+			</div>
+		</section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="wrapper">
-    <h2>Gallery</h2>
-    <p>Take a look at some of our recent work across homes and businesses in London.</p>
-    <table class="gallery">
-      <tr>
-        <td><img src="images/room_update_1.jpg" alt="Before" /><p>Before: Living Room</p></td>
-        <td><img src="images/room_update_2.jpg" alt="After" /><p>After: Modern Finish</p></td>
-      </tr>
-      <tr>
-        <td><img src="images/IMG_0578.JPEG" alt="Before Painting" /><p>Before Painting</p></td>
-        <td><img src="images/IMG_0583.JPEG" alt="After Painting" /><p>After Painting</p></td>
-      </tr>
-      <tr>
-        <td><img src="images/img_0931.jpg" alt="Decorating" /><p>Decorating Project</p></td>
-        <td><img src="images/img_0945.jpg" alt="Finished Room" /><p>Final Result</p></td>
-      </tr>
-    </table>
-  </section>
+		<!-- One -->
+		<section id="one" class="wrapper style2 spotlights">
+			<section>
+				<a href="#" class="image"><img src="images/pic01.jpg" alt="Interior & Exterior Painting" data-position="center center" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>Interior & Exterior Painting</h2>
+						<p>From fresh coats to complex colour schemes, we handle homes and businesses with precision and professionalism.</p>
+						<ul class="actions">
+							<li><a href="#two" class="button scrolly">Our Services</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!-- Added section for "Who we are" -->
+			<section>
+				<a href="#" class="image"><img src="images/pic02.jpg" alt="Professional Team" data-position="top center" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>Professional & Reliable</h2>
+						<p>With years of experience serving London homes and businesses, our skilled team delivers quality craftsmanship and exceptional customer service on every project.</p>
+					</div>
+				</div>
+			</section>
+		</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; Solid Finish Solutions. All rights reserved.</p>
-    <p>📧 <a href="mailto:solidfinishsolutions@gmail.com">solidfinishsolutions@gmail.com</a> | 📞 07739 960753</p>
-  </footer>
+		<!-- Two -->
+		<section id="two" class="wrapper style3 fade-up">
+			<div class="inner">
+				<h2>What We Do</h2>
+				<p>Our primary focus is <strong>painting and decorating</strong>, delivering flawless finishes with every brushstroke. We also offer wallpapering, plastering, and a range of property improvement services handled by qualified professionals.</p>
+				<div class="features">
+					<section>
+						<span class="icon solid major fa-paint-brush"></span>
+						<h3>Wallpapering & Feature Walls</h3>
+						<p>We install modern wallpaper and striking feature walls with precision, transforming rooms with texture, colour, and designs that stand out.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-tools"></span>
+						<h3>Plastering & Repairs</h3>
+						<p>From patching cracks to full wall skimming, we deliver smooth, paint-ready finishes with perfect surface preparation and long-lasting results.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-bolt"></span>
+						<h3>Plumbing & Electrics</h3>
+						<p>Our certified specialists handle installations, repairs, and upgrades — safely managing everything from sockets to sinks with professional reliability.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-bath"></span>
+						<h3>Kitchen & Bathroom Installs</h3>
+						<p>We plan and fit new kitchens and bathrooms with top-tier workmanship — tiling, fixtures, plumbing and finishes included, on time and on budget.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-th-large"></span>
+						<h3>Tiling, Flooring & Carpentry</h3>
+						<p>Expert floor laying and tiling, plus carpentry services for skirting, shelving, doors, and custom touches that complete your perfect interior.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-tree"></span>
+						<h3>Garden Landscaping & Fencing</h3>
+						<p>We design and maintain beautiful outdoor spaces with fencing, decking, and full garden makeovers tailored to your home or business.</p>
+					</section>
+				</div>
+				<ul class="actions">
+					<li><a href="#gallery" class="button scrolly">See Our Work</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Gallery -->
+		<section id="gallery" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2>Gallery</h2>
+				<p>Take a look at some of our recent work across homes and businesses in London.</p>
+				<table class="gallery">
+					<tr>
+						<td><img src="images/room_update_1.jpg" alt="Project Before" />
+						<p>Before: Living Room Renovation</p></td>
+						<td><img src="images/room_update_2.jpg" alt="Project After" />
+						<p>After: Transformed Space</p></td>
+					</tr>
+					<tr>
+						<td><img src="images/pic02.jpg" alt="Feature Wall" />
+						<p>Feature Wall Installation</p></td>
+						<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" />
+						<p>Modern Kitchen Installation</p></td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<!-- Three -->
+		<section id="three" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2>Get in touch</h2>
+				<p>If you'd like a quote, want to schedule a service, or have any questions — don't hesitate to contact us. We're here to help bring your vision to life.</p>
+				<div class="split style1">
+					<section>
+						<form method="post" action="mailto:solidfinishsolutions@gmail.com" autocomplete="on">
+							<div class="fields">
+								<div class="field half">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" autocomplete="name" required />
+								</div>
+								<div class="field half">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" autocomplete="email" required />
+								</div>
+								<div class="field">
+									<label for="phone">Phone</label>
+									<input type="tel" name="phone" id="phone" autocomplete="tel" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="5" required></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><button type="submit" class="button submit">Send Message</button></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<ul class="contact">
+							<li>
+								<h3>Address</h3>
+								<span>London, United Kingdom</span>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<a href="mailto:solidfinishsolutions@gmail.com">solidfinishsolutions@gmail.com</a>
+							</li>
+							<li>
+								<h3>Phone</h3>
+								<span>07739 960753</span>
+							</li>
+							<li>
+								<h3>Social</h3>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Solid Finish Solutions. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </body>
+```
+
 </html>
