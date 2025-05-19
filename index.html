@@ -5,122 +5,367 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<head>
-	<title>Solid Finish Solutions</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<style>
-		:root {
-			--primary-bg: #0b1a2d;
-			--secondary-bg: #111d33;
-			--accent: #d4af37;
-			--accent-hover: #e0c150;
-			--text-color: #ffffff;
-		}
-
-		html, body {
-			background-color: var(--primary-bg);
-			color: var(--text-color);
-			font-family: 'Segoe UI', sans-serif;
-		}
-
-		body.is-preload * {
-			color: var(--text-color);
-		}
-
-		h1, h2, h3, p, span, label, input, textarea, a, li {
-			color: var(--text-color);
-			word-wrap: break-word;
-			overflow-wrap: break-word;
-		}
-
-		a.button, button.submit {
-			background-color: var(--accent);
-			color: var(--primary-bg);
-			font-weight: bold;
-			border: none;
-			padding: 0.75rem 1.5rem;
-			border-radius: 4px;
-			text-decoration: none;
-			cursor: pointer;
-		}
-
-		a.button:hover, button.submit:hover {
-			background-color: var(--accent-hover);
-		}
-
-		nav ul li a {
-			color: var(--accent);
-		}
-
-		#sidebar {
-			background-color: var(--secondary-bg);
-			text-align: center;
-		}
-
-		#sidebar .inner::before {
-			content: "";
-			display: block;
-			margin-top: 1rem;
-		}
-
-		#sidebar .inner img {
-			width: 160px;
-			display: block;
-			margin: 1rem auto 1rem auto;
-		}
-
-		form .field {
-			margin-bottom: 1.5rem;
-		}
-
-		table.gallery {
-			width: 100%;
-			text-align: center;
-			margin: auto;
-			border-collapse: separate;
-			border-spacing: 10px;
-		}
-
-		table.gallery img {
-			width: 100%;
-			max-width: 250px;
-			height: auto;
-			margin-bottom: 1rem;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgba(0,0,0,0.3);
-		}
-
-		.contact h3 {
-			margin-top: 1.5rem;
-			margin-bottom: 0.5rem;
-		}
-
-		.contact h3:first-child {
-			margin-top: 0;
-		}
-
-		footer {
-			background-color: var(--secondary-bg);
-			text-align: center;
-			padding: 2rem;
-		}
-
-		footer a {
-			color: var(--accent);
-			text-decoration: none;
-		}
-
-		@media screen and (max-width: 768px) {
-			#sidebar .inner img {
-				width: 120px;
+	<head>
+		<title>Solid Finish Solutions</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Color scheme based on paint/decorating business logo */
+			:root {
+				--primary-color: #1e4f78; /* Deep blue - likely brand primary */
+				--secondary-color: #c78c36; /* Warm gold - accent color */
+				--tertiary-color: #2e7cbd; /* Lighter blue - supplementary */
+				--light-color: #f2f7fc; /* Very light blue - backgrounds */
+				--dark-color: #0a2b4a; /* Very dark blue - text */
 			}
-			table.gallery td {
-				display: block;
-				margin-bottom: 2rem;
+			
+			/* Section background colors */
+			.wrapper.style1 {
+				background-color: var(--light-color);
+				color: var(--dark-color);
 			}
-		}
-	</style>
-</head>
+			
+			.wrapper.style1-alt {
+				background-color: #0c3559;
+				color: rgba(255, 255, 255, 0.85);
+			}
+			
+			.wrapper.style2 {
+				background-color: var(--primary-color);
+				color: rgba(255, 255, 255, 0.85);
+			}
+			
+			.wrapper.style3 {
+				background-color: var(--light-color);
+				color: var(--dark-color);
+			}
+			
+			/* Sidebar styling */
+			#sidebar {
+				background-color: var(--secondary-color);
+			}
+			
+			#sidebar nav ul li a {
+				color: rgba(255, 255, 255, 0.85);
+			}
+			
+			#sidebar nav ul li a:hover {
+				color: #ffffff;
+			}
+			
+			/* Buttons */
+			.button {
+				background-color: var(--secondary-color);
+				color: #ffffff !important;
+				box-shadow: none;
+			}
+			
+			.button:hover {
+				background-color: #d89b45;
+			}
+			
+			.button.special {
+				background-color: var(--primary-color);
+			}
+			
+			.button.special:hover {
+				background-color: var(--tertiary-color);
+			}
+			
+			/* Icons */
+			.icon.major {
+				background-color: var(--primary-color);
+				color: #ffffff;
+			}
+			
+			/* Form elements */
+			input[type="text"], 
+			input[type="email"], 
+			input[type="tel"], 
+			select, 
+			textarea {
+				border-color: rgba(30, 79, 120, 0.3);
+			}
+			
+			input[type="text"]:focus, 
+			input[type="email"]:focus, 
+			input[type="tel"]:focus, 
+			select:focus, 
+			textarea:focus {
+				border-color: var(--secondary-color);
+				box-shadow: 0 0 0 1px var(--secondary-color);
+			}
+			
+			/* Features sections */
+			.features section {
+				border-color: rgba(30, 79, 120, 0.15);
+			}
+			
+			@media screen and (max-width: 768px) {
+				#sidebar .inner img {
+					display: block;
+					width: 140px;
+					margin: 1rem auto;
+				}
+			}
+			
+			/* Fix for text visibility */
+			p, h1, h2, h3, li, label, input, textarea, span, a {
+				color: inherit;
+				max-width: 100%;
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+			}
+			
+			/* Improve form readability */
+			form .field {
+				margin-bottom: 1.5rem;
+			}
+			
+			/* Gallery spacing */
+			table.gallery {
+				width: 100%;
+				text-align: center;
+				margin: auto;
+				border-collapse: separate;
+				border-spacing: 10px;
+			}
+			
+			table.gallery img {
+				width: 100%;
+				max-width: 250px;
+				height: auto;
+				margin-bottom: 1rem;
+			}
+			
+			/* Fix contact section spacing */
+			.contact h3 {
+				margin-top: 1.5rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.contact h3:first-child {
+				margin-top: 0;
+			}
+			
+			/* Footer styling */
+			#footer .menu a {
+				color: var(--secondary-color);
+			}
+			
+			/* Links */
+			a {
+				color: var(--secondary-color);
+			}
+			
+			a:hover {
+				color: var(--tertiary-color);
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+		<section id="sidebar">
+			<div class="inner">
+				<img src="images/logo_crown_color.png" alt="Solid Finish Solutions Logo" style="width: 2.5in; margin-bottom: 1rem; margin-top: -1in; display: block; margin-left: auto; margin-right: auto;" />
+				<nav>
+					<ul>
+						<li><a href="#intro">Welcome</a></li>
+						<li><a href="#one">Who we are</a></li>
+						<li><a href="#two">What we do</a></li>
+						<li><a href="#gallery">Gallery</a></li>
+						<li><a href="#three">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div class="inner">
+					<h1>Solid Finish Solutions</h1>
+					<p><strong>Expert Painting and Decorating</strong> is our specialty. We also offer reliable property improvement services across London — all delivered to the highest standard, on time and on budget.</p>
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">Learn more</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- One -->
+			<section id="one" class="wrapper style2 spotlights">
+				<section>
+					<a href="#" class="image"><img src="images/pic01.jpg" alt="Interior & Exterior Painting" data-position="center center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Interior & Exterior Painting</h2>
+							<p>From fresh coats to complex colour schemes, we handle homes and businesses with precision and professionalism.</p>
+							<ul class="actions">
+								<li><a href="#two" class="button scrolly">Our Services</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<!-- Added section for "Who we are" -->
+				<section>
+					<a href="#" class="image"><img src="images/pic02.jpg" alt="Professional Team" data-position="top center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Professional & Reliable</h2>
+							<p>With years of experience serving London homes and businesses, our skilled team delivers quality craftsmanship and exceptional customer service on every project.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<!-- Two -->
+			<section id="two" class="wrapper style3 fade-up">
+				<div class="inner">
+					<h2>What We Do</h2>
+					<p>Our primary focus is <strong>painting and decorating</strong>, delivering flawless finishes with every brushstroke. We also offer wallpapering, plastering, and a range of property improvement services handled by qualified professionals.</p>
+					<div class="features">
+						<section>
+							<span class="icon solid major fa-paint-brush"></span>
+							<h3>Wallpapering & Feature Walls</h3>
+							<p>We install modern wallpaper and striking feature walls with precision, transforming rooms with texture, colour, and designs that stand out.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-tools"></span>
+							<h3>Plastering & Repairs</h3>
+							<p>From patching cracks to full wall skimming, we deliver smooth, paint-ready finishes with perfect surface preparation and long-lasting results.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-bolt"></span>
+							<h3>Plumbing & Electrics</h3>
+							<p>Our certified specialists handle installations, repairs, and upgrades — safely managing everything from sockets to sinks with professional reliability.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-bath"></span>
+							<h3>Kitchen & Bathroom Installs</h3>
+							<p>We plan and fit new kitchens and bathrooms with top-tier workmanship — tiling, fixtures, plumbing and finishes included, on time and on budget.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-th-large"></span>
+							<h3>Tiling, Flooring & Carpentry</h3>
+							<p>Expert floor laying and tiling, plus carpentry services for skirting, shelving, doors, and custom touches that complete your perfect interior.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-tree"></span>
+							<h3>Garden Landscaping & Fencing</h3>
+							<p>We design and maintain beautiful outdoor spaces with fencing, decking, and full garden makeovers tailored to your home or business.</p>
+						</section>
+					</div>
+					<ul class="actions">
+						<li><a href="#gallery" class="button scrolly">See Our Work</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Gallery -->
+			<section id="gallery" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Gallery</h2>
+					<p>Take a look at some of our recent work across homes and businesses in London.</p>
+					<table class="gallery">
+						<tr>
+							<td><img src="images/room_update_1.jpg" alt="Project Before" />
+							<p>Before: Living Room Renovation</p></td>
+							<td><img src="images/room_update_2.jpg" alt="Project After" />
+							<p>After: Transformed Space</p></td>
+						</tr>
+						<tr>
+							<td><img src="images/pic02.jpg" alt="Feature Wall" />
+							<p>Feature Wall Installation</p></td>
+							<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" />
+							<p>Modern Kitchen Installation</p></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<p>If you'd like a quote, want to schedule a service, or have any questions — don't hesitate to contact us. We're here to help bring your vision to life.</p>
+					<div class="split style1">
+						<section>
+							<form method="post" action="mailto:solidfinishsolutions@gmail.com" autocomplete="on">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" autocomplete="name" required />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" autocomplete="email" required />
+									</div>
+									<div class="field">
+										<label for="phone">Phone</label>
+										<input type="tel" name="phone" id="phone" autocomplete="tel" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><button type="submit" class="button submit">Send Message</button></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>London, United Kingdom</span>
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:solidfinishsolutions@gmail.com">solidfinishsolutions@gmail.com</a>
+								</li>
+								<li>
+									<h3>Phone</h3>
+									<span>07739 960753</span>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; Solid Finish Solutions. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
