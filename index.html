@@ -1,474 +1,401 @@
-/*
+<!DOCTYPE HTML>
+<!--
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-@import url('fontawesome-all.min.css');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
-
-/* ---------- Base ---------- */
-
-	html, body {
-		height: 100%;
-	}
-
-	body {
-		background: #f0f8ff; /* Light blue background */
-		color: #333; /* Dark grey text */
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 16px;
-		font-weight: 300;
-		line-height: 1.65;
-		overflow-x: hidden;
-		-webkit-text-size-adjust: 100%;
-		-ms-text-size-adjust: 100%;
-	}
-
-	body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-		-moz-animation: none !important;
-		-webkit-animation: none !important;
-		-ms-animation: none !important;
-		animation: none !important;
-		-moz-transition: none !important;
-		-webkit-transition: none !important;
-		-ms-transition: none !important;
-		transition: none !important;
-	}
-
-	a {
-		-moz-transition: color 0.2s ease-in-out;
-		-webkit-transition: color 0.2s ease-in-out;
-		-ms-transition: color 0.2s ease-in-out;
-		transition: color 0.2s ease-in-out;
-		border-bottom: dotted 1px rgba(218, 165, 32, 0.5); /* Gold dotted underline */
-		color: #daa520; /* Gold link color */
-		text-decoration: none;
-	}
-
-		a:hover {
-			border-bottom-color: transparent;
-			color: #b8860b; /* Darker gold on hover */
-		}
-
-	strong, b {
-		font-weight: 600;
-	}
-
-	em, i {
-		font-style: italic;
-	}
-
-	p {
-		margin: 0 0 1em 0;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		color: #daa520; /* Gold heading color */
-		font-weight: 600;
-		line-height: 1.5;
-		margin: 0 0 1em 0;
-	}
-
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-	h1 {
-		font-size: 3.25em;
-	}
-
-	h2 {
-		font-size: 1.75em;
-	}
-
-	h3 {
-		font-size: 1.25em;
-	}
-
-	h4 {
-		font-size: 1.1em;
-	}
-
-	h5 {
-		font-size: 0.9em;
-	}
-
-	h6 {
-		font-size: 0.7em;
-	}
-
-	sub {
-		font-size: 0.8em;
-		position: relative;
-		top: 0.5em;
-	}
-
-	sup {
-		font-size: 0.8em;
-		position: relative;
-		top: -0.5em;
-	}
-
-	hr {
-		border: 0;
-		border-bottom: solid 1px rgba(218, 165, 32, 0.25); /* Light gold horizontal rule */
-		margin: 2em 0;
-	}
-
-		hr.major {
-			border-bottom-width: 2px;
-		}
-
-	.align-left {
-		text-align: left;
-	}
-
-	.align-center {
-		text-align: center;
-	}
-
-	.align-right {
-		text-align: right;
-	}
-
-/* ---------- Section/Article ---------- */
-
-	section, article {
-		margin: 0 0 2em 0;
-	}
-
-		section > :last-child, article > :last-child {
-			margin-bottom: 0;
-		}
-
-		section:last-child, article:last-child {
-			margin-bottom: 0;
-		}
-
-/* ---------- List ---------- */
-
-	ol {
-		list-style: decimal;
-		margin: 0 0 1em 0;
-		padding-left: 1.25em;
-	}
-
-		ol li {
-			padding-left: 0.25em;
-		}
-
-	ul {
-		list-style: disc;
-		margin: 0 0 1em 0;
-		padding-left: 1em;
-	}
-
-		ul li {
-			padding-left: 0.5em;
-		}
-
-		ul.alt {
-			list-style: none;
-			padding-left: 0;
-		}
-
-			ul.alt li {
-				border-top: solid 1px rgba(218, 165, 32, 0.25); /* Light gold list item border */
-				padding: 0.5em 0;
+-->
+<html>
+	<head>
+		<title>Solid Finish Solutions</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Clean, professional color scheme with better readability */
+			:root {
+				--primary-color: #345676; /* Navy blue - professional */
+				--secondary-color: #5e8b7e; /* Sage green - balanced accent */
+				--tertiary-color: #a7c4bc; /* Light sage - subtle complement */
+				--light-color: #f8f9fa; /* Off-white - clean backgrounds */
+				--dark-color: #2c3e50; /* Dark blue - readable text */
 			}
-
-				ul.alt li:first-child {
-					border-top: 0;
-					padding-top: 0;
+			
+			/* Section background colors */
+			.wrapper.style1 {
+				background-color: var(--light-color);
+				color: var(--dark-color);
+			}
+			
+			.wrapper.style1-alt {
+				background-color: #2b4257;
+				color: rgba(255, 255, 255, 0.95);
+			}
+			
+			.wrapper.style2 {
+				background-color: var(--primary-color);
+				color: rgba(255, 255, 255, 0.95);
+			}
+			
+			.wrapper.style3 {
+				background-color: #f0f5f9;
+				color: var(--dark-color);
+			}
+			
+			/* Sidebar styling */
+			#sidebar {
+				background-color: var(--dark-color);
+			}
+			
+			#sidebar nav ul li a {
+				color: rgba(255, 255, 255, 0.9);
+				font-weight: 500;
+				letter-spacing: 0.5px;
+			}
+			
+			#sidebar nav ul li a:hover {
+				color: #ffffff;
+			}
+			
+			/* Buttons */
+			.button {
+				background-color: var(--secondary-color);
+				color: #ffffff !important;
+				border-radius: 3px;
+				box-shadow: none;
+				font-weight: 500;
+			}
+			
+			.button:hover {
+				background-color: #6fa295;
+			}
+			
+			.button.special {
+				background-color: var(--primary-color);
+			}
+			
+			.button.special:hover {
+				background-color: #3e6589;
+			}
+			
+			/* Icons */
+			.icon.major {
+				background-color: var(--secondary-color);
+				color: #ffffff;
+			}
+			
+			/* Form elements */
+			input[type="text"], 
+			input[type="email"], 
+			input[type="tel"], 
+			select, 
+			textarea {
+				border-color: rgba(52, 86, 118, 0.2);
+				background-color: rgba(255, 255, 255, 0.95);
+			}
+			
+			input[type="text"]:focus, 
+			input[type="email"]:focus, 
+			input[type="tel"]:focus, 
+			select:focus, 
+			textarea:focus {
+				border-color: var(--secondary-color);
+				box-shadow: 0 0 0 1px var(--secondary-color);
+			}
+			
+			/* Features sections */
+			.features section {
+				border-color: rgba(52, 86, 118, 0.15);
+			}
+			
+			@media screen and (max-width: 768px) {
+				#sidebar .inner img {
+					display: block;
+					width: 140px;
+					margin: 1rem auto;
 				}
-
-	dl {
-		margin: 0 0 1em 0;
-	}
-
-		dl dt {
-			font-weight: 600;
-			margin-bottom: 0.5em;
-		}
-
-		dl dd {
-			margin-left: 1.25em;
-		}
-
-/* ---------- Table ---------- */
-
-	table {
-		border-collapse: collapse;
-		margin: 0 0 1em 0;
-		width: 100%;
-	}
-
-		table td {
-			border-bottom: solid 1px rgba(218, 165, 32, 0.25); /* Light gold table cell border */
-			padding: 0.75em;
-			text-align: left;
-		}
-
-		table th {
-			font-weight: 600;
-			padding: 0.75em;
-			text-align: left;
-		}
-
-		table thead {
-			border-bottom: solid 2px rgba(218, 165, 32, 0.25); /* Gold table header border */
-		}
-
-		table tbody tr:last-child td {
-			border-bottom: 0;
-		}
-
-		table tfoot {
-			border-top: solid 2px rgba(218, 165, 32, 0.25); /* Gold table footer border */
-		}
-
-		table.alt {
-			border-collapse: separate;
-		}
-
-			table.alt td {
-				border: solid 1px rgba(218, 165, 32, 0.25); /* Light gold table cell border */
-				border-left: 0;
-				border-top: 0;
 			}
-
-				table.alt td:first-child {
-					border-left: 0;
-				}
-
-				table.alt tr:first-child td {
-					border-top: 0;
-				}
-
-/* ---------- Button ---------- */
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: transparent;
-		border: solid 2px #daa520; /* Gold button border */
-		color: #daa520 !important; /* Gold button text */
-		cursor: pointer;
-		display: inline-block;
-		font-size: 0.8em;
-		font-weight: 600;
-		line-height: 1;
-		padding: 1.25em 2em;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
-
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		input[type="button"]:hover,
-		button:hover,
-		.button:hover {
-			background-color: rgba(218, 165, 32, 0.1); /* Light gold button hover */
-		}
-
-		input[type="submit"]:active,
-		input[type="reset"]:active,
-		input[type="button"]:active,
-		button:active,
-		.button:active {
-			background-color: rgba(218, 165, 32, 0.2); /* Slightly darker gold button active */
-		}
-
-		input[type="submit"].primary,
-		input[type="reset"].primary,
-		input[type="button"].primary,
-		button.primary,
-		.button.primary {
-			background-color: #daa520; /* Solid gold primary button */
-			color: #fff !important; /* White text on primary button */
-		}
-
-			input[type="submit"].primary:hover,
-			input[type="reset"].primary:hover,
-			input[type="button"].primary:hover,
-			button.primary:hover,
-			.button.primary:hover {
-				background-color: #b8860b; /* Darker gold primary button hover */
-			}
-
-			input[type="submit"].primary:active,
-			input[type="reset"].primary:active,
-			input[type="button"].primary:active,
-			button.primary:active,
-			.button.primary:active {
-				background-color: #98660b; /* Even darker gold primary button active */
-			}
-
-		input[type="submit"].fit,
-		input[type="reset"].fit,
-		input[type="button"].fit,
-		button.fit,
-		.button.fit {
-			display: block;
-			margin: 0 0 1em 0;
-			width: 100%;
-		}
-
-		input[type="submit"].small,
-		input[type="reset"].small,
-		input[type="button"].small,
-		button.small,
-		.button.small {
-			font-size: 0.6em;
-			padding: 0.75em 1.5em;
-		}
-
-/* ---------- Form ---------- */
-
-	form {
-		margin: 0 0 2em 0;
-	}
-
-		form > :last-child {
-			margin-bottom: 0;
-		}
-
-		form .fields {
-			display: -moz-flex;
-			display: -webkit-flex;
-			display: -ms-flex;
-			display: flex;
-			-moz-flex-wrap: wrap;
-			-webkit-flex-wrap: wrap;
-			-ms-flex-wrap: wrap;
-			flex-wrap: wrap;
-			margin: -1em 0 0 -1em;
-		}
-
-			form .fields > * {
-				padding: 1em 0 0 1em;
-				width: calc(100% - 1em);
-			}
-
-				form .fields > *.half {
-					width: calc(50% - 0.5em);
-				}
-
-				form .fields > *.third {
-					width: calc(100%/3 - 1em/3);
-				}
-
-				form .fields > *.quarter {
-					width: calc(25% - 0.25em);
-				}
-
-		form .field {
-			margin: 0 0 1em 0;
-		}
-
-			form .field > :last-child {
-				margin-bottom: 0;
-			}
-
-			form .field label {
-				color: #333; /* Dark grey label text */
-				display: block;
-				font-size: 0.9em;
-				font-weight: 600;
-				margin: 0 0 0.5em 0;
-			}
-
-			form .field input[type="text"],
-			form .field input[type="password"],
-			form .field input[type="email"],
-			form .field input[type="tel"],
-			form .field select,
-			form .field textarea {
-				-moz-appearance: none;
-				-webkit-appearance: none;
-				-ms-appearance: none;
-				appearance: none;
-				background: rgba(218, 165, 32, 0.075); /* Light gold input background */
-				border-radius: 0;
-				border: none;
+			
+			/* Fix for text visibility */
+			p, h1, h2, h3, li, label, input, textarea, span, a {
 				color: inherit;
-				display: block;
-				outline: 0;
-				padding: 0.75em;
-				text-decoration: none;
+				max-width: 100%;
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+			}
+			
+			/* Improve form readability */
+			form .field {
+				margin-bottom: 1.5rem;
+			}
+			
+			/* Gallery spacing */
+			table.gallery {
 				width: 100%;
+				text-align: center;
+				margin: auto;
+				border-collapse: separate;
+				border-spacing: 10px;
 			}
-
-				form .field input[type="text"]:focus,
-				form .field input[type="password"]:focus,
-				form .field input[type="email"]:focus,
-				form .field input[type="tel"]:focus,
-				form .field select:focus,
-				form .field textarea:focus {
-					background: rgba(218, 165, 32, 0.15); /* Slightly darker gold input focus */
-				}
-
-			form .field select {
-				background-image: url('data:application/x-www-form-urlencoded;charset=utf-8,%3C%3Fxml version%3D%221.0%22 encoding%3D%22utf-8%22%3F%3E%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2244%22 height%3D%2244%22 viewBox%3D%220 0 44 44%22%3E%3Cpath d%3D%22M22 27.027l-8.027-8.027h16.054z%22 fill%3D%22%23333%22 %2F%3E%3C%2Fsvg%3E'); /* Dark grey select arrow */
-				background-size: 1em;
-				background-repeat: no-repeat;
-				background-position: calc(100% - 0.75em) center;
-				height: 2.75em;
-				padding-right: 2.75em;
-				text-overflow: ellipsis;
+			
+			table.gallery img {
+				width: 100%;
+				max-width: 250px;
+				height: auto;
+				margin-bottom: 1rem;
 			}
-
-				form .field select::-ms-expand {
-					display: none;
-				}
-
-			form .field input[type="checkbox"],
-			form .field input[type="radio"] {
-				opacity: 0;
-				width: 0;
+			
+			/* Fix contact section spacing */
+			.contact h3 {
+				margin-top: 1.5rem;
+				margin-bottom: 0.5rem;
 			}
+			
+			.contact h3:first-child {
+				margin-top: 0;
+			}
+			
+			/* Footer styling */
+			#footer .menu a {
+				color: var(--tertiary-color);
+			}
+			
+			/* Links */
+			a {
+				color: var(--secondary-color);
+			}
+			
+			a:hover {
+				color: #6fa295;
+			}
+			
+			/* Typography improvements */
+			h1, h2, h3 {
+				font-weight: 600;
+				line-height: 1.4;
+			}
+			
+			.wrapper.style2 h1, 
+			.wrapper.style2 h2, 
+			.wrapper.style2 h3,
+			.wrapper.style1-alt h1,
+			.wrapper.style1-alt h2,
+			.wrapper.style1-alt h3 {
+				color: white;
+			}
+			
+			/* Improved text contrast */
+			.wrapper p, .wrapper li {
+				line-height: 1.7;
+			}
+			
+			/* Ensure list readability */
+			ul.actions {
+				margin-top: 1.5rem;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-				form .field input[type="checkbox"] + label,
-				form .field input[type="radio"] + label {
-					color: #333; /* Dark grey checkbox/radio label */
-					cursor: pointer;
-					display: inline-block;
-					font-size: 0.9em;
-					font-weight: 300;
-					padding-left: 2.25em;
-					position: relative;
-				}
+		<!-- Sidebar -->
+		<section id="sidebar">
+			<div class="inner">
+				<img src="images/logo_crown_color.png" alt="Solid Finish Solutions Logo" style="width: 2.5in; margin-bottom: 1rem; margin-top: -1in; display: block; margin-left: auto; margin-right: auto;" />
+				<nav>
+					<ul>
+						<li><a href="#intro">Welcome</a></li>
+						<li><a href="#one">Who we are</a></li>
+						<li><a href="#two">What we do</a></li>
+						<li><a href="#gallery">Gallery</a></li>
+						<li><a href="#three">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
 
-					form .field input[type="checkbox"] + label:before,
-					form .field input[type="radio"] + label:before {
-						-moz-osx-font-smoothing: grayscale;
-						-webkit-font-smoothing: antialiased;
-						font-family: 'Font Awesome 5 Free';
-						font-style: normal;
-						font-weight: 900;
-						color: #daa520; /* Gold checkbox/radio border */
-						display: block;
-						font-size: 0.8em;
-						left: 0;
-						line-height: 1.75;
-						position: absolute;
-						text-align: center;
-						top: 0;
-						width: 1.75em;
-						height: 1.75em;
-						border-radius: 0;
-						border: solid 1px #daa520; /* Gold checkbox border */
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div class="inner">
+					<h1>Solid Finish Solutions</h1>
+					<p><strong>Expert Painting and Decorating</strong> is our specialty. We also offer reliable property improvement services across London — all delivered to the highest standard, on time and on budget.</p>
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">Learn more</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- One -->
+			<section id="one" class="wrapper style2 spotlights">
+				<section>
+					<a href="#" class="image"><img src="images/pic01.jpg" alt="Interior & Exterior Painting" data-position="center center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Interior & Exterior Painting</h2>
+							<p>From fresh coats to complex colour schemes, we handle homes and businesses with precision and professionalism.</p>
+							<ul class="actions">
+								<li><a href="#two" class="button scrolly">Our Services</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<!-- Added section for "Who we are" -->
+				<section>
+					<a href="#" class="image"><img src="images/pic02.jpg" alt="Professional Team" data-position="top center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Professional & Reliable</h2>
+							<p>With years of experience serving London homes and businesses, our skilled team delivers quality craftsmanship and exceptional customer service on every project.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<!-- Two -->
+			<section id="two" class="wrapper style3 fade-up">
+				<div class="inner">
+					<h2>What We Do</h2>
+					<p>Our primary focus is <strong>painting and decorating</strong>, delivering flawless finishes with every brushstroke. We also offer wallpapering, plastering, and a range of property improvement services handled by qualified professionals.</p>
+					<div class="features">
+						<section>
+							<span class="icon solid major fa-paint-brush"></span>
+							<h3>Wallpapering & Feature Walls</h3>
+							<p>We install modern wallpaper and striking feature walls with precision, transforming rooms with texture, colour, and designs that stand out.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-tools"></span>
+							<h3>Plastering & Repairs</h3>
+							<p>From patching cracks to full wall skimming, we deliver smooth, paint-ready finishes with perfect surface preparation and long-lasting results.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-bolt"></span>
+							<h3>Plumbing & Electrics</h3>
+							<p>Our certified specialists handle installations, repairs, and upgrades — safely managing everything from sockets to sinks with professional reliability.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-bath"></span>
+							<h3>Kitchen & Bathroom Installs</h3>
+							<p>We plan and fit new kitchens and bathrooms with top-tier workmanship — tiling, fixtures, plumbing and finishes included, on time and on budget.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-th-large"></span>
+							<h3>Tiling, Flooring & Carpentry</h3>
+							<p>Expert floor laying and tiling, plus carpentry services for skirting, shelving, doors, and custom touches that complete your perfect interior.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-tree"></span>
+							<h3>Garden Landscaping & Fencing</h3>
+							<p>We design and maintain beautiful outdoor spaces with fencing, decking, and full garden makeovers tailored to your home or business.</p>
+						</section>
+					</div>
+					<ul class="actions">
+						<li><a href="#gallery" class="button scrolly">See Our Work</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Gallery -->
+			<section id="gallery" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Gallery</h2>
+					<p>Take a look at some of our recent work across homes and businesses in London.</p>
+					<table class="gallery">
+						<tr>
+							<td><img src="images/room_update_1.jpg" alt="Project Before" />
+							<p>Before: Living Room Renovation</p></td>
+							<td><img src="images/room_update_2.jpg" alt="Project After" />
+							<p>After: Transformed Space</p></td>
+						</tr>
+						<tr>
+							<td><img src="images/pic02.jpg" alt="Feature Wall" />
+							<p>Feature Wall Installation</p></td>
+							<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" />
+							<p>Modern Kitchen Installation</p></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<p>If you'd like a quote, want to schedule a service, or have any questions — don't hesitate to contact us. We're here to help bring your vision to life.</p>
+					<div class="split style1">
+						<section>
+							<form method="post" action="mailto:solidfinishsolutions@gmail.com" autocomplete="on">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" autocomplete="name" required />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" autocomplete="email" required />
+									</div>
+									<div class="field">
+										<label for="phone">Phone</label>
+										<input type="tel" name="phone" id="phone" autocomplete="tel" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><button type="submit" class="button submit">Send Message</button></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>London, United Kingdom</span>
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:solidfinishsolutions@gmail.com">solidfinishsolutions@gmail.com</a>
+								</li>
+								<li>
+									<h3>Phone</h3>
+									<span>07739 960753</span>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; Solid Finish Solutions. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
