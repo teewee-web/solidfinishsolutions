@@ -1,237 +1,86 @@
-<style>
-    /* Clean, professional color scheme with better readability */
-    :root {
-        /* === USER: REPLACE THESE HEX CODES WITH YOUR ACTUAL LOGO COLORS === */
-        /* These are examples. Choose colors that are prominent in your logo. */
-        --logo-main-color: #0D2C4F;       /* EXAMPLE: A strong, deep navy blue from your logo */
-        --logo-accent-color: #CAA860;    /* EXAMPLE: A muted, elegant gold/tan from your logo */
-        
-        /* Backgrounds for sections with white/light text - should be dark and logo-aligned */
-        --dark-bg-for-light-text: #1A2E40; /* EXAMPLE: A very dark blue/charcoal, harmonious with your logo */
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Solid Finish Solutions</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		:root {
+			--primary-bg: #0b1a2d;
+			--secondary-bg: #111d33;
+			--accent: #d4af37;
+			--accent-hover: #e0c150;
+			--text-color: #ffffff;
+			--dark-text: #2c3e50;
+		}
 
-        /* Backgrounds for sections with dark text - usually light and neutral */
-        --light-bg-for-dark-text: #f8f9fa;  /* EXAMPLE: Off-white, for clean primary backgrounds */
-        --medium-light-bg-for-dark-text: #EAEAEA; /* EXAMPLE: A light grey for secondary sections */
+		html, body {
+			margin: 0;
+			padding: 0;
+			background-color: var(--primary-bg);
+			color: var(--text-color);
+			font-family: 'Segoe UI', sans-serif;
+		}
 
-        /* Text colors */
-        --text-on-dark-bg: #FFFFFF;
-        --text-on-dark-bg-muted: rgba(255, 255, 255, 0.95);
-        --text-on-light-bg: #2c3e50; /* Original dark color, good for text readability */
-        
-        /* Other supporting colors (derived or distinct) */
-        --footer-link-color: #A9B4C2; /* EXAMPLE: A light, neutral blue-grey. Adjust as needed. */
-        /* === END USER REPLACEMENT SECTION === */
+		/* Section background colors updated to match logo */
+		.wrapper.style1 {
+			background: var(--primary-bg);
+			color: var(--text-color);
+		}
 
+		.wrapper.style1-alt {
+			background: var(--secondary-bg);
+			color: var(--text-color);
+		}
 
-        /* Mapping your logo colors to the theme's existing variable structure */
-        /* This helps maintain consistency with how the theme uses colors. */
-        --primary-color: var(--logo-main-color);         /* Main color for key sections, special buttons */
-        --secondary-color: var(--logo-accent-color);     /* Accent for regular buttons, icons, links */
-        --tertiary-color: var(--footer-link-color);      /* For less prominent text like footer links */
-        
-        --light-color: var(--light-bg-for-dark-text);      /* Background for sections like Intro, Gallery */
-        --dark-color-text: var(--text-on-light-bg);        /* Text color for light background sections */
-    }
+		.wrapper.style2 {
+			background: var(--accent);
+			color: var(--primary-bg);
+		}
 
-    /* Section background colors */
-    .wrapper.style1 { /* e.g., Intro, Gallery, Contact section background */
-        background-color: var(--light-color);
-        color: var(--dark-color-text);
-    }
+		.wrapper.style3 {
+			background: var(--secondary-bg);
+			color: var(--text-color);
+		}
 
-    .wrapper.style1-alt { /* e.g., Footer background */
-        background-color: var(--dark-bg-for-light-text); /* CHANGED: Ensures good contrast & logo harmony */
-        color: var(--text-on-dark-bg-muted);
-    }
+		/* Sidebar styling */
+		#sidebar {
+			background: var(--secondary-bg);
+		}
 
-    .wrapper.style2 { /* e.g., "Who we are" section background */
-        background-color: var(--primary-color); /* Uses your main logo color */
-        color: var(--text-on-dark-bg-muted);
-    }
+		#sidebar .inner img { display: block; margin: 1rem auto; width: 160px; }
 
-    .wrapper.style3 { /* e.g., "What we do" section background */
-        background-color: var(--medium-light-bg-for-dark-text); /* CHANGED: Uses a light neutral */
-        color: var(--dark-color-text);
-    }
+		nav ul li a { color: var(--accent); }
 
-    /* Sidebar styling */
-    #sidebar {
-        background-color: var(--primary-color); /* CHANGED: Uses your main logo color (or --dark-bg-for-light-text if preferred) */
-    }
+		/* Buttons */
+		a.button, button.submit {
+			background: var(--accent);
+			color: var(--primary-bg) !important;
+		}
+		a.button:hover, button.submit:hover { background: var(--accent-hover); }
 
-    #sidebar nav ul li a {
-        color: var(--text-on-dark-bg-muted);
-        font-weight: 500;
-        letter-spacing: 0.5px;
-    }
+		/* Text readability */
+		h1, h2, h3, p, li { margin-bottom: 1rem; }
 
-    #sidebar nav ul li a:hover {
-        color: var(--text-on-dark-bg);
-    }
+		/* Gallery */
+		table.gallery img { box-shadow: 0 0 10px rgba(0,0,0,0.3); border-radius: 5px; }
 
-    /* Buttons */
-    .button {
-        background-color: var(--secondary-color); /* Uses your logo accent color */
-        color: var(--text-on-dark-bg) !important; /* Ensure text on accent buttons is light for contrast */
-        border-radius: 3px;
-        box-shadow: none;
-        font-weight: 500;
-    }
+		/* Forms */
+		input, textarea { background: rgba(255,255,255,0.9); color: var(--dark-text); border: 1px solid rgba(0,0,0,0.2); }
 
-    .button:hover {
-        filter: brightness(110%); /* General way to adjust accent color on hover */
-        /* Or define a specific hover color for --secondary-color */
-    }
+		/* Footer links */
+		#footer a { color: var(--accent); }
 
-    .button.special {
-        background-color: var(--primary-color); /* Uses your main logo color */
-        color: var(--text-on-dark-bg) !important;
-    }
-
-    .button.special:hover {
-        filter: brightness(120%); /* Darkens main color slightly, or use a specific darker shade */
-         /* Or define a specific hover color for --primary-color */
-    }
-
-    /* Icons */
-    .icon.major {
-        background-color: var(--secondary-color); /* Uses your logo accent color */
-        color: var(--text-on-dark-bg); /* Ensure icon symbol is light */
-    }
-
-    /* Form elements */
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea {
-        border-color: rgba(0, 0, 0, 0.15); /* Subtle border */
-        background-color: #ffffff; /* White background for forms for clarity */
-        color: var(--dark-color-text); /* Ensure form input text is dark */
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus,
-    select:focus,
-    textarea:focus {
-        border-color: var(--secondary-color); /* Uses your logo accent color for focus outline */
-        box-shadow: 0 0 0 1px var(--secondary-color);
-    }
-
-    /* Features sections (border under icons in "What We Do") */
-    .features section {
-        border-color: rgba(0,0,0,0.1); /* Lighter, more neutral border */
-    }
-    
-    @media screen and (max-width: 768px) {
-        #sidebar .inner img {
-            display: block;
-            width: 140px;
-            margin: 1rem auto;
-        }
-    }
-
-    /* Fix for text visibility - this generic rule is mostly fine */
-    p, h1, h2, h3, li, label, input, textarea, span, a {
-        color: inherit; /* Allows more specific rules to take precedence */
-        max-width: 100%;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-    }
-
-    /* Improve form readability */
-    form .field {
-        margin-bottom: 1.5rem;
-    }
-
-    /* Gallery spacing */
-    table.gallery {
-        width: 100%;
-        text-align: center;
-        margin: auto;
-        border-collapse: separate;
-        border-spacing: 10px;
-    }
-
-    table.gallery img {
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-        margin-bottom: 1rem;
-    }
-
-    /* Fix contact section spacing */
-    .contact h3 {
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .contact h3:first-child {
-        margin-top: 0;
-    }
-
-    /* Footer styling */
-    #footer .menu a {
-        color: var(--tertiary-color); /* Uses the defined footer link color */
-    }
-
-    #footer .menu a:hover {
-        color: var(--logo-accent-color); /* Or var(--text-on-dark-bg) if footer bg is very dark */
-    }
-
-    /* Links */
-    a {
-        color: var(--secondary-color); /* Uses your logo accent color for general links */
-    }
-
-    a:hover {
-        filter: brightness(110%); /* Or adjust color directly if filter isn't desired */
-    }
-
-    /* Typography improvements */
-    h1, h2, h3 {
-        font-weight: 600;
-        line-height: 1.4;
-    }
-
-    /* Ensure headings on dark backgrounds are light */
-    .wrapper.style2 h1,
-    .wrapper.style2 h2,
-    .wrapper.style2 h3,
-    .wrapper.style1-alt h1,
-    .wrapper.style1-alt h2,
-    .wrapper.style1-alt h3 {
-        color: var(--text-on-dark-bg);
-    }
-
-    /* Ensure paragraph/list text on dark backgrounds is light and muted */
-    .wrapper.style2 p,
-    .wrapper.style2 li,
-    .wrapper.style1-alt p,
-    .wrapper.style1-alt li {
-        color: var(--text-on-dark-bg-muted);
-    }
-    
-    /* Ensure text (headings, p, li, labels) in light background sections uses the dark text color */
-    .wrapper.style1 p, .wrapper.style1 li, .wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 label,
-    .wrapper.style3 p, .wrapper.style3 li, .wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 label {
-        color: var(--dark-color-text);
-    }
-
-    /* Ensure links within light background sections also use appropriate text color or accent */
-    .wrapper.style1 a, .wrapper.style3 a {
-        color: var(--secondary-color); /* General link color (logo accent) */
-    }
-    .wrapper.style1 a:hover, .wrapper.style3 a:hover {
-        filter: brightness(110%); /* Or a slightly darker/different shade of the accent */
-    }
-
-    .wrapper p, .wrapper li {
-        line-height: 1.7;
-    }
-
-    ul.actions {
-        margin-top: 1.5rem;
-    }
-</style>
+		@media screen and (max-width: 768px) {
+			#sidebar .inner img { width: 120px; }
+			table.gallery td { display: block; margin-bottom: 1.5rem; }
+		}
+	</style>
+</head>
