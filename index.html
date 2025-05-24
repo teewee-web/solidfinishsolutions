@@ -52,11 +52,10 @@
 			.button.special { background-color: var(--primary-color); color: var(--text-on-dark-bg) !important; }
 			.button.special:hover { filter: brightness(120%); }
 
-            /* --- ICON STYLES REFINED --- */
 			.icon {
 				text-decoration: none;
 				border-bottom: none;
-				position: relative;
+				position: relative; 
 				display: inline-block; 
 			}
 			.icon:before { 
@@ -69,22 +68,22 @@
 			}
 
 			.icon.major { 
-                display: flex; /* CHANGED: Use Flexbox to center the icon character */
-                align-items: center; /* Vertically center content (the :before pseudo-element) */
-                justify-content: center; /* Horizontally center content */
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
 				background-color: var(--secondary-color);
 				color: var(--text-on-dark-bg);
 				border-radius: 100%;
 				width: 4.5em;  
 				height: 4.5em; 
-                /* line-height and text-align removed as flexbox handles centering */
-				margin: 0 auto 1.5em auto; /* Centers the circular block itself */
+				margin-left: auto;   /* For horizontal centering */
+				margin-right: auto;  /* For horizontal centering */
+                margin-top: 0;       /* Explicitly set top margin */
+				margin-bottom: 2em;  /* INCREASED bottom margin to push text down */
 			}
 			.icon.major:before {
 				font-size: 1.75em; 
-                /* No specific line-height or other alignment needed here, flex parent does the work */
 			}
-            /* --- END ICON STYLES REFINED --- */
 
 			input[type="text"], input[type="email"], input[type="tel"], select, textarea { width: 100%; padding: 0.75em; margin-bottom: 1em; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 3px; background-color: #ffffff; color: var(--dark-color-text); box-sizing: border-box; }
 			input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus, textarea:focus { border-color: var(--secondary-color); box-shadow: 0 0 0 1px var(--secondary-color); outline: none; }
@@ -96,12 +95,22 @@
                 padding: 1.5em; 
                 border: 1px solid rgba(0,0,0,0.1); 
                 border-radius: 3px; 
-                text-align: center; /* This will center the h3 and p. The .icon.major is centered by its own margin:auto */
+                text-align: center; 
             }
-			.features section h3 { margin-top: 0; font-size: 1.25em; }
-			.features section p { font-size: 0.9em; }
+			.features section h3 { 
+                margin-top: 0.5em; /* ENSURED a positive top margin for spacing below icon */
+                margin-bottom: 0.5em; /* Added for spacing above paragraph */
+                font-size: 1.25em; 
+                display: block; /* Ensures it takes full width for text-align and respects margins */
+            }
+			.features section p { 
+                display: block; /* Ensures it takes full width for text-align and respects margins */
+                margin-top: 0; /* Paragraph starts right after heading's bottom margin */
+            }
 
-			h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.4; margin-bottom: 0.5em; }
+			h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.4; /* margin-bottom: 0.5em; Removed generic margin-bottom for h3 to use more specific one */ }
+            h1,h2,h4,h5,h6 { margin-bottom: 0.5em; } /* Kept for other headings */
+
 			.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 { color: inherit; }
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style1-alt h1, .wrapper.style1-alt h2, .wrapper.style1-alt h3, #sidebar h1, #sidebar h2, #sidebar h3 { color: var(--text-on-dark-bg); }
 			.wrapper.style2 p, .wrapper.style2 li, .wrapper.style1-alt p, .wrapper.style1-alt li, #sidebar p, #sidebar li { color: var(--text-on-dark-bg-muted); }
