@@ -5,363 +5,164 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 			/* Clean, professional color scheme with better readability */
 			:root {
 				/* === USER: REPLACE THESE HEX CODES WITH YOUR ACTUAL LOGO COLORS === */
-				/* These are examples. Choose colors that are prominent in your logo. */
-				--logo-main-color: #0D2C4F;       /* EXAMPLE: A strong, deep navy blue from your logo */
-				--logo-accent-color: #CAA860;    /* EXAMPLE: A muted, elegant gold/tan from your logo */
-				
-				/* Backgrounds for sections with white/light text - should be dark and logo-aligned */
-				--dark-bg-for-light-text: #1A2E40; /* EXAMPLE: A very dark blue/charcoal, harmonious with your logo */
-
-				/* Backgrounds for sections with dark text - usually light and neutral */
-				--light-bg-for-dark-text: #f8f9fa;  /* EXAMPLE: Off-white, for clean primary backgrounds */
-				--medium-light-bg-for-dark-text: #EAEAEA; /* EXAMPLE: A light grey for secondary sections */
-
-				/* Text colors */
+				--logo-main-color: #0D2C4F;
+				--logo-accent-color: #CAA860;
+				--dark-bg-for-light-text: #1A2E40;
+				--light-bg-for-dark-text: #f8f9fa;
+				--medium-light-bg-for-dark-text: #EAEAEA;
 				--text-on-dark-bg: #FFFFFF;
 				--text-on-dark-bg-muted: rgba(255, 255, 255, 0.95);
-				--text-on-light-bg: #2c3e50; /* Original dark color from theme, good for text readability */
-				
-				/* Other supporting colors (derived or distinct) */
-				--footer-link-color: #A9B4C2; /* EXAMPLE: A light, neutral blue-grey. Adjust as needed. */
+				--text-on-light-bg: #2c3e50;
+				--footer-link-color: #A9B4C2;
 				/* === END USER REPLACEMENT SECTION === */
 
-
-				/* Mapping your logo colors to theme concepts */
 				--primary-color: var(--logo-main-color);
 				--secondary-color: var(--logo-accent-color);
 				--tertiary-color: var(--footer-link-color);
-				
 				--light-color: var(--light-bg-for-dark-text);
 				--dark-color-text: var(--text-on-light-bg);
 			}
 
-			/* General Body Styles (Optional - if main.css doesn't cover enough) */
 			body {
-				font-family: sans-serif; /* Or your preferred font stack from main.css */
-				color: var(--dark-color-text); /* Default text color for the site */
-				background-color: var(--light-color); /* Default background for the site */
+				font-family: sans-serif; 
+				color: var(--dark-color-text); 
+				background-color: var(--light-color); 
 			}
 
-			/* Section background colors & text colors */
-			.wrapper { /* Base styling for wrapper sections */
-				padding: 4em 0; /* Example padding, adjust as per main.css or preference */
-			}
+			.wrapper { padding: 4em 0; }
+			.wrapper.style1 { background-color: var(--light-color); color: var(--dark-color-text); }
+			.wrapper.style1-alt { background-color: var(--dark-bg-for-light-text); color: var(--text-on-dark-bg-muted); }
+			.wrapper.style2 { background-color: var(--primary-color); color: var(--text-on-dark-bg-muted); }
+			.wrapper.style3 { background-color: var(--medium-light-bg-for-dark-text); color: var(--dark-color-text); }
 
-			.wrapper.style1 { /* e.g., Intro, Gallery, Contact section background */
-				background-color: var(--light-color);
-				color: var(--dark-color-text);
-			}
+			#sidebar { background-color: var(--primary-color); color: var(--text-on-dark-bg-muted); }
+			#sidebar .inner { padding: 2em; }
+			#sidebar nav ul { list-style: none; padding: 0; margin: 0; }
+			#sidebar nav ul li a { display: block; padding: 0.75em 0; color: var(--text-on-dark-bg-muted); text-decoration: none; font-weight: 500; letter-spacing: 0.5px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+			#sidebar nav ul li:last-child a { border-bottom: none; }
+			#sidebar nav ul li a:hover { color: var(--text-on-dark-bg); }
 
-			.wrapper.style1-alt { /* e.g., Footer background */
-				background-color: var(--dark-bg-for-light-text);
-				color: var(--text-on-dark-bg-muted);
-			}
+			.button { display: inline-block; background-color: var(--secondary-color); color: var(--text-on-dark-bg) !important; padding: 0.75em 1.5em; border-radius: 3px; text-decoration: none; box-shadow: none; font-weight: 500; cursor: pointer; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; border: none; }
+			.button:hover { filter: brightness(110%); }
+			.button.special { background-color: var(--primary-color); color: var(--text-on-dark-bg) !important; }
+			.button.special:hover { filter: brightness(120%); }
 
-			.wrapper.style2 { /* e.g., "Who we are" section background */
-				background-color: var(--primary-color); /* Uses your main logo color */
-				color: var(--text-on-dark-bg-muted);
-			}
-
-			.wrapper.style3 { /* e.g., "What we do" section background */
-				background-color: var(--medium-light-bg-for-dark-text);
-				color: var(--dark-color-text);
-			}
-
-			/* Sidebar styling */
-			#sidebar {
-				background-color: var(--primary-color); /* Uses your main logo color */
-				color: var(--text-on-dark-bg-muted);
-			}
-
-			#sidebar .inner {
-				padding: 2em; /* Example padding */
-			}
-
-			#sidebar nav ul {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
-
-			#sidebar nav ul li a {
-				display: block;
-				padding: 0.75em 0;
-				color: var(--text-on-dark-bg-muted);
-				text-decoration: none;
-				font-weight: 500;
-				letter-spacing: 0.5px;
-				border-bottom: 1px solid rgba(255,255,255,0.1);
-			}
-
-			#sidebar nav ul li:last-child a {
-				border-bottom: none;
-			}
-
-			#sidebar nav ul li a:hover {
-				color: var(--text-on-dark-bg);
-			}
-
-			/* Buttons */
-			.button {
-				display: inline-block;
-				background-color: var(--secondary-color); /* Uses your logo accent color */
-				color: var(--text-on-dark-bg) !important; /* Ensure text on accent buttons is light for contrast */
-				padding: 0.75em 1.5em;
-				border-radius: 3px;
-				text-decoration: none;
-				box-shadow: none;
-				font-weight: 500;
-				cursor: pointer;
-				transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-				border: none; /* Remove default border if any */
-			}
-
-			.button:hover {
-				filter: brightness(110%);
-			}
-
-			.button.special {
-				background-color: var(--primary-color); /* Uses your main logo color */
-				color: var(--text-on-dark-bg) !important;
-			}
-
-			.button.special:hover {
-				filter: brightness(120%);
-			}
-
-			/* Icons from Font Awesome (if used like in the template) */
+            /* --- ICON STYLES REFINED --- */
 			.icon {
 				text-decoration: none;
 				border-bottom: none;
 				position: relative;
+				display: inline-block; /* Ensures proper block-like behavior for centering if needed */
 			}
-			.icon:before {
+			.icon:before { /* This targets the actual icon character */
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome; /* Make sure FontAwesome is linked if you use its classes */
+				font-family: FontAwesome; /* Use the correct Font Awesome 4 family name */
 				font-style: normal;
-				font-weight: normal;
+				font-weight: normal; /* Standard weight for FA4 icons */
 				text-transform: none !important;
 			}
-			.icon.major {
-				display: inline-block;
-				background-color: var(--secondary-color); /* Uses your logo accent color */
-				color: var(--text-on-dark-bg); /* Ensure icon symbol is light */
+
+			.icon.major { /* For the large circular icons in "What We Do" */
+				display: block; /* Changed to block to allow auto margins for centering */
+				background-color: var(--secondary-color);
+				color: var(--text-on-dark-bg);
 				border-radius: 100%;
-				width: 2.5em; /* Adjust size as needed */
-				height: 2.5em; /* Adjust size as needed */
-				line-height: 2.5em; /* Adjust size as needed */
-				text-align: center;
-				margin-bottom: 1em; /* Spacing below icon */
+				width: 4.5em;   /* Typical HTML5UP icon size */
+				height: 4.5em;  /* Typical HTML5UP icon size */
+				line-height: 4.5em; /* Vertically centers the icon character */
+				text-align: center;   /* Horizontally centers the icon character */
+				margin: 0 auto 1.5em auto; /* Centers the block and adds space below */
 			}
 			.icon.major:before {
-				font-size: 1.25em; /* Adjust icon symbol size */
+				font-size: 1.75em; /* Size of the icon character within the circle */
 			}
+            /* --- END ICON STYLES REFINED --- */
 
-			/* Form elements */
-			input[type="text"],
-			input[type="email"],
-			input[type="tel"],
-			select,
-			textarea {
-				width: 100%;
-				padding: 0.75em;
-				margin-bottom: 1em; /* Ensures spacing if form .field isn't used */
-				border: 1px solid rgba(0, 0, 0, 0.15);
-				border-radius: 3px;
-				background-color: #ffffff;
-				color: var(--dark-color-text);
-				box-sizing: border-box; /* Important for width and padding */
-			}
-
-			input[type="text"]:focus,
-			input[type="email"]:focus,
-			input[type="tel"]:focus,
-			select:focus,
-			textarea:focus {
-				border-color: var(--secondary-color);
-				box-shadow: 0 0 0 1px var(--secondary-color);
-				outline: none;
-			}
-
-			label {
-				display: block;
-				margin-bottom: 0.5em;
-				font-weight: 600;
-				color: var(--dark-color-text);
-			}
+			input[type="text"], input[type="email"], input[type="tel"], select, textarea { width: 100%; padding: 0.75em; margin-bottom: 1em; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 3px; background-color: #ffffff; color: var(--dark-color-text); box-sizing: border-box; }
+			input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus, textarea:focus { border-color: var(--secondary-color); box-shadow: 0 0 0 1px var(--secondary-color); outline: none; }
+			label { display: block; margin-bottom: 0.5em; font-weight: 600; color: var(--dark-color-text); }
 			
-			/* Features sections (e.g., under "What We Do") */
-			.features {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2em; /* Spacing between feature items */
-			}
-			.features section {
-				flex: 1 1 300px; /* Allows items to grow and shrink, with a base width */
-				padding: 1.5em;
-				border: 1px solid rgba(0,0,0,0.1);
-				border-radius: 3px;
-			}
-			.features section h3 {
-				margin-top: 0;
-			}
+			.features { display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; }
+			.features section { /* Each individual feature block */
+                flex: 1 1 300px; 
+                padding: 1.5em; 
+                border: 1px solid rgba(0,0,0,0.1); 
+                border-radius: 3px; 
+                text-align: center; /* This centers the icon (now block with auto margins), h3, and p */
+            }
+			.features section h3 { margin-top: 0; font-size: 1.25em; }
+			.features section p { font-size: 0.9em; }
 
-			/* Typography (General headings and paragraphs) */
-			h1, h2, h3, h4, h5, h6 {
-				font-weight: 600;
-				line-height: 1.4;
-				margin-bottom: 0.5em;
-			}
+			h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.4; margin-bottom: 0.5em; }
+			.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 { color: inherit; }
+			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style1-alt h1, .wrapper.style1-alt h2, .wrapper.style1-alt h3, #sidebar h1, #sidebar h2, #sidebar h3 { color: var(--text-on-dark-bg); }
+			.wrapper.style2 p, .wrapper.style2 li, .wrapper.style1-alt p, .wrapper.style1-alt li, #sidebar p, #sidebar li { color: var(--text-on-dark-bg-muted); }
+			.wrapper.style1 p, .wrapper.style1 li, .wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 label, .wrapper.style3 p, .wrapper.style3 li, .wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 label { color: var(--dark-color-text); }
+			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3 { color: var(--dark-color-text); }
+			.wrapper p, .wrapper li { line-height: 1.7; margin-bottom: 1em; }
+			ul.actions { list-style: none; padding: 0; margin: 1.5rem 0 0 0; }
+			ul.actions li { display: inline-block; padding: 0 0.5em 0 0; }
+			ul.actions li:last-child { padding-right: 0; }
+
+			a { color: var(--secondary-color); text-decoration: none; transition: color 0.2s ease-in-out; }
+			a:hover { filter: brightness(110%); text-decoration: underline; }
+			.wrapper.style1 a, .wrapper.style3 a { color: var(--secondary-color); }
+			.wrapper.style1 a:hover, .wrapper.style3 a:hover { filter: brightness(110%); }
+
+			#footer { padding: 2em 0; text-align: center; }
+			#footer .menu { list-style: none; padding: 0; margin: 0; }
+			#footer .menu li { display: inline; padding: 0 0.5em; font-size: 0.9em; }
+			#footer .menu a { color: var(--tertiary-color); }
+			#footer .menu a:hover { color: var(--logo-accent-color); }
 			
-			.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
-				color: inherit; /* Will take color from .wrapper.styleX */
-			}
-
-			/* Headings on dark backgrounds (ensure they are light) */
-			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3,
-			.wrapper.style1-alt h1, .wrapper.style1-alt h2, .wrapper.style1-alt h3,
-			#sidebar h1, #sidebar h2, #sidebar h3 { /* Assuming sidebar might have headings */
-				color: var(--text-on-dark-bg);
-			}
-
-			/* Paragraph/list text on dark backgrounds */
-			.wrapper.style2 p, .wrapper.style2 li,
-			.wrapper.style1-alt p, .wrapper.style1-alt li,
-			#sidebar p, #sidebar li { /* Assuming sidebar might have paragraphs/lists */
-				color: var(--text-on-dark-bg-muted);
-			}
-			
-			/* Text in light background sections (ensure correct dark text color) */
-			.wrapper.style1 p, .wrapper.style1 li, .wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 label,
-			.wrapper.style3 p, .wrapper.style3 li, .wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 label {
-				color: var(--dark-color-text);
-			}
-			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3,
-			.wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3 {
-				color: var(--dark-color-text); /* Explicitly set heading color for light backgrounds */
-			}
-
-
-			.wrapper p, .wrapper li {
-				line-height: 1.7;
-				margin-bottom: 1em;
-			}
-
-			ul.actions {
+            /* Social Icons in Footer */
+			#footer ul.icons { /* Targets the social icons list in the footer */
 				list-style: none;
-				padding: 0;
-				margin: 1.5rem 0 0 0;
+				padding-left: 0;
+				margin-top: 1em; /* Space above the icons */
+				margin-bottom: 0; /* Reset bottom margin */
 			}
-			ul.actions li {
+			#footer ul.icons li {
 				display: inline-block;
-				padding: 0 0.5em 0 0;
+				padding: 0 0.25em; /* Slightly less padding than action buttons */
 			}
-			ul.actions li:last-child {
-				padding-right: 0;
+			#footer ul.icons li a.icon { /* Targets the <a> tag if it has class 'icon' */
+				display: inline-block; /* Keep it inline-block */
+				color: var(--text-on-dark-bg-muted); /* Color for the icon character */
+				font-size: 1.25em; /* Adjust size of social icons if needed */
+				padding: 0.25em; /* Small padding around the icon character if desired */
+				background-color: transparent; /* Ensure no accidental background from .icon.major */
+				width: auto; /* Override .icon.major fixed width */
+				height: auto; /* Override .icon.major fixed height */
+				line-height: normal; /* Override .icon.major fixed line-height */
+				border-radius: 0; /* Override .icon.major border-radius */
+				margin: 0; /* Reset margin from .icon.major */
 			}
-
-			/* Links */
-			a {
-				color: var(--secondary-color); /* Uses your logo accent color for general links */
-				text-decoration: none; /* Or underline if preferred */
-				transition: color 0.2s ease-in-out;
+			#footer ul.icons li a.icon:hover {
+				color: var(--text-on-dark-bg); /* Brighter on hover */
 			}
-
-			a:hover {
-				filter: brightness(110%); /* Or a specific hover color */
-				text-decoration: underline; /* Optional: underline on hover */
-			}
-			
-			/* Links within light background sections */
-			.wrapper.style1 a, .wrapper.style3 a {
-				color: var(--secondary-color);
-			}
-			.wrapper.style1 a:hover, .wrapper.style3 a:hover {
-				filter: brightness(110%);
-			}
-
-			/* Footer styling */
-			#footer { /* This is .wrapper.style1-alt, so bg/color already set */
-				padding: 2em 0; /* Adjust padding */
-				text-align: center;
-			}
-			#footer .menu {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
-			#footer .menu li {
-				display: inline;
-				padding: 0 0.5em;
-				font-size: 0.9em;
-			}
-			#footer .menu a {
-				color: var(--tertiary-color); /* Uses the defined footer link color */
-			}
-			#footer .menu a:hover {
-				color: var(--logo-accent-color); /* Or var(--text-on-dark-bg) */
-			}
-			#footer .icons a { /* Social media icons in footer if any */
-				color: var(--text-on-dark-bg-muted);
-			}
-			#footer .icons a:hover {
-				color: var(--text-on-dark-bg);
+			#footer ul.icons li a.icon .label { /* Hides the text label if present (screen reader only) */
+				display: none;
 			}
 
 
 			/* USER'S ORIGINAL CUSTOM STYLES BELOW - PRESERVED */
 			@media screen and (max-width: 768px) {
-				#sidebar .inner img {
-					display: block;
-					width: 140px; /* Was 140px */
-					margin: 1rem auto;
-				}
+				#sidebar .inner img { display: block; width: 140px; margin: 1rem auto; }
 			}
-			
-			/* Fix for text visibility */
-			p, h1, h2, h3, li, label, input, textarea, span, a {
-				color: inherit;
-				max-width: 100%;
-				overflow-wrap: break-word;
-				word-wrap: break-word;
-			}
-			
-			/* Improve form readability */
-			form .field {
-				margin-bottom: 1.5rem;
-			}
-			
-			/* Gallery spacing */
-			table.gallery {
-				width: 100%;
-				text-align: center;
-				margin: auto;
-				border-collapse: separate;
-				border-spacing: 10px;
-			}
-			
-			table.gallery img {
-				width: 100%;
-				max-width: 250px;
-				height: auto;
-				margin-bottom: 1rem;
-			}
-			
-			/* Fix contact section spacing */
-			.contact h3 {
-				margin-top: 1.5rem;
-				margin-bottom: 0.5rem;
-			}
-			
-			.contact h3:first-child {
-				margin-top: 0;
-			}
+			p, h1, h2, h3, li, label, input, textarea, span, a { color: inherit; max-width: 100%; overflow-wrap: break-word; word-wrap: break-word; }
+			form .field { margin-bottom: 1.5rem; }
+			table.gallery { width: 100%; text-align: center; margin: auto; border-collapse: separate; border-spacing: 10px; }
+			table.gallery img { width: 100%; max-width: 250px; height: auto; margin-bottom: 1rem; }
+			.contact h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; }
+			.contact h3:first-child { margin-top: 0; }
 		</style>
 	</head>
 	<body class="is-preload">
