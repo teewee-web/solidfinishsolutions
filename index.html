@@ -8,7 +8,6 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Clean, professional color scheme with better readability */
 			:root {
 				/* === USER: REPLACE THESE HEX CODES WITH YOUR ACTUAL LOGO COLORS === */
 				--logo-main-color: #0D2C4F;
@@ -58,30 +57,32 @@
 				text-decoration: none;
 				border-bottom: none;
 				position: relative;
-				display: inline-block; /* Ensures proper block-like behavior for centering if needed */
+				display: inline-block; 
 			}
-			.icon:before { /* This targets the actual icon character */
+			.icon:before { 
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome; /* Use the correct Font Awesome 4 family name */
+				font-family: FontAwesome; 
 				font-style: normal;
-				font-weight: normal; /* Standard weight for FA4 icons */
+				font-weight: normal; 
 				text-transform: none !important;
 			}
 
-			.icon.major { /* For the large circular icons in "What We Do" */
-				display: block; /* Changed to block to allow auto margins for centering */
+			.icon.major { 
+                display: flex; /* CHANGED: Use Flexbox to center the icon character */
+                align-items: center; /* Vertically center content (the :before pseudo-element) */
+                justify-content: center; /* Horizontally center content */
 				background-color: var(--secondary-color);
 				color: var(--text-on-dark-bg);
 				border-radius: 100%;
-				width: 4.5em;   /* Typical HTML5UP icon size */
-				height: 4.5em;  /* Typical HTML5UP icon size */
-				line-height: 4.5em; /* Vertically centers the icon character */
-				text-align: center;   /* Horizontally centers the icon character */
-				margin: 0 auto 1.5em auto; /* Centers the block and adds space below */
+				width: 4.5em;  
+				height: 4.5em; 
+                /* line-height and text-align removed as flexbox handles centering */
+				margin: 0 auto 1.5em auto; /* Centers the circular block itself */
 			}
 			.icon.major:before {
-				font-size: 1.75em; /* Size of the icon character within the circle */
+				font-size: 1.75em; 
+                /* No specific line-height or other alignment needed here, flex parent does the work */
 			}
             /* --- END ICON STYLES REFINED --- */
 
@@ -90,12 +91,12 @@
 			label { display: block; margin-bottom: 0.5em; font-weight: 600; color: var(--dark-color-text); }
 			
 			.features { display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; }
-			.features section { /* Each individual feature block */
+			.features section { 
                 flex: 1 1 300px; 
                 padding: 1.5em; 
                 border: 1px solid rgba(0,0,0,0.1); 
                 border-radius: 3px; 
-                text-align: center; /* This centers the icon (now block with auto margins), h3, and p */
+                text-align: center; /* This will center the h3 and p. The .icon.major is centered by its own margin:auto */
             }
 			.features section h3 { margin-top: 0; font-size: 1.25em; }
 			.features section p { font-size: 0.9em; }
@@ -122,36 +123,11 @@
 			#footer .menu a { color: var(--tertiary-color); }
 			#footer .menu a:hover { color: var(--logo-accent-color); }
 			
-            /* Social Icons in Footer */
-			#footer ul.icons { /* Targets the social icons list in the footer */
-				list-style: none;
-				padding-left: 0;
-				margin-top: 1em; /* Space above the icons */
-				margin-bottom: 0; /* Reset bottom margin */
-			}
-			#footer ul.icons li {
-				display: inline-block;
-				padding: 0 0.25em; /* Slightly less padding than action buttons */
-			}
-			#footer ul.icons li a.icon { /* Targets the <a> tag if it has class 'icon' */
-				display: inline-block; /* Keep it inline-block */
-				color: var(--text-on-dark-bg-muted); /* Color for the icon character */
-				font-size: 1.25em; /* Adjust size of social icons if needed */
-				padding: 0.25em; /* Small padding around the icon character if desired */
-				background-color: transparent; /* Ensure no accidental background from .icon.major */
-				width: auto; /* Override .icon.major fixed width */
-				height: auto; /* Override .icon.major fixed height */
-				line-height: normal; /* Override .icon.major fixed line-height */
-				border-radius: 0; /* Override .icon.major border-radius */
-				margin: 0; /* Reset margin from .icon.major */
-			}
-			#footer ul.icons li a.icon:hover {
-				color: var(--text-on-dark-bg); /* Brighter on hover */
-			}
-			#footer ul.icons li a.icon .label { /* Hides the text label if present (screen reader only) */
-				display: none;
-			}
-
+			#footer ul.icons { list-style: none; padding-left: 0; margin-top: 1em; margin-bottom: 0; }
+			#footer ul.icons li { display: inline-block; padding: 0 0.25em; }
+			#footer ul.icons li a.icon { display: inline-block; color: var(--text-on-dark-bg-muted); font-size: 1.25em; padding: 0.25em; background-color: transparent; width: auto; height: auto; line-height: normal; border-radius: 0; margin: 0; }
+			#footer ul.icons li a.icon:hover { color: var(--text-on-dark-bg); }
+			#footer ul.icons li a.icon .label { display: none; }
 
 			/* USER'S ORIGINAL CUSTOM STYLES BELOW - PRESERVED */
 			@media screen and (max-width: 768px) {
