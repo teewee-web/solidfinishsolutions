@@ -1,86 +1,560 @@
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-<head>
-	<title>Solid Finish Solutions</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<style>
-		:root {
-			--primary-bg: #0b1a2d;
-			--secondary-bg: #111d33;
-			--accent: #d4af37;
-			--accent-hover: #e0c150;
-			--text-color: #ffffff;
-			--dark-text: #2c3e50;
-		}
+	<head>
+		<title>Solid Finish Solutions</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Clean, professional color scheme with better readability */
+			:root {
+				/* === USER: REPLACE THESE HEX CODES WITH YOUR ACTUAL LOGO COLORS === */
+				/* These are examples. Choose colors that are prominent in your logo. */
+				--logo-main-color: #0D2C4F;       /* EXAMPLE: A strong, deep navy blue from your logo */
+				--logo-accent-color: #CAA860;    /* EXAMPLE: A muted, elegant gold/tan from your logo */
+				
+				/* Backgrounds for sections with white/light text - should be dark and logo-aligned */
+				--dark-bg-for-light-text: #1A2E40; /* EXAMPLE: A very dark blue/charcoal, harmonious with your logo */
 
-		html, body {
-			margin: 0;
-			padding: 0;
-			background-color: var(--primary-bg);
-			color: var(--text-color);
-			font-family: 'Segoe UI', sans-serif;
-		}
+				/* Backgrounds for sections with dark text - usually light and neutral */
+				--light-bg-for-dark-text: #f8f9fa;  /* EXAMPLE: Off-white, for clean primary backgrounds */
+				--medium-light-bg-for-dark-text: #EAEAEA; /* EXAMPLE: A light grey for secondary sections */
 
-		/* Section background colors updated to match logo */
-		.wrapper.style1 {
-			background: var(--primary-bg);
-			color: var(--text-color);
-		}
+				/* Text colors */
+				--text-on-dark-bg: #FFFFFF;
+				--text-on-dark-bg-muted: rgba(255, 255, 255, 0.95);
+				--text-on-light-bg: #2c3e50; /* Original dark color from theme, good for text readability */
+				
+				/* Other supporting colors (derived or distinct) */
+				--footer-link-color: #A9B4C2; /* EXAMPLE: A light, neutral blue-grey. Adjust as needed. */
+				/* === END USER REPLACEMENT SECTION === */
 
-		.wrapper.style1-alt {
-			background: var(--secondary-bg);
-			color: var(--text-color);
-		}
 
-		.wrapper.style2 {
-			background: var(--accent);
-			color: var(--primary-bg);
-		}
+				/* Mapping your logo colors to theme concepts */
+				--primary-color: var(--logo-main-color);
+				--secondary-color: var(--logo-accent-color);
+				--tertiary-color: var(--footer-link-color);
+				
+				--light-color: var(--light-bg-for-dark-text);
+				--dark-color-text: var(--text-on-light-bg);
+			}
 
-		.wrapper.style3 {
-			background: var(--secondary-bg);
-			color: var(--text-color);
-		}
+			/* General Body Styles (Optional - if main.css doesn't cover enough) */
+			body {
+				font-family: sans-serif; /* Or your preferred font stack from main.css */
+				color: var(--dark-color-text); /* Default text color for the site */
+				background-color: var(--light-color); /* Default background for the site */
+			}
 
-		/* Sidebar styling */
-		#sidebar {
-			background: var(--secondary-bg);
-		}
+			/* Section background colors & text colors */
+			.wrapper { /* Base styling for wrapper sections */
+				padding: 4em 0; /* Example padding, adjust as per main.css or preference */
+			}
 
-		#sidebar .inner img { display: block; margin: 1rem auto; width: 160px; }
+			.wrapper.style1 { /* e.g., Intro, Gallery, Contact section background */
+				background-color: var(--light-color);
+				color: var(--dark-color-text);
+			}
 
-		nav ul li a { color: var(--accent); }
+			.wrapper.style1-alt { /* e.g., Footer background */
+				background-color: var(--dark-bg-for-light-text);
+				color: var(--text-on-dark-bg-muted);
+			}
 
-		/* Buttons */
-		a.button, button.submit {
-			background: var(--accent);
-			color: var(--primary-bg) !important;
-		}
-		a.button:hover, button.submit:hover { background: var(--accent-hover); }
+			.wrapper.style2 { /* e.g., "Who we are" section background */
+				background-color: var(--primary-color); /* Uses your main logo color */
+				color: var(--text-on-dark-bg-muted);
+			}
 
-		/* Text readability */
-		h1, h2, h3, p, li { margin-bottom: 1rem; }
+			.wrapper.style3 { /* e.g., "What we do" section background */
+				background-color: var(--medium-light-bg-for-dark-text);
+				color: var(--dark-color-text);
+			}
 
-		/* Gallery */
-		table.gallery img { box-shadow: 0 0 10px rgba(0,0,0,0.3); border-radius: 5px; }
+			/* Sidebar styling */
+			#sidebar {
+				background-color: var(--primary-color); /* Uses your main logo color */
+				color: var(--text-on-dark-bg-muted);
+			}
 
-		/* Forms */
-		input, textarea { background: rgba(255,255,255,0.9); color: var(--dark-text); border: 1px solid rgba(0,0,0,0.2); }
+			#sidebar .inner {
+				padding: 2em; /* Example padding */
+			}
 
-		/* Footer links */
-		#footer a { color: var(--accent); }
+			#sidebar nav ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
 
-		@media screen and (max-width: 768px) {
-			#sidebar .inner img { width: 120px; }
-			table.gallery td { display: block; margin-bottom: 1.5rem; }
-		}
-	</style>
-</head>
+			#sidebar nav ul li a {
+				display: block;
+				padding: 0.75em 0;
+				color: var(--text-on-dark-bg-muted);
+				text-decoration: none;
+				font-weight: 500;
+				letter-spacing: 0.5px;
+				border-bottom: 1px solid rgba(255,255,255,0.1);
+			}
+
+			#sidebar nav ul li:last-child a {
+				border-bottom: none;
+			}
+
+			#sidebar nav ul li a:hover {
+				color: var(--text-on-dark-bg);
+			}
+
+			/* Buttons */
+			.button {
+				display: inline-block;
+				background-color: var(--secondary-color); /* Uses your logo accent color */
+				color: var(--text-on-dark-bg) !important; /* Ensure text on accent buttons is light for contrast */
+				padding: 0.75em 1.5em;
+				border-radius: 3px;
+				text-decoration: none;
+				box-shadow: none;
+				font-weight: 500;
+				cursor: pointer;
+				transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+				border: none; /* Remove default border if any */
+			}
+
+			.button:hover {
+				filter: brightness(110%);
+			}
+
+			.button.special {
+				background-color: var(--primary-color); /* Uses your main logo color */
+				color: var(--text-on-dark-bg) !important;
+			}
+
+			.button.special:hover {
+				filter: brightness(120%);
+			}
+
+			/* Icons from Font Awesome (if used like in the template) */
+			.icon {
+				text-decoration: none;
+				border-bottom: none;
+				position: relative;
+			}
+			.icon:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-family: FontAwesome; /* Make sure FontAwesome is linked if you use its classes */
+				font-style: normal;
+				font-weight: normal;
+				text-transform: none !important;
+			}
+			.icon.major {
+				display: inline-block;
+				background-color: var(--secondary-color); /* Uses your logo accent color */
+				color: var(--text-on-dark-bg); /* Ensure icon symbol is light */
+				border-radius: 100%;
+				width: 2.5em; /* Adjust size as needed */
+				height: 2.5em; /* Adjust size as needed */
+				line-height: 2.5em; /* Adjust size as needed */
+				text-align: center;
+				margin-bottom: 1em; /* Spacing below icon */
+			}
+			.icon.major:before {
+				font-size: 1.25em; /* Adjust icon symbol size */
+			}
+
+			/* Form elements */
+			input[type="text"],
+			input[type="email"],
+			input[type="tel"],
+			select,
+			textarea {
+				width: 100%;
+				padding: 0.75em;
+				margin-bottom: 1em; /* Ensures spacing if form .field isn't used */
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				border-radius: 3px;
+				background-color: #ffffff;
+				color: var(--dark-color-text);
+				box-sizing: border-box; /* Important for width and padding */
+			}
+
+			input[type="text"]:focus,
+			input[type="email"]:focus,
+			input[type="tel"]:focus,
+			select:focus,
+			textarea:focus {
+				border-color: var(--secondary-color);
+				box-shadow: 0 0 0 1px var(--secondary-color);
+				outline: none;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 0.5em;
+				font-weight: 600;
+				color: var(--dark-color-text);
+			}
+			
+			/* Features sections (e.g., under "What We Do") */
+			.features {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2em; /* Spacing between feature items */
+			}
+			.features section {
+				flex: 1 1 300px; /* Allows items to grow and shrink, with a base width */
+				padding: 1.5em;
+				border: 1px solid rgba(0,0,0,0.1);
+				border-radius: 3px;
+			}
+			.features section h3 {
+				margin-top: 0;
+			}
+
+			/* Typography (General headings and paragraphs) */
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: 600;
+				line-height: 1.4;
+				margin-bottom: 0.5em;
+			}
+			
+			.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
+				color: inherit; /* Will take color from .wrapper.styleX */
+			}
+
+			/* Headings on dark backgrounds (ensure they are light) */
+			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3,
+			.wrapper.style1-alt h1, .wrapper.style1-alt h2, .wrapper.style1-alt h3,
+			#sidebar h1, #sidebar h2, #sidebar h3 { /* Assuming sidebar might have headings */
+				color: var(--text-on-dark-bg);
+			}
+
+			/* Paragraph/list text on dark backgrounds */
+			.wrapper.style2 p, .wrapper.style2 li,
+			.wrapper.style1-alt p, .wrapper.style1-alt li,
+			#sidebar p, #sidebar li { /* Assuming sidebar might have paragraphs/lists */
+				color: var(--text-on-dark-bg-muted);
+			}
+			
+			/* Text in light background sections (ensure correct dark text color) */
+			.wrapper.style1 p, .wrapper.style1 li, .wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 label,
+			.wrapper.style3 p, .wrapper.style3 li, .wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 label {
+				color: var(--dark-color-text);
+			}
+			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3,
+			.wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3 {
+				color: var(--dark-color-text); /* Explicitly set heading color for light backgrounds */
+			}
+
+
+			.wrapper p, .wrapper li {
+				line-height: 1.7;
+				margin-bottom: 1em;
+			}
+
+			ul.actions {
+				list-style: none;
+				padding: 0;
+				margin: 1.5rem 0 0 0;
+			}
+			ul.actions li {
+				display: inline-block;
+				padding: 0 0.5em 0 0;
+			}
+			ul.actions li:last-child {
+				padding-right: 0;
+			}
+
+			/* Links */
+			a {
+				color: var(--secondary-color); /* Uses your logo accent color for general links */
+				text-decoration: none; /* Or underline if preferred */
+				transition: color 0.2s ease-in-out;
+			}
+
+			a:hover {
+				filter: brightness(110%); /* Or a specific hover color */
+				text-decoration: underline; /* Optional: underline on hover */
+			}
+			
+			/* Links within light background sections */
+			.wrapper.style1 a, .wrapper.style3 a {
+				color: var(--secondary-color);
+			}
+			.wrapper.style1 a:hover, .wrapper.style3 a:hover {
+				filter: brightness(110%);
+			}
+
+			/* Footer styling */
+			#footer { /* This is .wrapper.style1-alt, so bg/color already set */
+				padding: 2em 0; /* Adjust padding */
+				text-align: center;
+			}
+			#footer .menu {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			#footer .menu li {
+				display: inline;
+				padding: 0 0.5em;
+				font-size: 0.9em;
+			}
+			#footer .menu a {
+				color: var(--tertiary-color); /* Uses the defined footer link color */
+			}
+			#footer .menu a:hover {
+				color: var(--logo-accent-color); /* Or var(--text-on-dark-bg) */
+			}
+			#footer .icons a { /* Social media icons in footer if any */
+				color: var(--text-on-dark-bg-muted);
+			}
+			#footer .icons a:hover {
+				color: var(--text-on-dark-bg);
+			}
+
+
+			/* USER'S ORIGINAL CUSTOM STYLES BELOW - PRESERVED */
+			@media screen and (max-width: 768px) {
+				#sidebar .inner img {
+					display: block;
+					width: 140px; /* Was 140px */
+					margin: 1rem auto;
+				}
+			}
+			
+			/* Fix for text visibility */
+			p, h1, h2, h3, li, label, input, textarea, span, a {
+				color: inherit;
+				max-width: 100%;
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+			}
+			
+			/* Improve form readability */
+			form .field {
+				margin-bottom: 1.5rem;
+			}
+			
+			/* Gallery spacing */
+			table.gallery {
+				width: 100%;
+				text-align: center;
+				margin: auto;
+				border-collapse: separate;
+				border-spacing: 10px;
+			}
+			
+			table.gallery img {
+				width: 100%;
+				max-width: 250px;
+				height: auto;
+				margin-bottom: 1rem;
+			}
+			
+			/* Fix contact section spacing */
+			.contact h3 {
+				margin-top: 1.5rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.contact h3:first-child {
+				margin-top: 0;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<section id="sidebar">
+			<div class="inner">
+				<img src="images/logo_crown_color.png" alt="Solid Finish Solutions Logo" style="width: 2.5in; margin-bottom: 1rem; margin-top: -1in; display: block; margin-left: auto; margin-right: auto;" />
+				<nav>
+					<ul>
+						<li><a href="#intro">Welcome</a></li>
+						<li><a href="#one">Who we are</a></li>
+						<li><a href="#two">What we do</a></li>
+						<li><a href="#gallery">Gallery</a></li>
+						<li><a href="#three">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<div id="wrapper">
+
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div class="inner">
+					<h1>Solid Finish Solutions</h1>
+					<p><strong>Expert Painting and Decorating</strong> is our specialty. We also offer reliable property improvement services across London — all delivered to the highest standard, on time and on budget.</p>
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">Learn more</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="one" class="wrapper style2 spotlights">
+				<section>
+					<a href="#" class="image"><img src="images/pic01.jpg" alt="Interior & Exterior Painting" data-position="center center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Interior & Exterior Painting</h2>
+							<p>From fresh coats to complex colour schemes, we handle homes and businesses with precision and professionalism.</p>
+							<ul class="actions">
+								<li><a href="#two" class="button scrolly">Our Services</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a href="#" class="image"><img src="images/pic02.jpg" alt="Professional Team" data-position="top center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Professional & Reliable</h2>
+							<p>With years of experience serving London homes and businesses, our skilled team delivers quality craftsmanship and exceptional customer service on every project.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<section id="two" class="wrapper style3 fade-up">
+				<div class="inner">
+					<h2>What We Do</h2>
+					<p>Our primary focus is <strong>painting and decorating</strong>, delivering flawless finishes with every brushstroke. We also offer wallpapering, plastering, and a range of property improvement services handled by qualified professionals.</p>
+					<div class="features">
+						<section>
+							<span class="icon solid major fa-paint-brush"></span>
+							<h3>Wallpapering & Feature Walls</h3>
+							<p>We install modern wallpaper and striking feature walls with precision, transforming rooms with texture, colour, and designs that stand out.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-tools"></span>
+							<h3>Plastering & Repairs</h3>
+							<p>From patching cracks to full wall skimming, we deliver smooth, paint-ready finishes with perfect surface preparation and long-lasting results.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-bolt"></span>
+							<h3>Plumbing & Electrics</h3>
+							<p>Our certified specialists handle installations, repairs, and upgrades — safely managing everything from sockets to sinks with professional reliability.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-bath"></span>
+							<h3>Kitchen & Bathroom Installs</h3>
+							<p>We plan and fit new kitchens and bathrooms with top-tier workmanship — tiling, fixtures, plumbing and finishes included, on time and on budget.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-th-large"></span>
+							<h3>Tiling, Flooring & Carpentry</h3>
+							<p>Expert floor laying and tiling, plus carpentry services for skirting, shelving, doors, and custom touches that complete your perfect interior.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-tree"></span>
+							<h3>Garden Landscaping & Fencing</h3>
+							<p>We design and maintain beautiful outdoor spaces with fencing, decking, and full garden makeovers tailored to your home or business.</p>
+						</section>
+					</div>
+					<ul class="actions">
+						<li><a href="#gallery" class="button scrolly">See Our Work</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="gallery" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Gallery</h2>
+					<p>Take a look at some of our recent work across homes and businesses in London.</p>
+					<table class="gallery">
+						<tr>
+							<td><img src="images/room_update_1.jpg" alt="Project Before" />
+							<p>Before: Living Room Renovation</p></td>
+							<td><img src="images/room_update_2.jpg" alt="Project After" />
+							<p>After: Transformed Space</p></td>
+						</tr>
+						<tr>
+							<td><img src="images/pic02.jpg" alt="Feature Wall" />
+							<p>Feature Wall Installation</p></td>
+							<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" />
+							<p>Modern Kitchen Installation</p></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<p>If you'd like a quote, want to schedule a service, or have any questions — don't hesitate to contact us. We're here to help bring your vision to life.</p>
+					<div class="split style1">
+						<section>
+							<form method="post" action="mailto:solidfinishsolutions@gmail.com" autocomplete="on">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" autocomplete="name" required />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" autocomplete="email" required />
+									</div>
+									<div class="field">
+										<label for="phone">Phone</label>
+										<input type="tel" name="phone" id="phone" autocomplete="tel" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><button type="submit" class="button submit">Send Message</button></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>London, United Kingdom</span>
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:solidfinishsolutions@gmail.com">solidfinishsolutions@gmail.com</a>
+								</li>
+								<li>
+									<h3>Phone</h3>
+									<span>07739 960753</span>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; Solid Finish Solutions. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
