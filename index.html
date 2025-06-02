@@ -1,30 +1,381 @@
-move the generic and elements pages <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>Solid Finish Solutions</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Modern CSS Reset and Base Styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: #f8f9fa;
+			}
+
+			/* Sidebar Styles */
+			#sidebar {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 300px;
+				height: 100vh;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				z-index: 1000;
+				overflow-y: auto;
+				transform: translateX(-100%);
+				transition: transform 0.3s ease;
+			}
+
+			#sidebar.active {
+				transform: translateX(0);
+			}
+
+			#sidebar .inner {
+				padding: 2rem;
+			}
+
+			#sidebar nav ul {
+				list-style: none;
+				margin-top: 2rem;
+			}
+
+			#sidebar nav ul li {
+				margin-bottom: 1rem;
+			}
+
+			#sidebar nav ul li a {
+				color: white;
+				text-decoration: none;
+				font-weight: 500;
+				font-size: 1.1rem;
+				transition: opacity 0.3s ease;
+			}
+
+			#sidebar nav ul li a:hover {
+				opacity: 0.8;
+			}
+
+			/* Mobile Menu Toggle */
+			.menu-toggle {
+				position: fixed;
+				top: 20px;
+				left: 20px;
+				z-index: 1001;
+				background: #667eea;
+				color: white;
+				border: none;
+				padding: 10px 15px;
+				border-radius: 5px;
+				cursor: pointer;
+				font-size: 16px;
+			}
+
+			/* Main Content */
+			#wrapper {
+				margin-left: 0;
+				transition: margin-left 0.3s ease;
+			}
+
+			@media (min-width: 1024px) {
+				#sidebar {
+					transform: translateX(0);
+				}
+				#wrapper {
+					margin-left: 300px;
+				}
+				.menu-toggle {
+					display: none;
+				}
+			}
+
+			/* Section Styles */
+			.wrapper {
+				padding: 4rem 2rem;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+			}
+
+			.wrapper.style1 {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+			}
+
+			.wrapper.style2 {
+				background: white;
+			}
+
+			.wrapper.style3 {
+				background: #f8f9fa;
+			}
+
+			.inner {
+				max-width: 1200px;
+				margin: 0 auto;
+				width: 100%;
+			}
+
+			/* Typography */
+			h1 {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+			}
+
+			h2 {
+				font-size: 2.5rem;
+				margin-bottom: 1.5rem;
+				font-weight: 600;
+				color: #333;
+			}
+
+			.wrapper.style1 h2 {
+				color: white;
+			}
+
+			h3 {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+				font-weight: 600;
+				color: #667eea;
+			}
+
+			p {
+				font-size: 1.1rem;
+				margin-bottom: 1.5rem;
+				color: #666;
+			}
+
+			.wrapper.style1 p {
+				color: rgba(255,255,255,0.9);
+			}
+
+			/* Buttons */
+			.button {
+				display: inline-block;
+				padding: 12px 30px;
+				background: #667eea;
+				color: white;
+				text-decoration: none;
+				border-radius: 25px;
+				font-weight: 600;
+				transition: all 0.3s ease;
+				border: none;
+				cursor: pointer;
+				font-size: 1rem;
+			}
+
+			.button:hover {
+				background: #5a6fd8;
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+			}
+
+			/* Features Grid */
+			.features {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin: 3rem 0;
+			}
+
+			.features section {
+				background: white;
+				padding: 2rem;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				text-align: center;
+				transition: transform 0.3s ease;
+			}
+
+			.features section:hover {
+				transform: translateY(-5px);
+			}
+
+			.icon {
+				font-size: 3rem;
+				color: #667eea;
+				margin-bottom: 1rem;
+			}
+
+			/* Gallery */
+			.gallery-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+
+			.gallery-grid img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				transition: transform 0.3s ease;
+			}
+
+			.gallery-grid img:hover {
+				transform: scale(1.05);
+			}
+
+			/* Contact Form */
+			.split {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 3rem;
+				margin-top: 2rem;
+			}
+
+			@media (max-width: 768px) {
+				.split {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			.field {
+				margin-bottom: 1.5rem;
+			}
+
+			.field.half {
+				width: 48%;
+				display: inline-block;
+				margin-right: 4%;
+			}
+
+			.field.half:nth-child(even) {
+				margin-right: 0;
+			}
+
+			@media (max-width: 768px) {
+				.field.half {
+					width: 100%;
+					margin-right: 0;
+				}
+			}
+
+			label {
+				display: block;
+				margin-bottom: 0.5rem;
+				font-weight: 600;
+				color: #333;
+			}
+
+			input, textarea {
+				width: 100%;
+				padding: 12px;
+				border: 2px solid #e1e5e9;
+				border-radius: 5px;
+				font-size: 1rem;
+				transition: border-color 0.3s ease;
+			}
+
+			input:focus, textarea:focus {
+				outline: none;
+				border-color: #667eea;
+			}
+
+			/* Contact Info */
+			.contact {
+				list-style: none;
+			}
+
+			.contact li {
+				margin-bottom: 2rem;
+			}
+
+			.icons {
+				list-style: none;
+				display: flex;
+				gap: 1rem;
+			}
+
+			.icons a {
+				color: #667eea;
+				font-size: 1.5rem;
+				transition: color 0.3s ease;
+			}
+
+			.icons a:hover {
+				color: #5a6fd8;
+			}
+
+			/* Footer */
+			#footer {
+				background: #333;
+				color: white;
+				text-align: center;
+				padding: 2rem;
+			}
+
+			.menu {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+				gap: 2rem;
+			}
+
+			.menu a {
+				color: #667eea;
+				text-decoration: none;
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				h1 {
+					font-size: 2rem;
+				}
+				h2 {
+					font-size: 1.8rem;
+				}
+				.wrapper {
+					padding: 2rem 1rem;
+				}
+				.menu {
+					flex-direction: column;
+					gap: 1rem;
+				}
+			}
+
+			/* Logo placeholder */
+			.logo-placeholder {
+				width: 150px;
+				height: 150px;
+				background: rgba(255,255,255,0.2);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 2rem;
+				font-size: 1.2rem;
+				text-align: center;
+			}
+		</style>
 	</head>
-	<body class="is-preload">
+	<body>
+		<button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
 
 		<!-- Sidebar -->
 		<section id="sidebar">
 			<div class="inner">
-				<img src="images/logo_crown_color.png" alt="Solid Finish Solutions Logo" style="width: 2.5in; margin-bottom: 1rem; margin-top: -1in; display: block; margin-left: auto; margin-right: auto;" />
+				<div class="logo-placeholder">
+					SFS Logo
+				</div>
 				<nav>
 					<ul>
-						<li><a href="#intro">Welcome</a></li>
-						<li><a href="#one">Who we are</a></li>
-						<li><a href="#two">What we do</a></li>
-						<li><a href="#gallery">Gallery</a></li>
-						<li><a href="#three">Get in touch</a></li>
+						<li><a href="#intro" onclick="closeSidebar()">Welcome</a></li>
+						<li><a href="#one" onclick="closeSidebar()">Who we are</a></li>
+						<li><a href="#two" onclick="closeSidebar()">What we do</a></li>
+						<li><a href="#gallery" onclick="closeSidebar()">Gallery</a></li>
+						<li><a href="#three" onclick="closeSidebar()">Get in touch</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -34,122 +385,104 @@ move the generic and elements pages <!DOCTYPE HTML>
 		<div id="wrapper">
 
 			<!-- Intro -->
-			<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<section id="intro" class="wrapper style1">
 				<div class="inner">
 					<h1>Solid Finish Solutions</h1>
 					<p><strong>Expert Painting and Decorating</strong> is our specialty. We also offer reliable property improvement services across London — all delivered to the highest standard, on time and on budget.</p>
-					<ul class="actions">
-						<li><a href="#one" class="button scrolly">Learn more</a></li>
-					</ul>
+					<a href="#one" class="button">Learn more</a>
 				</div>
 			</section>
 
 			<!-- One -->
-			<section id="one" class="wrapper style2 spotlights">
-				<section>
-					<a href="#" class="image"><img src="images/pic01.jpg" alt="Interior & Exterior Painting" data-position="center center" /></a>
-					<div class="content">
-						<div class="inner">
-							<h2>Interior & Exterior Painting</h2>
-							<p>From fresh coats to complex colour schemes, we handle homes and businesses with precision and professionalism.</p>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<h2>Interior & Exterior Painting</h2>
+					<p>From fresh coats to complex colour schemes, we handle homes and businesses with precision and professionalism. Our experienced team uses premium materials and proven techniques to deliver stunning results that last.</p>
+					<p>Whether you're looking to refresh a single room or transform your entire property, we provide comprehensive painting services tailored to your specific needs and budget.</p>
+				</div>
 			</section>
 
 			<!-- Two -->
-			<section id="two" class="wrapper style3 fade-up">
+			<section id="two" class="wrapper style3">
 				<div class="inner">
 					<h2>What We Do</h2>
 					<p>Our primary focus is <strong>painting and decorating</strong>, delivering flawless finishes with every brushstroke. We also offer wallpapering, plastering, and a range of property improvement services handled by qualified professionals.</p>
 					<div class="features">
 						<section>
-							<span class="icon solid major fa-paint-brush"></span>
+							<div class="icon">🎨</div>
 							<h3>Wallpapering & Feature Walls</h3>
 							<p>We install modern wallpaper and striking feature walls with precision, transforming rooms with texture, colour, and designs that stand out.</p>
 						</section>
 						<section>
-							<span class="icon solid major fa-tools"></span>
+							<div class="icon">🔧</div>
 							<h3>Plastering & Repairs</h3>
 							<p>From patching cracks to full wall skimming, we deliver smooth, paint-ready finishes with perfect surface preparation and long-lasting results.</p>
 						</section>
 						<section>
-							<span class="icon solid major fa-bolt"></span>
+							<div class="icon">⚡</div>
 							<h3>Plumbing & Electrics</h3>
 							<p>Our certified specialists handle installations, repairs, and upgrades — safely managing everything from sockets to sinks with professional reliability.</p>
 						</section>
 						<section>
-							<span class="icon solid major fa-bath"></span>
+							<div class="icon">🛁</div>
 							<h3>Kitchen & Bathroom Installs</h3>
 							<p>We plan and fit new kitchens and bathrooms with top-tier workmanship — tiling, fixtures, plumbing and finishes included, on time and on budget.</p>
 						</section>
 						<section>
-							<span class="icon solid major fa-th-large"></span>
+							<div class="icon">🏠</div>
 							<h3>Tiling, Flooring & Carpentry</h3>
 							<p>Expert floor laying and tiling, plus carpentry services for skirting, shelving, doors, and custom touches that complete your perfect interior.</p>
 						</section>
 						<section>
-							<span class="icon solid major fa-tree"></span>
+							<div class="icon">🌳</div>
 							<h3>Garden Landscaping & Fencing</h3>
 							<p>We design and maintain beautiful outdoor spaces with fencing, decking, and full garden makeovers tailored to your home or business.</p>
 						</section>
 					</div>
-					<ul class="actions">
-						<li><a href="generic.html" class="button">Learn more</a></li>
-					</ul>
 				</div>
 			</section>
 
 			<!-- Gallery -->
-			<section id="gallery" class="wrapper style1 fade-up">
+			<section id="gallery" class="wrapper style2">
 				<div class="inner">
 					<h2>Gallery</h2>
 					<p>Take a look at some of our recent work across homes and businesses in London.</p>
-					<table style="width: 100%; text-align: center;">
-						<tr>
-							<td><img src="images/room_update_1.jpg" alt="Project Before" style="width: 100%; max-width: 250px; height: auto;" /></td>
-							<td><img src="images/room_update_2.jpg" alt="Project After" style="width: 100%; max-width: 250px; height: auto;" /></td>
-						</tr>
-						<tr>
-							<td><img src="images/pic02.jpg" alt="Feature Wall" style="width: 100%; max-width: 250px; height: auto;" /></td>
-							<td><img src="images/pic03.jpg" alt="Modern Kitchen Install" style="width: 100%; max-width: 250px; height: auto;" /></td>
-						</tr>
-					</table>
+					<div class="gallery-grid">
+						<div style="background: linear-gradient(45deg, #f0f0f0, #e0e0e0); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666;">Before: Living Room</div>
+						<div style="background: linear-gradient(45deg, #667eea, #764ba2); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">After: Modern Finish</div>
+						<div style="background: linear-gradient(45deg, #f093fb, #f5576c); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">Feature Wall</div>
+						<div style="background: linear-gradient(45deg, #4facfe, #00f2fe); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">Kitchen Install</div>
+					</div>
 				</div>
 			</section>
 
 			<!-- Three -->
-			<section id="three" class="wrapper style1 fade-up">
+			<section id="three" class="wrapper style1">
 				<div class="inner">
 					<h2>Get in touch</h2>
-					<p>If you’d like a quote, want to schedule a service, or have any questions — don’t hesitate to contact us. We're here to help bring your vision to life.</p>
-					<div class="split style1">
+					<p>If you'd like a quote, want to schedule a service, or have any questions — don't hesitate to contact us. We're here to help bring your vision to life.</p>
+					<div class="split">
 						<section>
-							<form method="post" action="mailto:solidfinishsolutions@gmail.co.uk" autocomplete="on">
+							<form action="#" method="post" onsubmit="handleSubmit(event)">
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" autocomplete="name" />
+										<input type="text" name="name" id="name" required />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" autocomplete="email" />
+										<input type="email" name="email" id="email" required />
 									</div>
 									<div class="field half">
 										<label for="phone">Phone</label>
-										<input type="tel" name="phone" id="phone" autocomplete="tel" />
+										<input type="tel" name="phone" id="phone" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="5"></textarea>
+										<textarea name="message" id="message" rows="5" required></textarea>
 									</div>
 								</div>
-								<ul class="actions">
-									<li><button type="submit" class="button submit">Send Message</button></li>
-								</ul>
+								<button type="submit" class="button">Send Message</button>
 							</form>
 						</section>
 						<section>
@@ -157,17 +490,21 @@ move the generic and elements pages <!DOCTYPE HTML>
 								<li>
 									<h3>Address</h3>
 									<span>London, United Kingdom</span>
+								</li>
+								<li>
 									<h3>Email</h3>
 									<a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
+								</li>
+								<li>
 									<h3>Phone</h3>
-									<span>07739 960753</span>
+									<a href="tel:07739960753">07739 960753</a>
 								</li>
 								<li>
 									<h3>Social</h3>
 									<ul class="icons">
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+										<li><a href="#" title="Facebook">📘</a></li>
+										<li><a href="#" title="Instagram">📷</a></li>
+										<li><a href="#" title="LinkedIn">💼</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -179,23 +516,102 @@ move the generic and elements pages <!DOCTYPE HTML>
 		</div>
 
 		<!-- Footer -->
-		<footer id="footer" class="wrapper style1-alt">
+		<footer id="footer" class="wrapper">
 			<div class="inner">
 				<ul class="menu">
 					<li>&copy; Solid Finish Solutions. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>Professional painting and decorating services in London</li>
 				</ul>
 			</div>
 		</footer>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script>
+			// Smooth scrolling for navigation links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute('href'));
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
 
+			// Sidebar toggle functionality
+			function toggleSidebar() {
+				const sidebar = document.getElementById('sidebar');
+				sidebar.classList.toggle('active');
+			}
+
+			function closeSidebar() {
+				const sidebar = document.getElementById('sidebar');
+				sidebar.classList.remove('active');
+			}
+
+			// Close sidebar when clicking outside
+			document.addEventListener('click', function(event) {
+				const sidebar = document.getElementById('sidebar');
+				const menuToggle = document.querySelector('.menu-toggle');
+				
+				if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+					sidebar.classList.remove('active');
+				}
+			});
+
+			// Form submission handler
+			function handleSubmit(event) {
+				event.preventDefault();
+				
+				const form = event.target;
+				const formData = new FormData(form);
+				
+				const name = formData.get('name');
+				const email = formData.get('email');
+				const phone = formData.get('phone');
+				const message = formData.get('message');
+				
+				// Create mailto link
+				const subject = encodeURIComponent('New Contact Form Submission');
+				const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
+				const mailtoLink = `mailto:solidfinishsolutions@gmail.co.uk?subject=${subject}&body=${body}`;
+				
+				// Open email client
+				window.location.href = mailtoLink;
+				
+				// Show confirmation
+				alert('Thank you for your message! Your email client should open with the message ready to send.');
+				
+				// Reset form
+				form.reset();
+			}
+
+			// Add scroll effects
+			window.addEventListener('scroll', function() {
+				const sections = document.querySelectorAll('.wrapper');
+				sections.forEach(section => {
+					const rect = section.getBoundingClientRect();
+					if (rect.top < window.innerHeight && rect.bottom > 0) {
+						section.style.opacity = '1';
+						section.style.transform = 'translateY(0)';
+					}
+				});
+			});
+
+			// Initialize scroll effects
+			document.addEventListener('DOMContentLoaded', function() {
+				const sections = document.querySelectorAll('.wrapper');
+				sections.forEach(section => {
+					section.style.opacity = '0';
+					section.style.transform = 'translateY(20px)';
+					section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+				});
+				
+				// Trigger initial scroll check
+				window.dispatchEvent(new Event('scroll'));
+			});
+		</script>
 	</body>
 </html>
