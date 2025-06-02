@@ -42,6 +42,12 @@
 				padding: 2rem;
 			}
 
+			#sidebar .inner img {
+				display: block;
+				margin: 1rem auto -1rem auto;
+				width: 160px;
+			}
+
 			#sidebar nav ul {
 				list-style: none;
 				margin-top: 2rem;
@@ -344,20 +350,6 @@
 					gap: 1rem;
 				}
 			}
-
-			/* Logo placeholder */
-			.logo-placeholder {
-				width: 150px;
-				height: 150px;
-				background: rgba(255,255,255,0.2);
-				border-radius: 50%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				margin: 0 auto 2rem;
-				font-size: 1.2rem;
-				text-align: center;
-			}
 		</style>
 	</head>
 	<body>
@@ -366,9 +358,8 @@
 		<!-- Sidebar -->
 		<section id="sidebar">
 			<div class="inner">
-				<div class="logo-placeholder">
-					SFS Logo
-				</div>
+				<!-- Replace logo-placeholder with actual logo image -->
+				<img src="images/logo_crown_color.png" alt="Solid Finish Solutions Logo" />
 				<nav>
 					<ul>
 						<li><a href="#intro" onclick="closeSidebar()">Welcome</a></li>
@@ -448,10 +439,11 @@
 					<h2>Gallery</h2>
 					<p>Take a look at some of our recent work across homes and businesses in London.</p>
 					<div class="gallery-grid">
-						<div style="background: linear-gradient(45deg, #f0f0f0, #e0e0e0); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666;">Before: Living Room</div>
-						<div style="background: linear-gradient(45deg, #667eea, #764ba2); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">After: Modern Finish</div>
-						<div style="background: linear-gradient(45deg, #f093fb, #f5576c); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">Feature Wall</div>
-						<div style="background: linear-gradient(45deg, #4facfe, #00f2fe); height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">Kitchen Install</div>
+						<!-- Replace these placeholder divs with actual <img> tags when you have real image files -->
+						<img src="images/room_update_1.jpg" alt="Before: Living Room Renovation">
+						<img src="images/room_update_2.jpg" alt="After: Modern Finish">
+						<img src="images/pic02.jpg" alt="Feature Wall">
+						<img src="images/pic03.jpg" alt="Kitchen Install">
 					</div>
 				</div>
 			</section>
