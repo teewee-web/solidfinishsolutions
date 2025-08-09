@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solid Finish Solutions | Painting & Decorating in London</title>
+  <meta name="description" content="Solid Finish Solutions provides premium painting and decorating services across London and surrounding counties. Free quotes, spotless finishes, on-time and on-budget." />
+  <meta name="author" content="Solid Finish Solutions" />
+  <meta property="og:title" content="Solid Finish Solutions | Painting & Decorating in London" />
+  <meta property="og:description" content="Premium painting & decorating across London. Residential & commercial. Free quotes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-github-pages-url" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' rx='48' fill='%230f172a'/%3E%3Cpath fill='white' d='M64 160h128v24H64zm0-44h128v24H64zm0-44h128v24H64z'/%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg:#0b1020;       /* base */
+      --bg-soft:#0f172a;  /* cards */
+      --text:#e5e7eb;     /* copy */
+      --muted:#94a3b8;    /* secondary */
+      --brand:#22c55e;    /* green */
+      --brand-2:#38bdf8;  /* accent */
+      --line:#1f2937;     /* borders */
+      --max:1200px;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth;background:radial-gradient(1200px 600px at 10% -10%,rgba(34,197,94,.15),transparent 40%), radial-gradient(800px 400px at 120% 10%,rgba(56,189,248,.12),transparent 45%), var(--bg); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji" }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#22c55e, #2563eb)}
+    .logo svg{width:22px;height:22px;fill:white}
+    .brand h1{font-size:18px;letter-spacing:.2px;margin:0;font-weight:700}
+    nav ul{display:flex;gap:20px;align-items:center;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 12px;border-radius:10px;transition:all .2s ease;color:var(--muted)}
+    nav a:hover{background:rgba(148,163,184,.12);color:var(--text)}
+    .cta{display:flex;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg-soft);color:var(--text);box-shadow:var(--shadow);transition:transform .08s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,rgba(34,197,94,.9),rgba(56,189,248,.9));border-color:transparent}
+    .btn.ghost{background:transparent}
+
+    /* Hero */
+    .hero{padding:80px 0 40px}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px;letter-spacing:.4px}
+    .title{font-size:clamp(28px,5vw,52px);line-height:1.05;margin:16px 0 12px;font-weight:800}
+    .subtitle{font-size:clamp(15px,2.2vw,18px);color:var(--muted);max-width:60ch}
+    .hero-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+
+    .card{background:linear-gradient(180deg,rgba(15,23,42,.9),rgba(15,23,42,.75));border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+    .illus{aspect-ratio:4/3;border-radius:14px;background:
+      radial-gradient(120px 80px at 20% 25%, rgba(34,197,94,.2), transparent 60%),
+      radial-gradient(130px 90px at 80% 30%, rgba(56,189,248,.2), transparent 60%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 2px, transparent 2px 10px),
+      linear-gradient(135deg, #0b1228, #0b0f1f);
+      border:1px solid var(--line);position:relative}
+    .illus::after{content:"SFS";position:absolute;bottom:12px;right:16px;font-weight:800;letter-spacing:4px;color:rgba(255,255,255,.08);font-size:clamp(22px,12vw,64px)}
+
+    /* Services */
+    section{padding:60px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:24px}
+    h2{margin:0;font-size:clamp(22px,3.8vw,32px)}
+    p.lead{margin:0;color:var(--muted)}
+
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    .service{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(15,23,42,.6)}
+    .service h3{margin:0 0 6px;font-size:18px}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);color:#a7f3d0;font-size:12px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .tile{aspect-ratio:1/1;border-radius:12px;border:1px solid var(--line);background:linear-gradient(180deg,#0d1328,#0c1122);position:relative;overflow:hidden}
+    .tile::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 12px)}
+    .tile span{position:absolute;bottom:8px;left:10px;font-size:12px;color:var(--muted)}
+
+    /* Testimonials */
+    .testimonial{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(15,23,42,.6)}
+    .quote{font-size:15px;color:#e2e8f0}
+    .who{color:var(--muted);font-size:13px}
+
+    /* Areas */
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(148,163,184,.08);color:#cbd5e1;font-size:13px}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    .input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(2,6,23,.6);color:var(--text)}
+    textarea.input{min-height:120px;resize:vertical}
+    .inline{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero .wrap{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-4{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 520px){
+      nav ul{display:none}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .cta{display:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Solid Finish Solutions",
+    "image": "https://your-github-pages-url/logo.png",
+    "telephone": "+447739960753",
+    "email": "solidfinishsolutions@gmail.co.uk",
+    "url": "https://your-github-pages-url",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "GB"
+    },
+    "areaServed": ["London", "Essex", "Hertfordshire", "Surrey", "Kent", "Berkshire"],
+    "description": "Painting & decorating services for residential and commercial clients across London and surrounding counties.",
+    "servesCuisine": "",
+    "priceRange": "££"
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Solid Finish Solutions Home">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16v2H4zm0 4h10v2H4zm0 4h16v2H4z"/></svg>
+        </span>
+        <h1>Solid Finish Solutions</h1>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#areas">Areas</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <a class="btn ghost" href="tel:+447739960753" aria-label="Call us">Call: 07739 960 753</a>
+        <a class="btn primary" href="#quote" aria-label="Get a free quote">Get a Free Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="kicker">Serving All of London & Surrounding Counties</span>
+        <h2 class="title">Spotless Painting & Decorating — done right, first time.</h2>
+        <p class="subtitle">We deliver premium finishes with tidy workmanship, clear communication, and reliable timelines for homes and businesses. Fully insured. Free, fast quotes.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#quote">Request a Quote</a>
+          <a class="btn" href="mailto:solidfinishsolutions@gmail.co.uk?subject=Quote%20Request%20-%20Solid%20Finish%20Solutions">Email Us</a>
+          <a class="btn" href="tel:+447739960753">Call 07739 960 753</a>
+        </div>
+        <div class="inline" style="margin-top:14px;color:var(--muted);font-size:13px">
+          <span>Residential • Commercial • Interior • Exterior • Feature Walls • Wallpaper</span>
+        </div>
+      </div>
+      <div class="card illus" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Services</h2>
+        <p class="lead">Everything you need for a flawless finish.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="service">
+          <div class="badge">Most Popular</div>
+          <h3>Interior Painting</h3>
+          <p class="lead">Walls, ceilings, woodwork, colour matching, stain blocking, silky smooth finishes.</p>
+        </article>
+        <article class="service">
+          <h3>Exterior Painting</h3>
+          <p class="lead">Weatherproof masonry, render refresh, windows & doors, metalwork, fence & shed coatings.</p>
+        </article>
+        <article class="service">
+          <h3>Wallpaper & Feature Walls</h3>
+          <p class="lead">Lining, pattern matching, murals, removals, TV/media walls painted to perfection.</p>
+        </article>
+        <article class="service">
+          <h3>Repairs & Preparation</h3>
+          <p class="lead">Filling, caulking, sanding, stain sealing, water-damage repairs, surface priming.</p>
+        </article>
+        <article class="service">
+          <h3>Commercial & Rentals</h3>
+          <p class="lead">Shops, offices, HMOs, end-of-tenancy refresh, flexible out-of-hours scheduling.</p>
+        </article>
+        <article class="service">
+          <h3>Finishes & Coatings</h3>
+          <p class="lead">Durable scrubbable paints, low-VOC options, enamel trim, spray finishes on request.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Gallery -->
+  <section id="work">
+    <div class="container">
+      <div class="section-head">
+        <h2>Recent Work</h2>
+        <p class="lead">A peek at our finish quality (replace with your photos).</p>
+      </div>
+      <div class="gallery">
+        <div class="tile"><span>Lounge</span></div>
+        <div class="tile"><span>Kitchen</span></div>
+        <div class="tile"><span>Bedroom</span></div>
+        <div class="tile"><span>Hallway</span></div>
+        <div class="tile"><span>Exterior</span></div>
+        <div class="tile"><span>Feature Wall</span></div>
+        <div class="tile"><span>Commercial</span></div>
+        <div class="tile"><span>Office</span></div>
+        <div class="tile"><span>Bathroom</span></div>
+        <div class="tile"><span>Stairs</span></div>
+        <div class="tile"><span>Rental</span></div>
+        <div class="tile"><span>Garden Walls</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2>Client Reviews</h2>
+        <p class="lead">Trusted by homeowners and businesses across London.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="testimonial">
+          <p class="quote">“Immaculate finish and they kept the place spotless. Finished earlier than planned. Highly recommend.”</p>
+          <span class="who">— Sarah, Islington</span>
+        </div>
+        <div class="testimonial">
+          <p class="quote">“Clear quote, no surprises, and the results are fantastic. Our shop front looks brand new.”</p>
+          <span class="who">— Daniel, Shoreditch</span>
+        </div>
+        <div class="testimonial">
+          <p class="quote">“Professional, friendly, and precise. The feature wall is perfect.”</p>
+          <span class="who">— Emma, Wimbledon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas Served -->
+  <section id="areas">
+    <div class="container">
+      <div class="section-head">
+        <h2>Areas We Serve</h2>
+        <p class="lead">London-wide and nearby counties.</p>
+      </div>
+      <div class="chips">
+        <span class="chip">Central London</span>
+        <span class="chip">North London</span>
+        <span class="chip">East London</span>
+        <span class="chip">South London</span>
+        <span class="chip">West London</span>
+        <span class="chip">Essex</span>
+        <span class="chip">Hertfordshire</span>
+        <span class="chip">Surrey</span>
+        <span class="chip">Kent</span>
+        <span class="chip">Berkshire</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Quote -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p class="lead">Fast responses, clear pricing, tidy work.</p>
+      </div>
+      <div class="grid cols-3" style="align-items:start">
+        <div class="card">
+          <h3 style="margin-top:0">Reach Us</h3>
+          <p class="lead">Phone: <a href="tel:+447739960753">07739 960 753</a><br/>Email: <a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a></p>
+          <div class="inline">
+            <a class="btn" href="tel:+447739960753">Call Now</a>
+            <a class="btn" href="mailto:solidfinishsolutions@gmail.co.uk?subject=Enquiry%20-%20Solid%20Finish%20Solutions">Email</a>
+            <a class="btn" href="#quote">Get Quote</a>
+          </div>
+        </div>
+        <div class="card" id="quote">
+          <h3 style="margin-top:0">Request a Free Quote</h3>
+          <form id="quoteForm">
+            <input class="input" name="name" placeholder="Your name" required />
+            <input class="input" name="phone" placeholder="Phone" />
+            <input class="input" type="email" name="email" placeholder="Email" />
+            <input class="input" name="location" placeholder="Location (e.g., E3, Enfield)" />
+            <select class="input" name="service">
+              <option value="Interior Painting">Interior Painting</option>
+              <option value="Exterior Painting">Exterior Painting</option>
+              <option value="Wallpaper / Feature Wall">Wallpaper / Feature Wall</option>
+              <option value="Repairs & Prep">Repairs & Prep</option>
+              <option value="Commercial / Rental">Commercial / Rental</option>
+            </select>
+            <textarea class="input" name="details" placeholder="Tell us about your project (rooms, sizes, timings)"></textarea>
+            <div class="inline">
+              <button type="submit" class="btn primary">Send via Email</button>
+              <button type="reset" class="btn">Clear</button>
+            </div>
+            <p style="color:var(--muted);font-size:12px;margin:6px 0 0">No server needed — opens your email app with all details pre-filled.</p>
+          </form>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Why Choose Us</h3>
+          <ul style="margin:0 0 0 18px;line-height:1.7;color:var(--muted)">
+            <li>Clean, respectful, fully insured team</li>
+            <li>Transparent pricing & clear timelines</li>
+            <li>Premium materials for durable finishes</li>
+            <li>London-wide coverage + nearby counties</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+      <div>© <span id="y"></span> Solid Finish Solutions. All rights reserved.</div>
+      <div>Phone: <a href="tel:+447739960753">07739 960 753</a> · Email: <a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Build a mailto from the quote form (works on GitHub Pages without a backend)
+    const form = document.getElementById('quoteForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const get = (k) => (data.get(k) || '').toString().trim();
+
+      const subject = encodeURIComponent('Quote Request - ' + get('service'));
+      const lines = [
+        'Name: ' + get('name'),
+        'Phone: ' + get('phone'),
+        'Email: ' + get('email'),
+        'Location: ' + get('location'),
+        'Service: ' + get('service'),
+        'Details:',
+        get('details')
+      ];
+      const body = encodeURIComponent(lines.join('\n'));
+      const mailto = `mailto:solidfinishsolutions@gmail.co.uk?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
