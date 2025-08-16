@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Solid Finish Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific tweaks (rides on top of style.css) */
+    .page-head{padding:36px 0;background:#0b1330;border-bottom:1px solid #1f2a54}
+    .page-head h1{margin:0;font-size:34px}
+    .gallery-wrap{padding:48px 0}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .gallery-card{position:relative;border-radius:12px;overflow:hidden;border:1px solid #1f2a54;background:#0f1630}
+    .gallery-card img{width:100%;height:260px;object-fit:cover;display:block}
+    .gallery-card .tag{position:absolute;left:10px;top:10px;background:#182a71;border:1px solid #2b3e96;color:#d6defc;
+      font-size:12px;padding:4px 8px;border-radius:20px}
+    .gallery-title{font-size:22px;margin:0 0 14px}
+    .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999}
+    .lb img{max-width:92vw;max-height:90vh;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+    .lb-close{position:fixed;top:16px;right:22px;color:#fff;font-size:18px;cursor:pointer;opacity:.9}
+    @media(max-width:960px){
+      .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .gallery-card img{height:200px}
+    }
+    @media(max-width:560px){
+      .gallery-grid{grid-template-columns:1fr}
+      .gallery-card img{height:220px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR / HEADER (reuse site styles) -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <span>London & Surrounding Areas</span>
+      <div>
+        <span class="rating">★★★★★ Rated</span>
+        <a class="link" href="tel:07739960753">07739 960 753</a>
+        <span class="sep">•</span>
+        <a class="link" href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img class="logo" src="images/logo_crown_color.png" alt="Solid Finish Solutions">
+        <span>Solid Finish Solutions</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="gallery.html">Gallery</a>
+        <a href="mailto:solidfinishsolutions@gmail.co.uk" class="btn btn-small">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <h1>Our Work Gallery</h1>
+      <p style="color:#c6cfef;margin:6px 0 0">Before &amp; after examples from recent jobs.</p>
+    </div>
+  </section>
+
+  <main class="wrap gallery-wrap">
+    <h2 class="gallery-title">Before Projects</h2>
+    <div class="gallery-grid" id="beforeGrid"></div>
+
+    <div style="height:22px"></div>
+
+    <h2 class="gallery-title">After Projects</h2>
+    <div class="gallery-grid" id="afterGrid"></div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lightbox">
+    <span class="lb-close" onclick="hideLB()">✕ Close</span>
+    <img id="lbImg" alt="Preview">
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div><strong>Solid Finish Solutions</strong><br>London, United Kingdom</div>
+      <div class="footer-contact">
+        <a href="tel:07739960753">07739 960 753</a>
+        <a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Solid Finish Solutions</div>
+  </footer>
+
+  <script>
+    // EDIT THESE ARRAYS to match the exact filenames you upload to /images/before/ and /images/after/
+    const beforeFiles = [
+      'before1.jpg','before2.jpg','before3.jpg','before4.jpg','before5.jpg','before6.jpg','before7.jpg','before8.jpg','before9.jpg','before10.jpg',
+      'before11.jpg','before12.jpg','before13.jpg','before14.jpg','before15.jpg','before16.jpg','before17.jpg','before18.jpg','before19.jpg','before20.jpg'
+    ];
+    const afterFiles = [
+      'after1.jpg','after2.jpg','after3.jpg','after4.jpg','after5.jpg','after6.jpg'
+    ];
+
+    function buildGrid(id, files, folder){
+      const el = document.getElementById(id);
+      files.forEach(name => {
+        const card = document.createElement('article');
+        card.className = 'gallery-card';
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.alt = name;
+        img.src = `images/${folder}/${name}`;
+        img.onclick = () => showLB(img.src);
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = folder === 'before' ? 'Before' : 'After';
+        card.appendChild(img);
+        card.appendChild(tag);
+        el.appendChild(card);
+      });
+    }
+    function showLB(src){
+      document.getElementById('lbImg').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function hideLB(){ document.getElementById('lightbox').style.display = 'none'; }
+
+    // Build on load
+    buildGrid('beforeGrid', beforeFiles, 'before');
+    buildGrid('afterGrid', afterFiles, 'after');
+  </script>
+</body>
+</html>
