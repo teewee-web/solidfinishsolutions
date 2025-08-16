@@ -1,164 +1,123 @@
+/* General Styles */
 * {
-    margin: 0;
-    
-    
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    background: linear-gradient(to bottom, #f0f4f8, #ffffff);
-    color: #333;
-    line-height: 1.6;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
 }
 
+/* Header */
 header {
-    background: #0a3751;
-    color: #fff;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: #0a3d62;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
 }
 
 header h1 {
-    font-size: 1.5rem;
-}
-
-nav a {
-    color: #fff;
-    margin-left: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #78c1f3;
-}
-
-.hero {
-    position: relative;
-    height: 50vh;
-    background: url('https://images.unsplash.com/photo-1560185127-6c3d91d8e09b?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-}
-
-.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 55, 81, 0.6);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 0 1rem;
-    text-align: center;
-}
-
-#services {
-    padding: 2rem 1rem;
-}
-
-#services h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.service-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.service-item {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#contact {
-    background: #dff0f7;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-#contact h2 {
-    margin-bottom: 0.5rem;
-}
-
-#contact ul {
-    list-style-type: none;
-    margin: 0 auto;
-    max-width: 500px;
-}
-
-#contact li {
-    margin: 0.5rem 0;
-}
-
-footer {
-    background: #0a3751;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-.gallery-section {
-    padding: 2rem 1rem;
-}
-
-.gallery-section h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.gallery-grid img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-  
-    /* Center header content and enlarge title with logo */
-header {
-    flex-direction: column;
-    justify-content: center;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-}
-
-.logo-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.logo-title h1 {
-    font-size: 2.5rem;
-    margin: 0;
+  font-size: 28px;
+  margin-left: 10px;
 }
 
 .logo {
-    height: 40px;
-    width: auto;
+  height: 60px;
+  margin-right: 15px;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #e67e22;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Sections */
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.about, .services, .cta {
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Call to Action */
+.cta {
+  background: #0a3d62;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.cta .btn {
+  background: #e67e22;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #fff;
 }
