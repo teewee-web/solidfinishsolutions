@@ -13,34 +13,37 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ["Inter", "system-ui", "Arial", "sans-serif"],
-              display: ["Outfit", "Inter", "sans-serif"],
+              sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Arial", "sans-serif"],
+              display: ["Outfit", "Inter", "system-ui", "sans-serif"],
             },
             colors: {
-              brand: {500: "#397dff", 600: "#215fe6", 700: "#1748b4"},
-              ink: {50:"#f7f7f8",100:"#efeff1",300:"#cfd2d9",600:"#585e69",800:"#2f333b",900:"#1f2229"}
+              brand: {50:"#eef5ff",100:"#d9e9ff",200:"#b6d3ff",300:"#89b7ff",400:"#5b98ff",500:"#397dff",600:"#215fe6",700:"#1748b4",800:"#133e8f",900:"#103372"},
+              ink:   {50:"#f7f7f8",100:"#efeff1",200:"#e2e3e7",300:"#cfd2d9",400:"#a8adb7",500:"#787f8a",600:"#585e69",700:"#40454f",800:"#2f333b",900:"#1f2229"}
             },
-            boxShadow: {soft: "0 10px 30px rgba(16,51,114,0.08)"}
+            boxShadow: { soft: "0 10px 30px rgba(16,51,114,0.08)" }
           }
         }
       }
     </script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
-    <style>html {scroll-behavior: smooth;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+      html { scroll-behavior: smooth; }
+      .link-underline { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    </style>
   </head>
   <body class="font-sans text-ink-800 bg-white">
-    <!-- Top bar -->
+    <!-- Top Bar -->
     <div class="bg-ink-900 text-white text-sm">
       <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
         <div class="flex items-center gap-4">
           <span class="hidden sm:inline">Serving London & Surrounding Areas</span>
-          <a href="tel:07739960753">07739960753</a>
-          <a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
+          <a class="link-underline" href="tel:07739960753">07739960753</a>
+          <a class="link-underline" href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
         </div>
         <div class="hidden md:flex items-center gap-3 opacity-90">
-          <span>⭐️⭐️⭐️⭐️⭐️</span>
+          <span aria-hidden="true">⭐️⭐️⭐️⭐️⭐️</span>
           <span>Top-rated local decorators</span>
         </div>
       </div>
@@ -53,17 +56,18 @@
           <a href="#home" class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-brand-600 grid place-items-center text-white font-display font-bold">SFS</div>
             <div class="leading-tight">
-              <div class="font-display font-extrabold text-lg">Solid Finish Solutions</div>
+              <div class="font-display font-extrabold text-lg tracking-tight">Solid Finish Solutions</div>
               <div class="text-xs text-ink-600">Painters & Decorators</div>
             </div>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm">
-            <a href="#services">Services</a>
-            <a href="#work">Recent Work</a>
-            <a href="#why">Why Us</a>
-            <a href="#areas">Areas</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 text-white">Get a Quote</a>
+            <a href="#services" class="hover:text-brand-700">Services</a>
+            <a href="#work" class="hover:text-brand-700">Recent Work</a>
+            <a href="#why" class="hover:text-brand-700">Why Us</a>
+            <a href="#process" class="hover:text-brand-700">Process</a>
+            <a href="#areas" class="hover:text-brand-700">Areas</a>
+            <a href="#reviews" class="hover:text-brand-700">Reviews</a>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-soft">Get a Quote</a>
           </nav>
         </div>
       </div>
@@ -72,70 +76,309 @@
     <!-- Hero -->
     <section id="home" class="relative">
       <div class="absolute inset-0 -z-10">
-        <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover"/>
+        <img referrerpolicy="no-referrer"
+             src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1920&auto=format&fit=crop"
+             alt="Professional decorators painting interior"
+             class="w-full h-full object-cover"/>
         <div class="absolute inset-0 bg-gradient-to-b from-ink-900/70 via-ink-900/50 to-white/0"></div>
       </div>
-      <div class="max-w-7xl mx-auto px-4 py-24 md:py-36 text-white">
-        <h1 class="font-display font-extrabold text-4xl md:text-6xl">Painters & Decorators in London</h1>
-        <p class="mt-4 text-lg">Interior & exterior painting, wallpapering, domestic and commercial.</p>
-        <div class="mt-6 flex gap-3">
-          <a href="#contact" class="px-5 py-3 rounded-lg bg-brand-500 text-white font-semibold">Request a Quote</a>
-          <a href="tel:07739960753" class="px-5 py-3 rounded-lg bg-white/20 border border-white/30">Call 07739960753</a>
+      <div class="max-w-7xl mx-auto px-4 py-24 md:py-36">
+        <div class="max-w-3xl text-white">
+          <h1 class="font-display font-extrabold text-4xl md:text-6xl leading-tight">Painters & Decorators in London</h1>
+          <p class="mt-4 text-lg md:text-xl text-white/90">Interior & exterior painting, wallpaper hanging, domestic & commercial. Premium finishes, punctual service.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="px-5 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-white font-semibold shadow-soft">Request a Free Quote</a>
+            <a href="tel:07739960753" class="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-semibold">Call 07739960753</a>
+          </div>
+          <div class="mt-8 flex items-center gap-6 text-white/80">
+            <div class="flex items-center gap-2"><span class="font-bold">20+ years</span><span class="hidden sm:inline">experience</span></div>
+            <div class="flex items-center gap-2"><span class="font-bold">Fully insured</span></div>
+            <div class="flex items-center gap-2"><span class="font-bold">London-wide</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Partner logos -->
+    <!-- Partner Logos -->
     <section class="bg-white border-y border-ink-100">
       <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 place-items-center">
-        <a href="https://www.checkatrade.com/" target="_blank"><img referrerpolicy="no-referrer" class="h-8" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Checkatrade_Logo.svg"></a>
-        <a href="https://www.google.com/" target="_blank"><img referrerpolicy="no-referrer" class="h-8" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Google_2015_logo.svg"></a>
-        <a href="https://www.yell.com/" target="_blank"><img referrerpolicy="no-referrer" class="h-8" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Yell_logo.svg"></a>
-        <a href="https://www.bark.com/" target="_blank"><img referrerpolicy="no-referrer" class="h-8" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Bark_Logo.png"></a>
-        <a href="https://uk.trustpilot.com/" target="_blank"><img referrerpolicy="no-referrer" class="h-8" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Trustpilot_Logo.png"></a>
-        <a href="https://www.freeindex.co.uk/" target="_blank"><img referrerpolicy="no-referrer" class="h-8" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Freeindex_logo.png"></a>
+        <a href="https://www.checkatrade.com/" target="_blank" rel="noopener">
+          <img referrerpolicy="no-referrer" class="h-8 opacity-80 hover:opacity-100 transition"
+               src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Checkatrade_Logo.svg" alt="Checkatrade"/>
+        </a>
+        <a href="https://www.google.com/" target="_blank" rel="noopener">
+          <img referrerpolicy="no-referrer" class="h-8 opacity-80 hover:opacity-100 transition"
+               src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Google_2015_logo.svg" alt="Google"/>
+        </a>
+        <a href="https://www.yell.com/" target="_blank" rel="noopener">
+          <img referrerpolicy="no-referrer" class="h-8 opacity-80 hover:opacity-100 transition"
+               src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Yell_logo.svg" alt="Yell"/>
+        </a>
+        <a href="https://www.bark.com/" target="_blank" rel="noopener">
+          <img referrerpolicy="no-referrer" class="h-8 opacity-80 hover:opacity-100 transition"
+               src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Bark_Logo.png" alt="Bark"/>
+        </a>
+        <a href="https://uk.trustpilot.com/" target="_blank" rel="noopener">
+          <img referrerpolicy="no-referrer" class="h-8 opacity-80 hover:opacity-100 transition"
+               src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Trustpilot_Logo.png" alt="Trustpilot"/>
+        </a>
+        <a href="https://www.freeindex.co.uk/" target="_blank" rel="noopener">
+          <img referrerpolicy="no-referrer" class="h-8 opacity-80 hover:opacity-100 transition"
+               src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Freeindex_logo.png" alt="FreeIndex"/>
+        </a>
       </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="py-16 bg-ink-50">
+    <section id="services" class="py-16 md:py-24 bg-ink-50">
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="font-display text-3xl font-extrabold">Services</h2>
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-2xl shadow-soft">🎨 Interior Painting</div>
-          <div class="bg-white p-6 rounded-2xl shadow-soft">🧰 Exterior Painting</div>
-          <div class="bg-white p-6 rounded-2xl shadow-soft">📐 Wallpaper Hanging</div>
-          <div class="bg-white p-6 rounded-2xl shadow-soft">🏢 Commercial Decorating</div>
-          <div class="bg-white p-6 rounded-2xl shadow-soft">🏠 Domestic Decorating</div>
-          <div class="bg-white p-6 rounded-2xl shadow-soft">🧪 Specialist Coatings</div>
+        <header class="max-w-3xl">
+          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Services</h2>
+          <p class="mt-3 text-ink-700">A complete decorating service for homes and businesses across London.</p>
+        </header>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🎨</div><h3 class="font-semibold">Interior Painting</h3></div>
+            <p class="mt-3 text-sm text-ink-700">Walls, ceilings, woodwork, stain blocking, colour matching, fine finishes.</p>
+          </article>
+          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🧰</div><h3 class="font-semibold">Exterior Painting</h3></div>
+            <p class="mt-3 text-sm text-ink-700">Masonry, render, windows, doors, metalwork—all prepared & protected.</p>
+          </article>
+          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">📐</div><h3 class="font-semibold">Wallpaper Hanging</h3></div>
+            <p class="mt-3 text-sm text-ink-700">Feature walls to whole rooms. Lining, murals, pattern-matched flawlessly.</p>
+          </article>
+          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🏢</div><h3 class="font-semibold">Commercial Decorating</h3></div>
+            <p class="mt-3 text-sm text-ink-700">Offices, retail, hospitality. Out-of-hours scheduling to minimise downtime.</p>
+          </article>
+          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🏠</div><h3 class="font-semibold">Domestic Decorating</h3></div>
+            <p class="mt-3 text-sm text-ink-700">Clean, respectful, and tidy in lived-in homes. Protection as standard.</p>
+          </article>
+          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🧪</div><h3 class="font-semibold">Specialist Coatings</h3></div>
+            <p class="mt-3 text-sm text-ink-700">Kitchens, bathrooms, metal, floors. Durable systems built to last.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Recent Work -->
-    <section id="work" class="py-16">
+    <!-- Recent Work (Gallery) -->
+    <section id="work" class="py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="font-display text-3xl font-extrabold">Recent Work</h2>
+        <header class="max-w-3xl">
+          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Recent Work</h2>
+          <p class="mt-3 text-ink-700">A small selection of projects across London.</p>
+        </header>
         <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full" src="https://images.unsplash.com/photo-1582582621959-48d022433e1b?q=80&w=1200&auto=format&fit=crop"/>
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full" src="https://images.unsplash.com/photo-1582582621980-7c9f0bf0b0ac?q=80&w=1200&auto=format&fit=crop"/>
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full" src="https://images.unsplash.com/photo-1582582622270-5a3f9c1c65f1?q=80&w=1200&auto=format&fit=crop"/>
+          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full"
+               src="https://images.unsplash.com/photo-1582582621959-48d022433e1b?q=80&w=1200&auto=format&fit=crop"
+               alt="Cutting in walls and ceilings"/>
+          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full"
+               src="https://images.unsplash.com/photo-1582582621980-7c9f0bf0b0ac?q=80&w=1200&auto=format&fit=crop"
+               alt="Glossed woodwork and skirting"/>
+          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full"
+               src="https://images.unsplash.com/photo-1582582622270-5a3f9c1c65f1?q=80&w=1200&auto=format&fit=crop"
+               alt="Feature wall finish"/>
+          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full"
+               src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"
+               alt="Wallpaper hung with pattern match"/>
+          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full"
+               src="https://images.unsplash.com/photo-1582582621932-5d4cf0a1f2e0?q=80&w=1200&auto=format&fit=crop"
+               alt="Exterior masonry repaint"/>
+          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-44 w-full"
+               src="https://images.unsplash.com/photo-1519710164239-1113f66f3cc1?q=80&w=1200&auto=format&fit=crop"
+               alt="Prepared & protected workspace"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why" class="py-16 md:py-24 bg-ink-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <header class="max-w-3xl">
+          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Why Choose Us</h2>
+          <p class="mt-3 text-ink-700">Clear communication, meticulous prep, premium finishes—every project treated like our own home.</p>
+        </header>
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <h3 class="font-semibold">Customer-first approach</h3>
+            <p class="mt-2 text-sm text-ink-700">We listen, advise, and deliver exactly what you need—on time, on budget.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <h3 class="font-semibold">Quality workmanship</h3>
+            <p class="mt-2 text-sm text-ink-700">Skilled decorators using proven systems and reputable brands.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <h3 class="font-semibold">Great value</h3>
+            <p class="mt-2 text-sm text-ink-700">Transparent quotes and durable finishes that stand the test of time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <header class="max-w-3xl">
+          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Our Process</h2>
+          <p class="mt-3 text-ink-700">Simple, transparent steps from first call to final walkthrough.</p>
+        </header>
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="text-brand-700 font-bold">01</div>
+            <h3 class="mt-2 font-semibold">Tell us the details</h3>
+            <p class="mt-2 text-sm text-ink-700">Share photos, measurements, and any finishes you like.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="text-brand-700 font-bold">02</div>
+            <h3 class="mt-2 font-semibold">Get a fixed quote</h3>
+            <p class="mt-2 text-sm text-ink-700">Clear scope, timelines, and payment milestones.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div class="text-brand-700 font-bold">03</div>
+            <h3 class="mt-2 font-semibold">We deliver</h3>
+            <p class="mt-2 text-sm text-ink-700">Protection, prep, immaculate finish, and tidy handover.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Areas Covered -->
+    <section id="areas" class="py-16 md:py-24 bg-ink-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <header class="max-w-3xl">
+          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Areas We Cover</h2>
+          <p class="mt-3 text-ink-700">Based in London—covering all boroughs and nearby counties.</p>
+        </header>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Central London</span>
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">North London</span>
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">East London</span>
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">South London</span>
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">West London</span>
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Herts</span>
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Essex</span>
+          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Surrey</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <header class="max-w-3xl">
+          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">What Clients Say</h2>
+          <p class="mt-3 text-ink-700">Real feedback from our customers.</p>
+        </header>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <figure class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div aria-hidden="true">⭐⭐⭐⭐⭐</div>
+            <blockquote class="mt-2 text-ink-700">“Flawless finish throughout. On time, tidy, and professional.”</blockquote>
+            <figcaption class="mt-3 text-sm text-ink-600">— Sarah, N1</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div aria-hidden="true">⭐⭐⭐⭐⭐</div>
+            <blockquote class="mt-2 text-ink-700">“Great communication and superb attention to detail.”</blockquote>
+            <figcaption class="mt-3 text-sm text-ink-600">— James, W9</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
+            <div aria-hidden="true">⭐⭐⭐⭐⭐</div>
+            <blockquote class="mt-2 text-ink-700">“Would recommend without hesitation. Excellent value.”</blockquote>
+            <figcaption class="mt-3 text-sm text-ink-600">— Aisha, SE1</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-16 bg-ink-50">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="font-display text-3xl font-extrabold">Get a Free Quote</h2>
-        <p class="mt-2">Call us on <a href="tel:07739960753">07739960753</a> or email <a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a></p>
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-b from-ink-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Request a Free Quote</h2>
+          <p class="mt-3 text-ink-700">Tell us about your project and we’ll get back to you promptly.</p>
+          <ul class="mt-6 space-y-2 text-ink-700">
+            <li>📞 <a class="link-underline" href="tel:07739960753">07739960753</a></li>
+            <li>✉️ <a class="link-underline" href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a></li>
+            <li>📍 London & surrounding areas</li>
+          </ul>
+        </div>
+        <form class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft grid gap-4" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="grid md:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-sm font-medium text-ink-700">Full name</label>
+              <input class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400" name="name" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-ink-700">Email</label>
+              <input type="email" class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400" name="email" required />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-ink-700">Phone</label>
+            <input class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400" name="phone" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-ink-700">Project details</label>
+            <textarea rows="4" class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400" name="message" placeholder="Rooms, surfaces, timelines…"></textarea>
+          </div>
+          <button class="mt-2 px-5 py-3 rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-soft font-semibold">Send Request</button>
+          <p class="text-xs text-ink-500">By submitting, you agree we may contact you about your enquiry.</p>
+        </form>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-ink-900 text-white py-6">
-      <div class="max-w-7xl mx-auto px-4 text-center text-sm">© 2025 Solid Finish Solutions. All rights reserved.</div>
+    <footer class="border-t border-ink-100">
+      <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-8 text-sm">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-brand-600 grid place-items-center text-white font-display font-bold">SFS</div>
+            <span class="font-semibold">Solid Finish Solutions</span>
+          </div>
+          <p class="mt-3 text-ink-600">Professional painters & decorators across London.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Services</h4>
+          <ul class="mt-2 space-y-1 text-ink-600">
+            <li>Interior Painting</li>
+            <li>Exterior Painting</li>
+            <li>Wallpaper Hanging</li>
+            <li>Commercial</li>
+            <li>Domestic</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Company</h4>
+          <ul class="mt-2 space-y-1 text-ink-600">
+            <li><a href="#work">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#areas">Areas</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Contact</h4>
+          <ul class="mt-2 space-y-1 text-ink-600">
+            <li>Phone: <a href="tel:07739960753" class="link-underline">07739960753</a></li>
+            <li>Email: <a href="mailto:solidfinishsolutions@gmail.co.uk" class="link-underline">solidfinishsolutions@gmail.co.uk</a></li>
+            <li>London, United Kingdom</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-ink-100 py-4 text-xs text-ink-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
+          <p>© <span id="year"></span> Solid Finish Solutions. All rights reserved.</p>
+          <p>Website template by Veronica — built with Tailwind CSS.</p>
+        </div>
+      </div>
     </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
-
