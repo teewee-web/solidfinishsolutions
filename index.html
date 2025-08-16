@@ -1,119 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Solid Finish Solutions | Painters & Decorators in London</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Professional painters and decorators in London and surrounding areas. Interior & exterior, repairs, skimming, and commercial work.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid Finish Solutions – Painters & Decorators</title>
+    <link rel="stylesheet" href="copy_site_style.css">
 </head>
 <body>
-  <!-- Top contact strip -->
-  <div class="topbar">
-    <div class="wrap topbar-inner">
-      <div class="topbar-left">
-        <span>London & Surrounding Areas</span>
-      </div>
-      <div class="topbar-right">
-        <span class="rating">★★★★★ Rated</span>
-        <a href="tel:07739960753" class="link">07739 960 753</a>
-        <span class="sep">•</span>
-        <a href="mailto:solidfinishsolutions@gmail.co.uk" class="link">solidfinishsolutions@gmail.co.uk</a>
-      </div>
+    <!-- Top bar with contact details and rating tagline -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <span class="phone">020 7372 4092</span> ·
+            <span class="mobile">07739 960 753</span> ·
+            <span class="email">solidfinishsolutions@gmail.co.uk</span>
+        </div>
+        <div class="rating-tagline">
+            <!-- simple star icons represented with Unicode characters -->
+            <span class="stars">★★★★★</span>
+            <span class="tagline">We boast excellent scores and reviews</span>
+        </div>
+        <a href="#contact" class="cta-button">Request a quote!</a>
     </div>
-  </div>
 
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="wrap nav">
-      <a href="index.html" class="brand">
-        <img src="images/logo_crown_color.png" alt="Solid Finish Solutions logo" class="logo">
-        <span>Solid Finish Solutions</span>
-      </a>
-      <nav class="main-nav">
-        <a class="active" href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="#services">Services</a>
-        <a href="mailto:solidfinishsolutions@gmail.co.uk" class="btn btn-small">Get a Quote</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Main header with logo and navigation -->
+    <header class="site-header">
+        <div class="logo-title">
+            <img src="images/logo_crown_color.png" alt="Solid Finish Solutions logo" class="logo">
+            <h1>Solid Finish Solutions</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="social-icons">
+            <!-- Replace # with actual social links if available -->
+            <a href="#" aria-label="Facebook" class="social fb"></a>
+            <a href="#" aria-label="Twitter" class="social tw"></a>
+            <a href="#" aria-label="Instagram" class="social ig"></a>
+            <a href="#" aria-label="LinkedIn" class="social li"></a>
+        </div>
+    </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content wrap">
-      <h1>Expert Painting &amp; Decorating</h1>
-      <p>High‑quality finishes for homes, schools, and businesses across London.</p>
-      <div class="cta-row">
-        <a href="mailto:solidfinishsolutions@gmail.co.uk" class="btn">Free Quote</a>
-        <a href="gallery.html" class="btn btn-ghost">See Our Work</a>
-      </div>
-    </div>
-  </section>
+    <!-- Hero section with background image and overlay text -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="rating-badge">
+                Top‑Rated Company ★★★★★
+            </div>
+            <h2>Professional Painting & Decorating Services in London</h2>
+            <p>Transforming spaces with precision and style.</p>
+        </div>
+    </section>
 
-  <!-- Trust Bar -->
-  <section class="trust">
-    <div class="wrap trust-grid">
-      <div class="trust-item">Dust‑free prep</div>
-      <div class="trust-item">Premium paints</div>
-      <div class="trust-item">On‑time & tidy</div>
-      <div class="trust-item">Fully insured</div>
-    </div>
-  </section>
+    <!-- Services section with feature cards -->
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon interior"></div>
+                <h3>Interior Painting</h3>
+                <p>Refresh your rooms with meticulous surface preparation, premium paints and flawless finishes.</p>
+            </div>
+            <div class="card">
+                <div class="icon exterior"></div>
+                <h3>Exterior Painting</h3>
+                <p>Protect and beautify your property’s exterior with weather‑resistant coatings and professional workmanship.</p>
+            </div>
+            <div class="card">
+                <div class="icon specialist"></div>
+                <h3>Specialist Finishes</h3>
+                <p>From wallpapering to decorative plaster and faux finishes – bring your vision to life with custom details.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Services -->
-  <section id="services" class="section">
-    <div class="wrap">
-      <h2 class="section-title">Services</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Interior & Exterior</h3>
-          <p>Walls, ceilings, woodwork and masonry with durable, wipeable finishes.</p>
-        </article>
-        <article class="card">
-          <h3>Repairs & Skimming</h3>
-          <p>Fill, skim and straighten surfaces for a glass‑smooth, long‑lasting result.</p>
-        </article>
-        <article class="card">
-          <h3>Commercial & Schools</h3>
-          <p>Out‑of‑hours, safe systems of work, and fast turnarounds with no fuss.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+    <!-- About section with company overview -->
+    <section id="about" class="about-section">
+        <h2>About Solid Finish Solutions</h2>
+        <p>As one of London’s premier painting and decorating companies, we pride ourselves on high quality workmanship and attentive customer service. Whether you’re refreshing a single room or updating an entire property, our team brings expertise, reliability and a meticulous eye for detail.</p>
+        <p>Our outstanding reviews on independent platforms demonstrate our commitment to client satisfaction and beautiful, long‑lasting results. We handle residential and commercial projects throughout London and the surrounding areas.</p>
+    </section>
 
-  <!-- About / CTA -->
-  <section class="section alt">
-    <div class="wrap two-col">
-      <div>
-        <h2 class="section-title">Solid, Clean, On‑Spec.</h2>
-        <p>We prepare meticulously, use premium materials, and leave every space spotless.
-        From single rooms to full refurbishments, we deliver a consistent, solid finish.</p>
-      </div>
-      <div class="cta-box">
-        <h3>Get Your Free Quote</h3>
-        <p>Send photos or a brief and we’ll reply quickly with options and timescales.</p>
-        <a href="mailto:solidfinishsolutions@gmail.co.uk" class="btn btn-block">Email Us</a>
-        <a href="tel:07739960753" class="btn btn-ghost btn-block">Call 07739 960 753</a>
-      </div>
-    </div>
-  </section>
+    <!-- Contact section with call to action -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Ready to discuss your project? Get in touch today for a free consultation and quote.</p>
+        <ul>
+            <li>Email: <a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a></li>
+            <li>Phone: <a href="tel:+447739960753">07739 960 753</a></li>
+            <li>Address: London & surrounding areas</li>
+        </ul>
+        <a href="mailto:solidfinishsolutions@gmail.co.uk" class="cta-button">Request a quote!</a>
+    </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div>
-        <strong>Solid Finish Solutions</strong><br>London, United Kingdom
-      </div>
-      <div class="footer-contact">
-        <a href="tel:07739960753">07739 960 753</a>
-        <a href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
-      </div>
-    </div>
-    <div class="copyright">© 2025 Solid Finish Solutions</div>
-  </footer>
+    <footer class="site-footer">
+        <p>&copy; 2025 Solid Finish Solutions. All rights reserved.</p>
+    </footer>
 </body>
 </html>
