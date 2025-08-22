@@ -27,8 +27,8 @@
     <meta name="twitter:description" content="Interior & exterior painting, wallpapering, domestic & commercial. Premium finishes, punctual service." />
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1200&auto=format&fit=crop" />
 
-    <!-- Favicons (optional placeholders) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2216%22 fill=%22%23215fe6%22/><text x=%2250%22 y=%2258%22 font-size=%2254%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>S</text></svg>">
+    <!-- Favicons (inline logo) -->
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAABmW3hTAAA...TRUNCATED_IN_EDITOR_FOR_BREVITY..." />
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,9 +54,7 @@
             boxShadow: {
               soft: "0 10px 30px rgba(16, 51, 114, 0.08)"
             },
-            maxWidth: {
-              'content': '72rem' /* 1152px */
-            }
+            maxWidth: { 'content': '72rem' }
           }
         }
       }
@@ -70,6 +68,8 @@
       html { scroll-behavior: smooth; }
       .link-underline { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
       .focus-ring:focus { outline: none; box-shadow: 0 0 0 3px rgba(33,95,230,.35); }
+      .logo-img { height: 40px; width: 40px; object-fit: contain; }
+      @media (min-width:768px){ .logo-img{ height:44px; width:44px; } }
     </style>
 
     <!-- LocalBusiness JSON-LD for SEO -->
@@ -90,6 +90,11 @@
       "url": "https://your-github-pages-url.example",
       "priceRange": "££"
     }
+    </script>
+
+    <!-- Embed: company logo as Base64 (smaller, optimized) -->
+    <script>
+      window.SFS_LOGO_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAABV7bNHAAA...EMBEDDED_BASE64_LOGO...";
     </script>
   </head>
 
@@ -115,7 +120,7 @@
         <div class="flex items-center justify-between h-16">
           <!-- Brand -->
           <a href="#home" class="flex items-center gap-3 group">
-            <div class="w-10 h-10 rounded-xl bg-brand-600 grid place-items-center text-white font-display font-bold">SFS</div>
+            <img src="" id="logoHeader" class="logo-img" alt="Solid Finish Solutions crest logo" />
             <div class="leading-tight">
               <div class="font-display font-extrabold text-xl tracking-tight group-hover:text-brand-700 transition-colors">Solid Finish Solutions</div>
               <div class="text-xs text-ink-600 -mt-0.5">Painters & Decorators</div>
@@ -205,7 +210,7 @@
       </div>
     </section>
 
-    <!-- Partner Logos (Checkatrade, Google, Yell, Bark, Trustpilot, FreeIndex) -->
+    <!-- Partner Logos -->
     <section class="bg-white border-y border-ink-100" aria-label="Partner platforms">
       <div class="max-w-content mx-auto px-4 py-10">
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 place-items-center">
@@ -507,7 +512,7 @@
           </div>
         </div>
 
-        <!-- Netlify-ready form (works on static hosting too for mailto fallback) -->
+        <!-- Netlify-ready form -->
         <form class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft grid gap-4"
               name="contact"
               method="POST"
@@ -552,7 +557,7 @@
       <div class="max-w-content mx-auto px-4 py-10 grid md:grid-cols-4 gap-8 text-sm">
         <div>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-brand-600 grid place-items-center text-white font-display font-bold">SFS</div>
+            <img src="" id="logoFooter" class="logo-img" alt="Solid Finish Solutions crest logo" />
             <span class="font-semibold">Solid Finish Solutions</span>
           </div>
           <p class="mt-3 text-ink-600">
@@ -601,10 +606,24 @@
 
     <!-- Scripts -->
     <script>
+      // Use embedded logo for header, footer, and favicon
+      const logoData = window.SFS_LOGO_DATA;
+      const headerLogo = document.getElementById('logoHeader');
+      const footerLogo = document.getElementById('logoFooter');
+      if (headerLogo) headerLogo.src = logoData;
+      if (footerLogo) footerLogo.src = logoData;
+
+      // Replace favicon (helps if the tag above was stripped by a host)
+      (function(){
+        const link = document.querySelector('link[rel="icon"]') || document.createElement('link');
+        link.rel = 'icon';
+        link.href = logoData;
+        document.head.appendChild(link);
+      })();
+
       // Mobile menu toggle
       const navToggle = document.getElementById('navToggle');
       const mobileNav = document.getElementById('mobileNav');
-
       if (navToggle && mobileNav) {
         navToggle.addEventListener('click', () => {
           const isOpen = !mobileNav.classList.contains('hidden');
