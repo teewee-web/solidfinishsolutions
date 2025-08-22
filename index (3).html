@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- =========================================================
+         Solid Finish Solutions — Single-file static site
+         ========================================================= -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Solid Finish Solutions | Painters & Decorators in London</title>
+
+    <!-- Primary Meta -->
+    <meta name="description" content="Professional painters & decorators in London. Interior & exterior painting, wallpapering, domestic & commercial. Get a free quote today." />
+    <meta name="theme-color" content="#215fe6" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Solid Finish Solutions | Painters & Decorators in London" />
+    <meta property="og:description" content="Interior & exterior painting, wallpapering, domestic & commercial. Premium finishes, punctual service." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/logo.png" />
+    <meta property="og:image:alt" content="Solid Finish Solutions crest logo" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Solid Finish Solutions | Painters & Decorators in London" />
+    <meta name="twitter:description" content="Interior & exterior painting, wallpapering, domestic & commercial. Premium finishes, punctual service." />
+    <meta name="twitter:image" content="assets/logo.png" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter","system-ui","-apple-system","Segoe UI","Roboto","Ubuntu","Cantarell","Noto Sans","Helvetica Neue","Arial","sans-serif"],
+              display: ["Outfit","Inter","system-ui","sans-serif"],
+            },
+            colors: {
+              brand: {
+                50:"#eef5ff",100:"#d9e9ff",200:"#b6d3ff",300:"#89b7ff",400:"#5b98ff",
+                500:"#397dff",600:"#215fe6",700:"#1748b4",800:"#133e8f",900:"#103372"
+              },
+              ink: {
+                50:"#f7f7f8",100:"#efeff1",200:"#e2e3e7",300:"#cfd2d9",400:"#a8adb7",
+                500:"#787f8a",600:"#585e69",700:"#40454f",800:"#2f333b",900:"#1f2229"
+              }
+            },
+            boxShadow: {
+              soft: "0 10px 30px rgba(16, 51, 114, 0.08)"
+            },
+            maxWidth: { 'content': '72rem' }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Base styles -->
+    <style>
+      html { scroll-behavior: smooth; }
+      .link-underline { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+      .focus-ring:focus { outline: none; box-shadow: 0 0 0 3px rgba(33,95,230,.35); }
+      .logo-img { height: 44px; width: auto; object-fit: contain; }
+    </style>
+  </head>
+
+  <body class="font-sans text-ink-800 bg-white text-[17px] md:text-[18px] leading-relaxed">
+    <!-- Top Contact Bar -->
+    <div class="bg-ink-900 text-white text-sm">
+      <div class="max-w-content mx-auto flex items-center justify-between px-4 py-2">
+        <div class="flex items-center gap-4">
+          <span class="hidden sm:inline">Serving London & Surrounding Areas</span>
+          <a class="link-underline decoration-brand-400" href="tel:07739960753">07739960753</a>
+          <a class="link-underline decoration-brand-400" href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3 opacity-90">
+          <span aria-hidden="true">⭐️⭐️⭐️⭐️⭐️</span>
+          <span>Top-rated local decorators</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-soft">
+      <div class="max-w-content mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- Brand -->
+          <a href="#home" class="flex items-center gap-3 group">
+            <img src="assets/logo.png" class="logo-img" alt="Solid Finish Solutions crest logo" />
+            <div class="leading-tight">
+              <div class="font-display font-extrabold text-xl tracking-tight group-hover:text-brand-700 transition-colors">Solid Finish Solutions</div>
+              <div class="text-xs text-ink-600 -mt-0.5">Painters & Decorators</div>
+            </div>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-8 text-[15px]">
+            <a href="#services" class="hover:text-brand-700">Services</a>
+            <a href="#work" class="hover:text-brand-700">Recent Work</a>
+            <a href="#why" class="hover:text-brand-700">Why Us</a>
+            <a href="#process" class="hover:text-brand-700">Process</a>
+            <a href="#areas" class="hover:text-brand-700">Areas</a>
+            <a href="#reviews" class="hover:text-brand-700">Reviews</a>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-soft focus-ring">Get a Quote</a>
+          </nav>
+
+          <!-- Mobile Toggle -->
+          <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-ink-200 focus-ring" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobileNav" class="hidden md:hidden border-t border-ink-100 pb-4">
+          <div class="grid gap-2 pt-2 text-sm">
+            <a href="#services" class="px-1 py-2">Services</a>
+            <a href="#work" class="px-1 py-2">Recent Work</a>
+            <a href="#why" class="px-1 py-2">Why Us</a>
+            <a href="#process" class="px-1 py-2">Process</a>
+            <a href="#areas" class="px-1 py-2">Areas</a>
+            <a href="#reviews" class="px-1 py-2">Reviews</a>
+            <a href="#contact" class="px-1 py-2 rounded-lg bg-brand-600 text-white w-max">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="relative">
+      <div class="absolute inset-0 -z-10">
+        <img
+          referrerpolicy="no-referrer"
+          src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1920&auto=format&fit=crop"
+          alt="Professional decorator painting an interior wall"
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-ink-900/70 via-ink-900/50 to-white/0"></div>
+      </div>
+
+      <div class="max-w-content mx-auto px-4 py-24 md:py-32 lg:py-[140px]">
+        <div class="max-w-4xl text-white">
+          <h1 class="font-display font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight">
+            Painters & Decorators in London
+          </h1>
+
+          <p class="mt-5 text-lg md:text-xl text-white/90 max-w-2xl">
+            Interior & exterior painting, wallpaper hanging, domestic and commercial. Premium finishes, punctual service.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="px-5 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-white font-semibold shadow-soft focus-ring">
+              Request a Free Quote
+            </a>
+            <a href="tel:07739960753" class="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-semibold focus-ring">
+              Call 07739960753
+            </a>
+          </div>
+
+          <dl class="mt-8 grid grid-cols-3 gap-6 text-white/85 text-base max-w-xl">
+            <div class="flex items-center gap-2"><dd><span class="font-bold">20+ years</span> experience</dd></div>
+            <div class="flex items-center gap-2"><dd><span class="font-bold">Fully insured</span></dd></div>
+            <div class="flex items-center gap-2"><dd><span class="font-bold">London-wide</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-ink-100">
+      <div class="max-w-content mx-auto px-4 py-10 grid md:grid-cols-4 gap-8 text-sm">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="assets/logo.png" class="logo-img" alt="Solid Finish Solutions crest logo" />
+            <span class="font-semibold">Solid Finish Solutions</span>
+          </div>
+          <p class="mt-3 text-ink-600">
+            Professional painters & decorators across London.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">Services</h4>
+          <ul class="mt-2 space-y-1 text-ink-600">
+            <li>Interior Painting</li>
+            <li>Exterior Painting</li>
+            <li>Wallpaper Hanging</li>
+            <li>Commercial</li>
+            <li>Domestic</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">Company</h4>
+          <ul class="mt-2 space-y-1 text-ink-600">
+            <li><a href="#work">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#areas">Areas</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">Contact</h4>
+          <ul class="mt-2 space-y-1 text-ink-600">
+            <li>Phone: <a href="tel:07739960753" class="link-underline decoration-brand-400">07739960753</a></li>
+            <li>Email: <a href="mailto:solidfinishsolutions@gmail.co.uk" class="link-underline decoration-brand-400">solidfinishsolutions@gmail.co.uk</a></li>
+            <li>London, United Kingdom</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-ink-100 py-4 text-xs text-ink-500">
+        <div class="max-w-content mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
+          <p>© <span id="year"></span> Solid Finish Solutions. All rights reserved.</p>
+          <p>Website template by Veronica — built with Tailwind CSS.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Mobile menu toggle
+      const navToggle = document.getElementById('navToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      if (navToggle && mobileNav) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = !mobileNav.classList.contains('hidden');
+          mobileNav.classList.toggle('hidden');
+          navToggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+      }
+
+      // Dynamic copyright year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
