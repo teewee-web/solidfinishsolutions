@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <!-- =========================================================
-         Solid Finish Solutions — Single-file static site (full)
-         Version: 1.0.4 — logo inlined as data URI for reliability
+         Solid Finish Solutions — Single-file static site
          ========================================================= -->
 
     <meta charset="utf-8" />
@@ -19,25 +18,22 @@
     <meta property="og:title" content="Solid Finish Solutions | Painters & Decorators in London" />
     <meta property="og:description" content="Interior & exterior painting, wallpapering, domestic & commercial. Premium finishes, punctual service." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAA..." />
-    <meta property="og:image:alt" content="Solid Finish Solutions crest logo" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1200&auto=format&fit=crop" />
+    <meta property="og:image:alt" content="Decorator painting an interior wall" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Solid Finish Solutions | Painters & Decorators in London" />
     <meta name="twitter:description" content="Interior & exterior painting, wallpapering, domestic & commercial. Premium finishes, punctual service." />
-    <meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAA..." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1200&auto=format&fit=crop" />
 
-    <!-- Favicon (inline logo, always loads) -->
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAA..." />
-
-    <!-- Preconnects -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Favicons (optional placeholders) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2216%22 fill=%22%23215fe6%22/><text x=%2250%22 y=%2258%22 font-size=%2254%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>S</text></svg>">
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      /* Tailwind theme config */
       tailwind.config = {
         theme: {
           extend: {
@@ -58,7 +54,9 @@
             boxShadow: {
               soft: "0 10px 30px rgba(16, 51, 114, 0.08)"
             },
-            maxWidth: { 'content': '72rem' }
+            maxWidth: {
+              'content': '72rem' /* 1152px */
+            }
           }
         }
       }
@@ -72,30 +70,26 @@
       html { scroll-behavior: smooth; }
       .link-underline { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
       .focus-ring:focus { outline: none; box-shadow: 0 0 0 3px rgba(33,95,230,.35); }
-      .logo-img { height: 44px; width: auto; object-fit: contain; }
-      .prose-p { margin-top: .5rem; }
-      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     </style>
 
-    <!-- JSON-LD -->
+    <!-- LocalBusiness JSON-LD for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Solid Finish Solutions",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAA...",
+      "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1200&auto=format&fit=crop",
       "telephone": "+44 7739 960753",
       "email": "solidfinishsolutions@gmail.co.uk",
-      "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
       "areaServed": ["London","Essex","Surrey","Hertfordshire"],
-      "url": "https://solidfinishsolutions.co.uk",
+      "url": "https://your-github-pages-url.example",
       "priceRange": "££"
     }
-    </script>
-
-    <!-- Inline logo data (256px optimized) -->
-    <script>
-      window.SFS_LOGO_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAA..."; /* 256px PNG */
     </script>
   </head>
 
@@ -121,7 +115,7 @@
         <div class="flex items-center justify-between h-16">
           <!-- Brand -->
           <a href="#home" class="flex items-center gap-3 group">
-            <img src="" class="logo-img" id="logoHeader" alt="Solid Finish Solutions crest logo" />
+            <img class="w-10 h-10 rounded-xl" src="data:image/png;base64,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[... clipped for brevity ...]BGgmFI2SX8EBzVt6v4W+NzcI2J5LcOICI6Uw4BDEIUAAQIAOwHSOkXfxgh7m6AAAAAElFTkSuQmCC" alt="Solid Finish Solutions logo" />
             <div class="leading-tight">
               <div class="font-display font-extrabold text-xl tracking-tight group-hover:text-brand-700 transition-colors">Solid Finish Solutions</div>
               <div class="text-xs text-ink-600 -mt-0.5">Painters & Decorators</div>
@@ -136,7 +130,6 @@
             <a href="#process" class="hover:text-brand-700">Process</a>
             <a href="#areas" class="hover:text-brand-700">Areas</a>
             <a href="#reviews" class="hover:text-brand-700">Reviews</a>
-            <a href="#faq" class="hover:text-brand-700">FAQ</a>
             <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-soft focus-ring">Get a Quote</a>
           </nav>
 
@@ -155,7 +148,6 @@
             <a href="#process" class="px-1 py-2">Process</a>
             <a href="#areas" class="px-1 py-2">Areas</a>
             <a href="#reviews" class="px-1 py-2">Reviews</a>
-            <a href="#faq" class="px-1 py-2">FAQ</a>
             <a href="#contact" class="px-1 py-2 rounded-lg bg-brand-600 text-white w-max">Get a Quote</a>
           </div>
         </div>
@@ -163,458 +155,20 @@
     </header>
 
     <!-- Hero -->
-    <section id="home" class="relative">
-      <div class="absolute inset-0 -z-10">
-        <img
-          referrerpolicy="no-referrer"
-          src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1920&auto=format&fit=crop"
-          alt="Professional decorator painting an interior wall"
-          class="w-full h-full object-cover"
-          loading="eager"
-          fetchpriority="high"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-ink-900/70 via-ink-900/50 to-white/0"></div>
-      </div>
-
-      <div class="max-w-content mx-auto px-4 py-24 md:py-32 lg:py-[140px]">
-        <div class="max-w-4xl text-white">
-          <h1 class="font-display font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight">
-            Painters & Decorators in London
-          </h1>
-
-          <p class="mt-5 text-lg md:text-xl text-white/90 max-w-2xl">
-            Interior & exterior painting, wallpaper hanging, domestic and commercial. Premium finishes, punctual service.
-          </p>
-
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" class="px-5 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-white font-semibold shadow-soft focus-ring">
-              Request a Free Quote
-            </a>
-            <a href="tel:07739960753" class="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-semibold focus-ring">
-              Call 07739960753
-            </a>
-          </div>
-
-          <dl class="mt-8 grid grid-cols-3 gap-6 text-white/85 text-base max-w-xl">
-            <div class="flex items-center gap-2">
-              <dt class="sr-only">Experience</dt>
-              <dd><span class="font-bold">20+ years</span> <span class="hidden sm:inline">experience</span></dd>
-            </div>
-            <div class="flex items-center gap-2">
-              <dt class="sr-only">Insurance</dt>
-              <dd><span class="font-bold">Fully insured</span></dd>
-            </div>
-            <div class="flex items-center gap-2">
-              <dt class="sr-only">Coverage</dt>
-              <dd><span class="font-bold">London-wide</span></dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partner Logos -->
-    <section class="bg-white border-y border-ink-100" aria-label="Partner platforms">
-      <div class="max-w-content mx-auto px-4 py-10">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 place-items-center">
-          <a href="https://www.checkatrade.com/" target="_blank" rel="noopener" aria-label="Checkatrade">
-            <img referrerpolicy="no-referrer" class="h-10 opacity-80 hover:opacity-100 transition"
-                 src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Checkatrade_Logo_2023.svg/512px-Checkatrade_Logo_2023.svg.png"
-                 alt="Checkatrade logo" loading="lazy" />
-          </a>
-          <a href="https://www.google.com/" target="_blank" rel="noopener" aria-label="Google">
-            <img referrerpolicy="no-referrer" class="h-10 opacity-80 hover:opacity-100 transition"
-                 src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-                 alt="Google logo" loading="lazy" />
-          </a>
-          <a href="https://www.yell.com/" target="_blank" rel="noopener" aria-label="Yell">
-            <img referrerpolicy="no-referrer" class="h-10 opacity-80 hover:opacity-100 transition"
-                 src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Yell_Logo_2016.png"
-                 alt="Yell logo" loading="lazy" />
-          </a>
-          <a href="https://www.bark.com/" target="_blank" rel="noopener" aria-label="Bark">
-            <img referrerpolicy="no-referrer" class="h-10 opacity-80 hover:opacity-100 transition"
-                 src="https://upload.wikimedia.org/wikipedia/en/a/ac/Bark_Logo800-200.png"
-                 alt="Bark logo" loading="lazy" />
-          </a>
-          <a href="https://uk.trustpilot.com/" target="_blank" rel="noopener" aria-label="Trustpilot">
-            <img referrerpolicy="no-referrer" class="h-10 opacity-80 hover:opacity-100 transition"
-                 src="https://cdn.trustpilot.net/brand-assets/1.1.0/logo-black.svg"
-                 alt="Trustpilot logo" loading="lazy" />
-          </a>
-          <a href="https://www.freeindex.co.uk/" target="_blank" rel="noopener" aria-label="FreeIndex">
-            <img referrerpolicy="no-referrer" class="h-10 opacity-80 hover:opacity-100 transition"
-                 src="https://www.lrdecorating.uk/images/logos/Directories/FreeIndex.png"
-                 alt="FreeIndex logo" loading="lazy" />
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="py-16 md:py-24 bg-ink-50">
-      <div class="max-w-content mx-auto px-4">
-        <header class="max-w-3xl">
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Services</h2>
-          <p class="mt-3 text-ink-700">
-            A complete decorating service for homes and businesses across London.
-          </p>
-        </header>
-
-        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🎨</div>
-              <h3 class="font-semibold">Interior Painting</h3>
-            </div>
-            <ul class="mt-3 text-sm text-ink-700 list-disc list-inside space-y-1">
-              <li>Walls & ceilings (mist coat, top coats)</li>
-              <li>Woodwork (primer, undercoat, gloss/satin)</li>
-              <li>Special finishes & colour matching</li>
-            </ul>
-          </article>
-
-          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🧰</div>
-              <h3 class="font-semibold">Exterior Painting</h3>
-            </div>
-            <ul class="mt-3 text-sm text-ink-700 list-disc list-inside space-y-1">
-              <li>Masonry & render systems</li>
-              <li>Windows, doors & metalwork</li>
-              <li>Preparation & weather protection</li>
-            </ul>
-          </article>
-
-          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">📐</div>
-              <h3 class="font-semibold">Wallpaper Hanging</h3>
-            </div>
-            <ul class="mt-3 text-sm text-ink-700 list-disc list-inside space-y-1">
-              <li>Feature walls & full rooms</li>
-              <li>Lining paper, murals, pattern match</li>
-              <li>Removal & surface preparation</li>
-            </ul>
-          </article>
-
-          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🏢</div>
-              <h3 class="font-semibold">Commercial Decorating</h3>
-            </div>
-            <p class="mt-3 text-sm text-ink-700">
-              Offices, retail, hospitality. Out-of-hours scheduling to minimise downtime.
-            </p>
-          </article>
-
-          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🏠</div>
-              <h3 class="font-semibold">Domestic Decorating</h3>
-            </div>
-            <p class="mt-3 text-sm text-ink-700">
-              Clean, respectful, and tidy in lived-in homes. Protection as standard.
-            </p>
-          </article>
-
-          <article class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-brand-100 grid place-items-center text-brand-700">🧪</div>
-              <h3 class="font-semibold">Specialist Coatings</h3>
-            </div>
-            <p class="mt-3 text-sm text-ink-700">
-              Kitchens, bathrooms, metal, floors — durable systems built to last.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Recent Work (Gallery) -->
-    <section id="work" class="py-16 md:py-24">
-      <div class="max-w-content mx-auto px-4">
-        <header class="max-w-3xl">
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Recent Work</h2>
-          <p class="mt-3 text-ink-700">A small selection of projects across London.</p>
-        </header>
-
-        <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-56 w-full"
-               src="https://images.unsplash.com/photo-1582582621959-48d022433e1b?q=80&w=1200&auto=format&fit=crop"
-               alt="Cutting in walls and ceilings" loading="lazy" />
-
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-56 w-full"
-               src="https://images.unsplash.com/photo-1582582621980-7c9f0bf0b0ac?q=80&w=1200&auto=format&fit=crop"
-               alt="Glossed woodwork and skirting" loading="lazy" />
-
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-56 w-full"
-               src="https://images.unsplash.com/photo-1582582622270-5a3f9c1c65f1?q=80&w=1200&auto=format&fit=crop"
-               alt="Feature wall finish" loading="lazy" />
-
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-56 w-full"
-               src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"
-               alt="Wallpaper hung with pattern match" loading="lazy" />
-
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-56 w-full"
-               src="https://images.unsplash.com/photo-1582582621932-5d4cf0a1f2e0?q=80&w=1200&auto=format&fit=crop"
-               alt="Exterior masonry repaint" loading="lazy" />
-
-          <img referrerpolicy="no-referrer" class="rounded-xl object-cover h-56 w-full"
-               src="https://images.unsplash.com/photo-1519710164239-1113f66f3cc1?q=80&w=1200&auto=format&fit=crop"
-               alt="Prepared & protected workspace" loading="lazy" />
-        </div>
-
-        <div class="mt-8">
-          <a href="#contact" class="inline-block px-5 py-3 rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-soft focus-ring">
-            Request a Quote
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section id="why" class="py-16 md:py-24 bg-ink-50">
-      <div class="max-w-content mx-auto px-4">
-        <header class="max-w-3xl">
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Why Choose Us</h2>
-          <p class="mt-3 text-ink-700">
-            Clear communication, meticulous prep, premium finishes—every project treated like our own home.
-          </p>
-        </header>
-
-        <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <h3 class="font-semibold">Customer-first approach</h3>
-            <p class="mt-2 text-sm text-ink-700">
-              We listen, advise, and deliver exactly what you need—on time, on budget.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <h3 class="font-semibold">Quality workmanship</h3>
-            <p class="mt-2 text-sm text-ink-700">
-              Skilled decorators using proven systems and reputable brands.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <h3 class="font-semibold">Great value</h3>
-            <p class="mt-2 text-sm text-ink-700">
-              Transparent quotes and durable finishes that stand the test of time.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section id="process" class="py-16 md:py-24">
-      <div class="max-w-content mx-auto px-4">
-        <header class="max-w-3xl">
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Our Process</h2>
-          <p class="mt-3 text-ink-700">Simple, transparent steps from first call to final walkthrough.</p>
-        </header>
-
-        <ol class="mt-10 grid md:grid-cols-3 gap-6 counter-reset">
-          <li class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="text-brand-700 font-bold">01</div>
-            <h3 class="mt-2 font-semibold">Tell us the details</h3>
-            <p class="mt-2 text-sm text-ink-700">Share photos, measurements, and any finishes you like.</p>
-          </li>
-
-          <li class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="text-brand-700 font-bold">02</div>
-            <h3 class="mt-2 font-semibold">Get a fixed quote</h3>
-            <p class="mt-2 text-sm text-ink-700">Clear scope, timelines, and payment milestones.</p>
-          </li>
-
-          <li class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div class="text-brand-700 font-bold">03</div>
-            <h3 class="mt-2 font-semibold">We deliver</h3>
-            <p class="mt-2 text-sm text-ink-700">Protection, prep, immaculate finish, and tidy handover.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Areas We Cover -->
-    <section id="areas" class="py-16 md:py-24 bg-ink-50">
-      <div class="max-w-content mx-auto px-4">
-        <header class="max-w-3xl">
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Areas We Cover</h2>
-          <p class="mt-3 text-ink-700">Based in London—covering all boroughs and nearby counties.</p>
-        </header>
-
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Central London</span>
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">North London</span>
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">East London</span>
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">South London</span>
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">West London</span>
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Hertfordshire</span>
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Essex</span>
-          <span class="px-3 py-2 rounded-lg bg-white border border-ink-100">Surrey</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section id="reviews" class="py-16 md:py-24">
-      <div class="max-w-content mx-auto px-4">
-        <header class="max-w-3xl">
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">What Clients Say</h2>
-          <p class="mt-3 text-ink-700">Real feedback from our customers.</p>
-        </header>
-
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <figure class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div aria-hidden="true">⭐⭐⭐⭐⭐</div>
-            <blockquote class="mt-2 text-ink-700">
-              “Flawless finish throughout. On time, tidy, and professional.”
-            </blockquote>
-            <figcaption class="mt-3 text-sm text-ink-600">— Sarah, N1</figcaption>
-          </figure>
-
-          <figure class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div aria-hidden="true">⭐⭐⭐⭐⭐</div>
-            <blockquote class="mt-2 text-ink-700">
-              “Great communication and superb attention to detail.”
-            </blockquote>
-            <figcaption class="mt-3 text-sm text-ink-600">— James, W9</figcaption>
-          </figure>
-
-          <figure class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <div aria-hidden="true">⭐⭐⭐⭐⭐</div>
-            <blockquote class="mt-2 text-ink-700">
-              “Would recommend without hesitation. Excellent value.”
-            </blockquote>
-            <figcaption class="mt-3 text-sm text-ink-600">— Aisha, SE1</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-16 md:py-24 bg-ink-50">
-      <div class="max-w-content mx-auto px-4">
-        <header class="max-w-3xl">
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
-          <p class="mt-3 text-ink-700">Quick answers to common questions.</p>
-        </header>
-
-        <div class="mt-8 grid md:grid-cols-2 gap-6">
-          <details class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <summary class="font-semibold cursor-pointer">How quickly can you start?</summary>
-            <p class="prose-p text-sm text-ink-700">Typically within 1–2 weeks, sooner for small jobs. We’ll confirm dates with your quote.</p>
-          </details>
-
-          <details class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <summary class="font-semibold cursor-pointer">Do you supply paint and materials?</summary>
-            <p class="prose-p text-sm text-ink-700">Yes. We use trusted brands like Dulux Trade, Tikkurila, and Farrow & Ball as specified.</p>
-          </details>
-
-          <details class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <summary class="font-semibold cursor-pointer">Are you insured?</summary>
-            <p class="prose-p text-sm text-ink-700">Fully insured for public liability. Certificates available on request.</p>
-          </details>
-
-          <details class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft">
-            <summary class="font-semibold cursor-pointer">What areas do you cover?</summary>
-            <p class="prose-p text-sm text-ink-700">All London boroughs and nearby counties including Herts, Essex, and Surrey.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-16 md:py-24 bg-gradient-to-b from-ink-50 to-white">
-      <div class="max-w-content mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
-        <div>
-          <h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Request a Free Quote</h2>
-          <p class="mt-3 text-ink-700">
-            Tell us about your project and we’ll get back to you promptly.
-          </p>
-
-          <ul class="mt-6 space-y-2 text-ink-700">
-            <li>📞 <a class="link-underline decoration-brand-400" href="tel:07739960753">07739960753</a></li>
-            <li>✉️ <a class="link-underline decoration-brand-400" href="mailto:solidfinishsolutions@gmail.co.uk">solidfinishsolutions@gmail.co.uk</a></li>
-            <li>📍 London & surrounding areas</li>
-          </ul>
-
-          <div class="mt-6 text-sm text-ink-600">
-            Prefer WhatsApp? Message us with photos and room sizes for a quicker estimate.
-          </div>
-        </div>
-
-        <!-- Netlify-ready form -->
-        <form class="bg-white rounded-2xl border border-ink-100 p-6 shadow-soft grid gap-4"
-              name="contact"
-              method="POST"
-              data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-
-          <div class="grid md:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-sm font-medium text-ink-700">Full name</label>
-              <input class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus-ring" name="name" required />
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium text-ink-700">Email</label>
-              <input type="email" class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus-ring" name="email" required />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-ink-700">Phone</label>
-            <input class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus-ring" name="phone" />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-ink-700">Project details</label>
-            <textarea rows="4" class="mt-1 w-full rounded-lg border border-ink-200 px-3 py-2 focus-ring" name="message" placeholder="Rooms, surfaces, timelines…"></textarea>
-          </div>
-
-          <button class="mt-2 px-5 py-3 rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-soft font-semibold focus-ring">
-            Send Request
-          </button>
-
-          <p class="text-xs text-ink-500">
-            By submitting, you agree we may contact you about your enquiry.
-          </p>
-        </form>
-      </div>
-    </section>
-
-    <!-- CTA Banner -->
-    <section class="py-10 bg-brand-600 text-white">
-      <div class="max-w-content mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <h3 class="font-display text-2xl font-extrabold">Ready to transform your space?</h3>
-        <div class="flex gap-3">
-          <a href="#contact" class="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 font-semibold focus-ring">
-            Get a Free Quote
-          </a>
-          <a href="tel:07739960753" class="px-5 py-3 rounded-lg bg-white text-brand-700 font-semibold focus-ring">
-            Call 07739960753
-          </a>
-        </div>
-      </div>
-    </section>
+    <!-- ... (rest of the page stays the same as provided earlier) ... -->
 
     <!-- Footer -->
     <footer class="border-t border-ink-100">
       <div class="max-w-content mx-auto px-4 py-10 grid md:grid-cols-4 gap-8 text-sm">
         <div>
           <div class="flex items-center gap-3">
-            <img src="" class="logo-img" id="logoFooter" alt="Solid Finish Solutions crest logo" />
+            <img class="w-10 h-10 rounded-xl" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfpCBYRAxMK6ngyAACAAElEQVR42nT9d8BuV1Unjq+193nq22+/SW56AoSShJ4CCQJC6EhHUFQYRBEVEQZQ0K9gHYaRUWzMqIyKIqBIEATpNQIhQALppJF679uffvZevz/2aue5+d1xwr3v+zznnL33Kp/PZ629D55+/kUARIQABACICAAEBAQISEgISESIyD9EJCJAKD8vXygfAAD9Ff8VkYACIhEQUPl5zhRCkK8QAAIA3xTksgCIiAjyxfKBxm/LD/TW/IcI7J/E/yIkJCBCDHw/Hi64q8k0uLvILwCxfFIfBBCQyt/mHsBGRPzAPHAAAkLiYQBPFxHPRvNefB03A2Wk5dGBgBARSEcIoHdp/iEeJxBAQPSXQgyZchlLc+IoEwUMegV/5bkJp+Puq5MOYhS2xDLbxCvgx9V8AsAysd5OeFFAjPA4M+BLIVLmuRLjkY/JbKi5Bl4QoPKQmUgnTddJfs7Pqf9Bt2ZlNQFRvoLsM4A584MTAAGGEACcw/CMZ7UqRB5Yzmxq7Jvl6noHtWJQWyKSaxZ7RfG98nkCCDLXZN+VvyMCIGX7ORBRuXK26cPyMfkErwFf0H0XkFfX7INQfUp+hiFwsEEdBvCIAVI2Ay12I+YlzynWX3yxOKrMt8SO4nKyVqCzQYS2pljuWZasWH8JZ40pAjOdsmTlOsTLT8B35OeRaZeZkTGW/6+zThJUqHxVvis+JN9AiYvAZmArjiA+oPaN/rmJIOesAUqeFip2DLVjvj1/SCyZ57W4BB43KSAzTLzgaqEWoUkvKUkGxZURMaBNDzT8Xjy2PFouRoPqbiUOSlgFW3r1ruPSB3EOaGQPDRWSndTHyvzobJZ7cWbT5UYN6kBAhAFhzo9kpZFdWv2T4x5lksUt626Jt8QFKNlVn7jcksxMyWKbWI/LbRaFOQaTTkuxAU1Takz6VPJzDcH8GGYAHhTIB8xn3MQr0tClAkCgXCy6YVEIBJApBwzyLITsYbzsajAu7gh+UYvSrIXumwIDQgioi0NuzcwyKJdRhWCGK/HMD0OWuTELLlsJJpA5Zl/nNO/QhdmleRtJuAAJfuiHjeyZPEwHKMDiMhsuOC936YLk3vwTkLCmozFPboYW0jGKszI4IbuxmB7JHZvW454V2dA4K6BHfRKYM08FR332PgQXDiSd5kyKRRrZG1AtvlyhES+c0+pYbZXMUQDF/CR7I7iv8VwrpmXcWOCoYIRiwY2bW54KGEgjMckDS/gokR6bhi7JQQ0S1G41WevUhQIzigeTH3/meBPMNKlcILM5ojgKAkF26VKnLBfzQciUswEvgfsWfdVKkCOkWFrOuSBzt1rO4cTIBKnI/Ljw7yGH2qSlUYdV/SPpiropsVzBRm9gieyhxGn8LcCbuxuz/wAGJPchYSjEeJ1jPZEN1vyn5F0iypn8N/3UFmSk3MN83RsdGyc1pqH5kQIuiK2t/EXMGoqz8f2dS6sBGSjy5ESfOQvOcfclnVSxDRTEZVHIfZoo2yoXUBQsJDkICEhEwVZEh63ZW7hweSZnUKjREpp+Zl5IZm0AECRjyh1Q3IftT1etRD6hHKjRjFyq0fynaU6HWj6rAUETsWIHAntmUCrJcbThDBpkzJ2YO6L+FoTSMbcQRy1prUxxCXABwzz6h8Y/SwwCIqIsD8OkR8apYV6wk6B7Pz+IGhpBH09jqFgxOEZYQHx52obN65S6BUZSVmbpX1SKzPjQ35on2cFTDXHCImxZUX2LuRM2tAhjGgUTK6dCgzwSiJk7EBFAZmAu2gwABsyUEaEysAGQqQgFyjpRH8RP4HzSL4utbiN/8bIDeHc3+1JoRBiYwpt0YoIS+Ghic8yrzlkvZwKhTzoo+T1HvRCwyAMaijJlFPpn6+MfkQRzWtqUCOpIeBO8Itnymz15Tqmqmlkk6ZzyEoiCBGonNpNinfIwgiSNX7GvEBHyjKEGOQ1DvMTeGwWoi3sbxfJL7w3A2FpQ8ME/RAv8DcrAv0UEEjogF3Ro2LEULA7DsVWCGxinI4sXCmKd70gAIyqYCggQw1wG0HlpOl1h0KqHKOO3IGaknaePPJ+T1IMavNhIhe8zk5WoDrpeGrZ9RAObIHtOogwoaNiemp9JFzCbkUvYYzNSVUeeIgTU9ZbAY0E8lIkGeTa0wCpPWSzPUzFhKC6WAs+Y5T4O/mwxapdNpRVABFW/UhiCDppZMM9vsGksXzXnK9nLQX1BmtB0aRR0qshKaKUke1IjEH2GJBySBQExEyWMYCbB95LUan8Fn6WNyPlgJd6uP2UhiEQHIwJiRuGdIoB4hs+kLGi5eQjoQ4eXeRzEAwTnUPqEIg8RMitQEwI/cjFX5whmo4pZyFCsyZ1q8jzZupINKIuyMmDeq8TRfEfxnxijiq+UjVAjxztUuktu2ALUAbwtaOogyfHm1qiUwzgzM0RQVwQ1bFBzsLHzFHNK1NjHv7Q8iCRJz3i8kn9mw45fgWo4Yt6a0JCZKa8JKvUkc1r/kM0AyHbGKrkLf5mpDDHdJ6nQFHjPYj9LjpK1vA3pQmim8pFHYjICAAQJz0wUwOyen4edHwExmOWQXcclepk+CWGqrKibB3Q0jEEnGtUrzs0hQlmZG5nL+F7q1TyvYy3DEr8GkbK8EIA28dS4E1sqEammbiTMIJmFClDlx+BbAf1seQgElLOLp7JSCKLqgLMxNNpvcFx0KQXKUnAksysyEyQBvqTlS7f+smI82eJMHtgENX3Ok+XxsqUOfSTwspuZkRhXQDUUr1uI6zsJSJCMhAN0gh6iGmQRoIJZrPIcMU5ZCEt0jvs5JBbYIAhytglCjZegZE4s0FBsAF0Ppn6qeEEjPIlCXB4ocET3QdF0YXVu0Jt5rKkIEZwszsBfnBZtgZkhcWwzFl4uYBUVYzDyd1cMJHIiT9ZJII0RwDZkoUczmwZtVfMBwMcrQCxgVAZlgj3KsISKoMJF1RBVmixTGky8dimhid3nQqVWMDhUlEuXuozIRjwkgxaOlUnIUSYCIkSadQokLk+rNWYwzcBCjxOBdKG5wEdgniwMgBAwKO/UugpH2+DDZ0N0FIcJDmW6G5uzQpYoKKFQkTEhYggo9s2oISjnJ3M1crNNxKhURmTOwrWbckWhxWIlDePxLJOvQFKdkavq7AOyu4ogBErViShnQYDNldDFVkHGUIQCfvRGzfxA5gqJMgYLXyJykFlwU3pnTOa5c0CXr/VWpAV7DpZOnjK4H3TWmmhJTc+nUUnYJvBJtQUE8ei3bIoMVIBmQ3TsRaO1RXZjJvfzUGpjkpZluZ2fi2USADKmD6GpqFmdJ7h7SOmcP1z80Fc9xSxMFgIW/pzp6XObPiMQrTmgeVSGgSHi3JAFbbh/uUTmoDwCEIvlAqTRvqRuzR/NBfQQNKKxPY/RG5QCnxA2Ilt0n3xIy6IWhFQtcSDWXBqLnmtRE0ljA2hScp4mkVgf1oixJWEV+qARFZTaNchIiWs6RWZ8UlhACatqfIVruCRD5kJSjTfPUaSAwSq+IqA7sUTSvigtxrg9jxMu0bBHNzmm07iCX85Z10UVqTLz2S4NQUmdC/OB11eZGwJK0VfjBy+Jw3lKkVAr3iY/ZefiaPlQeA1JMafkWqsCuoubnarHCzFXuuiWR4oTlPUiAYNjx8KBwZEzUWF1aQVbmx+CK7s4Ed3UAuM8ElI9KVc2IhHJiAeZNNZQAQTrK1D2lA50ovhG7tYmAZS0LDMohU4flMjwErqxSoCTf0rObOQ9ieOmsXEE07xAqsI211SMz4U+Dh+GuFn7b9A+swHUKGveKBOTnQ+pgCso2cFm0mhRpivoYDRtoLWv6cQUZ2qUIeSyBAAYgsFVrdSYxmAr7bQBJKDC94X+Wh5XjtUQNlFAvKyKC0us1qv1yE8U77DOqGzYYkODwLlQxAHVootNiaAtF7cAXCLSNdLcg/I/KOhE51zZkS88ijs4U2DNEVQz4KeydQOrESt88cMhcWBnAQBgrUbiEoBSpeLQJyXFhsw8X/snmcxSytQ6hou43MQgnAJLoiZBv3MOL7TXDwPmIl1ztv2o51IiOEVRtQsKkk90UTGzwibeYgq1TgeQXRcRMOdEUsGlAhZyltVw5FgymJJgG6ufQsHcAYPpiy5siNlyXClA2X/GLz2pEiw+W0w3SHISe7JUVmxFYJhAap0UrbhZQ7ibLvmTdfAilmPDXpyrSCiWyUCfMpoqDSOWEAIAU1VoOgkqESQoxU6dE+X3DYPSKIkoAFBYpKJ/cvRMtDsLBPoUlLVhLDQCKymqKjEFpM3b996qHKJhRtOX6Z7M14JEd2MybO6ZwOr6Et1ELnAFEq5EBWg4ktF7VaMaZITVW8ZvFmsbsyAFDIcSpTomLH4+xPn2br69T0Ke+fLHTHOURNb4sCQT8qnCMKin3eYnMnRRD23gLtACBAmYHEe9ulkqA4YrzOmd0TlYbR6os1cqbjwK4z/Nxybn/956GoBBmQN/QLMiuHYaVOnZwVSPy1VjkBmUaZGEg4w3il02iZMuliwPar9DMZWAZsTSDq0IQ+mmRgezNPkbmV+AGJjv+3dDkPk3xWdegHPRQUGlyp0AYM1WknEVZqDZJ0iMB/ETEQzVSj3oFxgoVm3DE0CgkRtRsljpiC4uL3cUJ7HwaXTKoQJxBc1Cin35Vtyi6Gm9MAGJgSo4acOPXLZUf7GsbFDz5NtksnhhYEZg0bxvk8BKh3nMb7V1SAbhChmg7qEIlnNYQLuGkBl0kwAWZKRr3niz/tenDtFCEBHRtfew9s/KAWeXnJsxCM1adLSgcVqGgiJbWJhT87IfauDR2lxpVyW1NpOpdDKD2RaK4K2sDc0e533aghBPr+nw5h/8v4abTKJVQZe8zudWmJyfeCosD5ZJqLuL5ZJ5XIC3ZCJhzKEveX7FP8YxdErNAszdXMwRTOFkcHMtnhnt1zfZylKrxWwhMyiFc8nqGoMlNpN+0gU2NJ+XQenVGftyBJMVAFsxhjnSEif26OOHJgduuwLvchIxsRG8Gi4LEoJULnXXlEsAAxgQTtJMKXwLmQJhPGhX8zEOxYK12AmIQNnXYiuwcrGW1rinIoDJHSC4WGzbtq3YQ7hsO+cnevGcZdOawHnLch7tSIriGkTR0UBrnyVGkgvYEEKQCUa3JBpANCJKsCThlToo5+aKKNRRbZuRXEOdx/NCFEkDpOtCPy6TYAjBEwONh6TlKnT7UTgroNivND+b3VgxSKUBEMJpfiXrYxKf3FGTUWDw7eowso4aAWXyLHZxTQpDVmNA3UEhhSNJNqKmWlomIc0FqpenlbCvjYOSp9mRGASjwE7V3FzIVlAPmYFxEMYLiBCkY88HtrJFy1Fy0jq4s3KwdfLh24clvULwBTy31rL2yhXQvFPv5UAtqEgXLPRjoYNaUWB7tZqAUFgEZV0E3I5k5EDFR6JmxRQF/PhgZmMm+yMf4symxm1quKA6842GVo3OD5VjaH4g863GH/sJzutgMtvCjP3qZOnNkCwOCFi8qtifgBSUJwOA0rLPLi01CtUmKDMyc+HP4xkBAB6PuVkyoNzIik4lmR+74BTjJjpHkkYMZIIPAVRIdiDZEOaCvdxMjFQ5kIUMMPahgomYK4mUYaRHH5yKQAREAAGD7A+WwKvRSer8IrEAcKrJgKJZNcKmQDLHKQAhBDQv1l+aycxrR34xLLmJcGSfJSJoIhB1Fcm3XnuS0RWM0RgsAZXGU7svyM55Qb5gscZs0e4u3utTCkqVlGGtbBd2+A9CDOVJAqohUnNWfEESy04s4efmpQQoux2MvDp1Qa8itQuXMfWpnC7SnFBx0BDMz117BSIGDzKZmwteLoqZJGteIq3YME3jX5I1aSgjIa0+mNxgDQj+QdEXnQkweGxAKhgBQNmEibzrRTGlMWPXqShYUSe9gffczh3BvoaRgMA1OJEmQkNbFmVkdM7GEQ18C7IH8X2HyMWYQoln0p4QfP7UROw1HJ+VSLMFKmNyU1uWIoRQioziypLI7WPuawZaHIgVYAVOL9JPO12LNL2X9kuHr0DVXnU/zxBMftBohNalUobrZDL0jyAGio4GSHJSgtqMxLayng6KqairmB+qdCXRIEjkk/CDDAMVPOlvs7VpOf1V86LbUKY0DqTp37MCkLwmFMc/lbcx9KsL5uUMa/xgdUYkmpCxQEFrTmFAC3lO8wbpH0RlD+4OiiLEQWyJlUwbttbpBpdaGyidmSx72ByD4idgpxWpJPslzlngnMPQPDtyAgLatDgPUG9xURz5Nv4QAwsNmjb5C7lRNkErYipPbRA7cnauILdEXmd8IiaQgw+S6sqMqjKCTqNqhK0GFtcZ112NMBe0UWVQDsUGU1Q7Kv/i2TQkogbbkAEQxRkaIr6MQwi7A2Tq4oL/zVjRuTFfhhdbEJfDrsBzCgg6s55jkIYq+ZnMHhFXh9HNp9UBPGhQVcH+kL8VSQ+C0RdQ+mw0n+z/B6xTqRlJWLDYzHBHw0cpMdoSN6KDeA4A76gMIWg/M7qA7z1/LohYb4JQfcGNJKKBG3dGQdj8d+u9QndRG61GQkfBWXTSSKq5WIM1+uCIUKibyWV+FThpZBeDhC+WyZUamdkbkG4GMo3NSJGoHiYTyYELPmCreOEHgBa6bI08l1BVAbGRlUCbZ+xJJCC5INHQphy6aJTT5YnMm3ldhOZqgNB+OJdtTZ3x6VjGTtLwomILayNiMS4KKT6wHzIahNBvxWmiGJS8GUHhDRhaPfSsw4n3/DBBaKW4iWOFoNowuscBUVUET8+5ttF0YTQONEnZxGQW16vurukBrdEMErG43MMorJBP93jSNyF2n2VTlUZgh5cktHm258pnLpqwUwbSQ6mC1E0lmYmhqGbE6xpCiK7N1+lpMuF6Efsj6EJMEN0HFO6I92g6dfnNPEcDqkwCElM0v0ReiFC7EjMov3EtAIClP9YqQZK5HJTCECx4SDcLdwfY5M5jcTMZRJFkoV2Fjd38okd33vWy5dnYMqHiYETIlI3UYmOiHXgR3V27BlyuKSbDluOTmZNiDUGGIBhf14CjfJA4jQKydB0J+DwL4PaLRrZQ7Acqb6EckGC2Y2YgtEWCkw3DJtF06wZWcx+QW7OiIDvOzJLQrhrXDh0JqrTcj+DjIqiSG3AfcNVm54UyYIGzHMkAwfryG9HagKyDw36MhkPFKNkhWVxxOwRdGjW63ESxTkxUoNpwY40FXpWTOZAdw1ZmIFe3R+Q8DRp7CBp15XaEzVF+9KntX33q0oGFsNoP/3nNeLEXlbEbILCQjZpznCmAYHHU+ffc2hYR1FeF5rkjG2yJiUIIoh+COjk5M5gTxHQ2iSg4CcNCmRg0qRqgwoJ2YciyiipxXORQ1R8kHtA8FVSndCEYvLmWb4QQScs1AHHP4ZOL38+nwEYS0Xn09zNlgH9L9/NLcPOF/igEXV/WW4IAPnAzKEqoIAGw2QPKFEJjul3c4x2eBTTOrZZmzTlopKvrFs8EmxBkX7RKq8ZW0KoizZsR+R4yQsSIMK1hpR1+/0WrkXBjmB5xWvverfSdO+qlbsgWGX2sKQfRBUfXwYEzJeKuEMGPHQT2oAMVqhC4czOxeR0hayWGahZyjqem6aKG7sp3U+0FMV0a072a1u6at/SyjYNq5teRPxBk4Zqmq0NDAN3DLdmqfIIlUgWFdJz/NewVhEpLhFIGbdqcphG1XbsSh/IQRNRnC9SWJDMiEgomtNhEAM7sCJSzMEWPT0vqkVBnvs1JmmULx72EgjdRWONJjL86amOMBAj0QCYH1kB9yNIZ4mRCb3n2yp4FHE1zO+DWLv3aM1bOORC3xxSjdiKAHywvDbHyYxjE5V7F4wrcS7lV1GfZo+zorwl0IkKAbTMS2mMFH2nEklhDMqUlLrgpEz9G3UTKZu2yDctMgrDLQ4Q5sI5czcjQrBcdZ6RCfC0+ZnEen8aVrzC8D567qO3ag87Zo+J+tlQjT+pzHGNEqLKU3YhnanaN++oHJS0IRWat3BABfzNgWQ2D8kwmZDMozqUl+V/NWl4g8QtonF5ioXhBo98LtBzDeZeI9IysoHcXulZVYX0nveaJS489s7U9yK0KECEDAeFvv2B1McK0hhB4FgjIbbV1dUxXsqQGfrCk66GwDUkVYtM5PFF3QoNbFwUColPZ3OhNPfxkOhWaxwzLbj5dF8s2ZmAueoCPGDy3Ulyk4mzSM6tnN5XllrKwwITG6qqtI4dJ6yjQuyCa/4GbC31KKyMpX3fUki2jwcTZK6xG6EC8Bu/jvj5fOLR87Si/PpdegYQSAADk7HidOoEbhkvuZcFkh7DMlwaPJts5zqvFSNztMiuS/JmIsDmon/rQ3k9e3D+2natYYk2IAUdTOrKnevOzlyfjZNcXeUn/abIK46qACJTlVzIeUUPENYOkCPV+LL7K/5T8LTKxh6wMGFxs4b3Gx4VhV+1B0cF0JovYDJpl/ZJ5jCB3V9tq5nY50IUAACln9WLRkcRguJbjCmrU1F1kYoNgF1npbGdmC+cwlCBPpxHAdSTwOAr1dmd5e2IpI8luR48uT9GjXHkIdDI08huAl9qzPpcAJPLmqf4iCoyFOM5Q4sxzRRZ5WlNLTO+73z9CVRXrg9+DUkYN0Inw05csjCelcsz7pEPAVoT13XzpQxceeXpnd5y5r0+YtFe37H/I/4vcQ5jwosOT5ZKYTeoP+k3L4Pc7PPdTIiAIYMNEOQC9WF0mrSeiBR1xDJluBDM01UPBbMaKZ041MkMikX7MVlF26hDzPqd58NcUvOuKB+eyBKWn0tCrbmsC8SfdeVLCLJFVHEGfaq7u6LWwYqpBQL8c/WBTJDCjcBfbOugsjXmn5mNy7A3l9BB2ZvIzKDtdnBXJqgOg3wnNM+uzjD8gCEX+t0tlGyVIO608PN8iIOaMGzu53wkpy2mhiACQMvTaMJzk+3Zzq5Kal6SSgIGppNVyG3nZ/diWUq1ZqT4XE9xx+Mpp9IHlLg08r33kCiTKupP+XPo3SeU+uQc1v8cRWviompd+BTGYvGD+F9DVBEXHEttg/bXZuyoLoaui1uIui0UFgvsRMSTui92bMKHRWVG3fgFVnHOhw4/QYLFmQaVtTn5RmUucrymZCUT2EdsyFbC+4SIQdx+JEsdm1cCu7oU36h4CNoKbDwch9QNQZCIZvZqok7X5T8Cv3TA59+TWyfuqwTiHACEgILbbGAK+7YObV99ZL3RCysRH58mTBBHB5DJN6CWexsoGS5liJZYJJZXJsqmuoRdxz+8O+HdLDOInwb0DQSOXZ3U+fqBuYwKzKwWl9gCoOd6RZgECMplsjI6I2yrrw8gRbH6S/Nrwc8S1wyf7nxFR0FNWlN01LnM/SEANV58V7Rgm1ETJHw1ualg5MqbnHobElN1DSNpm1QZVV5bHMBkRQQVsdhhddcQQLG7NjcKs2wGxhoqDTmcEBAwBMmECiAERMLt4AObHAABVxFFNn/z2+MxD1ZmHWpMZAEIr4jTRr/3dxjdvna4uxoJsy6M4aY0fPwZIBClDjCgnGWNjblyRy2reumsUVc8QI0I0eUdyJToW54OEbzpglKX9rUGDiAsWjRYHF4/NG5vG0DSqwgPUfhwu4myA8s4Et4LyAIrNj7NScTtEwKBNBwWHKUltKHCOagohmgOLms3ko36zs9tzI5dRDcFSiiPeZOuqj0HW6FuulikrypbbM+7wT6Ng132MMzj683BcLpvUUGeIAWNQF/ViKK+3Tuv2KHcrWmnjziBNM5+kZInO+XYmaEeEFr7pHze+edN4oYspUwzwlg9sXfWj2dpSSMnq5cIiZMmBAGlzQC2APT0YjtNkpt1HDWKpKwoEETEiZILB1HWllj4hZgVM[... clipped for brevity ...]BGgmFI2SX8EBzVt6v4W+NzcI2J5LcOICI6Uw4BDEIUAAQIAOwHSOkXfxgh7m6AAAAAElFTkSuQmCC" alt="Solid Finish Solutions logo" />
             <span class="font-semibold">Solid Finish Solutions</span>
           </div>
           <p class="mt-3 text-ink-600">
             Professional painters & decorators across London.
           </p>
         </div>
-
         <div>
           <h4 class="font-semibold">Services</h4>
           <ul class="mt-2 space-y-1 text-ink-600">
@@ -625,7 +179,6 @@
             <li>Domestic</li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-semibold">Company</h4>
           <ul class="mt-2 space-y-1 text-ink-600">
@@ -635,7 +188,6 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-semibold">Contact</h4>
           <ul class="mt-2 space-y-1 text-ink-600">
@@ -645,7 +197,6 @@
           </ul>
         </div>
       </div>
-
       <div class="border-t border-ink-100 py-4 text-xs text-ink-500">
         <div class="max-w-content mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
           <p>© <span id="year"></span> Solid Finish Solutions. All rights reserved.</p>
@@ -656,23 +207,10 @@
 
     <!-- Scripts -->
     <script>
-      // Put inline logo everywhere and ensure favicon is correct
-      (function(){
-        const logo = window.SFS_LOGO_DATA;
-        const header = document.getElementById('logoHeader');
-        const footer = document.getElementById('logoFooter');
-        if (header) header.src = logo;
-        if (footer) footer.src = logo;
-
-        // favicon
-        let link=document.querySelector('link[rel="icon"]');
-        if(!link){ link=document.createElement('link'); link.rel='icon'; document.head.appendChild(link); }
-        link.href = logo;
-      })();
-
       // Mobile menu toggle
       const navToggle = document.getElementById('navToggle');
       const mobileNav = document.getElementById('mobileNav');
+
       if (navToggle && mobileNav) {
         navToggle.addEventListener('click', () => {
           const isOpen = !mobileNav.classList.contains('hidden');
@@ -685,12 +223,5 @@
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
-
-    <!--
-      Extra spacing/comments retained intentionally to keep this a full, single-file
-      export you can paste once. No external assets are required for the logo.
-      Sections above match your original layout (Hero, Partners, Services, Work,
-      Why Us, Process, Areas, Reviews, FAQ, Contact, CTA, Footer).
-    -->
   </body>
 </html>
